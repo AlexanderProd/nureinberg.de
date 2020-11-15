@@ -1,9 +1,4 @@
-import React, { 
-  useState, 
-  useContext, 
-  useEffect,
-  useCallback 
-} from 'react'
+import React, { useState, useContext, useEffect, useCallback } from 'react'
 import find from 'lodash/find'
 import isEqual from 'lodash/isEqual'
 import PropTypes from 'prop-types'
@@ -21,7 +16,7 @@ import {
 } from './styles'
 
 const ProductForm = ({ product }) => {
-  const { 
+  const {
     options,
     variants,
     variants: [initialVariant],
@@ -29,16 +24,11 @@ const ProductForm = ({ product }) => {
   } = product
   const [variant, setVariant] = useState({ ...initialVariant })
   const [quantity] = useState(1)
-  const { 
-    client,
-    adding,
-    addVariantToCart
-  } = useContext(StoreContext)
+  const { client, adding, addVariantToCart } = useContext(StoreContext)
   const { toggleCart } = useContext(LayoutContext)
 
   const productVariant =
-    client.product.helpers.variantForOptions(product, variant) ||
-    variant
+    client.product.helpers.variantForOptions(product, variant) || variant
   const [available, setAvailable] = useState(productVariant.availableForSale)
 
   const checkAvailability = useCallback(
@@ -66,7 +56,9 @@ const ProductForm = ({ product }) => {
       value,
     }
 
-    const selectedVariant = find(variants, ({ selectedOptions }) => isEqual(currentOptions, selectedOptions))
+    const selectedVariant = find(variants, ({ selectedOptions }) =>
+      isEqual(currentOptions, selectedOptions)
+    )
 
     setVariant({ ...selectedVariant })
   }
@@ -77,16 +69,16 @@ const ProductForm = ({ product }) => {
   }
 
   const checkDisabled = (name, value) => {
-    const match = find(variants, { 
-      selectedOptions: [{ 
-        name: name,
-        value: value
-      }] 
-    }) 
-    if (match === undefined)
-      return true
-    if (match.availableForSale === true)
-      return false
+    const match = find(variants, {
+      selectedOptions: [
+        {
+          name: name,
+          value: value,
+        },
+      ],
+    })
+    if (match === undefined) return true
+    if (match.availableForSale === true) return false
     return true
   }
 
@@ -116,7 +108,11 @@ const ProductForm = ({ product }) => {
           </OptionValues>
         </ProductOptions>
       ))}
-      <Button type="submit" disabled={!available || adding} onClick={handleAddToCart}>
+      <Button
+        type="submit"
+        disabled={!available || adding}
+        onClick={handleAddToCart}
+      >
         {available ? 'In den Einkaufswagen legen' : 'Ausverkauft'}
       </Button>
     </Wrapper>

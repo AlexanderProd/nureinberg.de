@@ -6,8 +6,7 @@ import { useSiteMetadata } from '../utils/hooks'
 
 function SEO({ description, lang, meta, keywords, title }) {
   const siteMetadata = useSiteMetadata()
-  const metaDescription =
-    description || siteMetadata.description
+  const metaDescription = description || siteMetadata.description
   return (
     <Helmet
       htmlAttributes={{
@@ -52,9 +51,9 @@ function SEO({ description, lang, meta, keywords, title }) {
         .concat(
           keywords.length > 0
             ? {
-              name: `keywords`,
-              content: keywords.join(`, `),
-            }
+                name: `keywords`,
+                content: keywords.join(`, `),
+              }
             : []
         )
         .concat(meta)}

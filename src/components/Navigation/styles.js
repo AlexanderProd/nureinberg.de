@@ -13,9 +13,9 @@ export const Wrapper = styled.div`
   display: grid;
   grid-template-columns: auto auto;
   grid-template-rows: auto;
-  grid-template-areas: "left right";
+  grid-template-areas: 'left right';
 
-  @media (max-width: ${breakpoints.l}px){
+  @media (max-width: ${breakpoints.l}px) {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -30,7 +30,7 @@ export const HamburgerWrapper = styled.span`
   z-index: 23;
   cursor: pointer;
 
-  @media (min-width: ${breakpoints.l}px){
+  @media (min-width: ${breakpoints.l}px) {
     display: none;
   }
 `
@@ -51,8 +51,8 @@ export const MenuWrapper = styled.div`
 `
 
 export const MenuItem = styled(Link)`
-	color: ${({ color }) => color ? color : 'black'};
-	text-decoration: none;
+  color: ${({ color }) => (color ? color : 'black')};
+  text-decoration: none;
   font-size: 1rem;
   margin-right: 1.45rem;
   letter-spacing: 0.1rem;
@@ -63,23 +63,23 @@ export const MenuItem = styled(Link)`
   border-bottom: 1pt solid transparent;
 
   &:hover {
-    border-bottom: 1pt solid ${({ color }) => color ? color : 'black'};
+    border-bottom: 1pt solid ${({ color }) => (color ? color : 'black')};
   }
 
-  @media (min-width: ${breakpoints.l}px){
+  @media (min-width: ${breakpoints.l}px) {
     display: block;
   }
 `
 
 export const CartCounter = styled.span`
-	background-color: white;
-	color: #663399;
-	border-radius: 20px;
-	padding: 0 10px;
-	font-size: 1.2rem;
-	float: right;
-	margin: -10px;
-	z-index: 22;
+  background-color: white;
+  color: #663399;
+  border-radius: 20px;
+  padding: 0 10px;
+  font-size: 1.2rem;
+  float: right;
+  margin: -10px;
+  z-index: 22;
 `
 
 export const CartWrapper = styled.div`

@@ -3,8 +3,11 @@ import React from 'react'
 import Page from '~/templates/Page'
 
 const Versand = () => (
-  <Page title='Versand'>
-    <p><strong>Preise, Versandkosten und Lieferinformationen</strong><span>:</span></p>
+  <Page title="Versand">
+    <p>
+      <strong>Preise, Versandkosten und Lieferinformationen</strong>
+      <span>:</span>
+    </p>
     <ul>
       <li>Kostenloser Versand innerhalb Deutschland.</li>
       <li>DHL mit Versandverfolgung 4,99€.</li>

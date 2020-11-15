@@ -9,8 +9,8 @@ const client = Client.buildClient({
 export const defaultStoreContext = {
   client,
   adding: false,
-  checkout: { 
-    lineItems: []
+  checkout: {
+    lineItems: [],
   },
   products: [],
   shop: {},
@@ -30,18 +30,18 @@ export class StoreProvider extends React.Component {
           console.error('Both a size and quantity are required.')
           resolve()
         }
-  
+
         this.setState(state => ({
           ...state,
           adding: true,
         }))
-  
+
         const { checkout, client } = this.state
         const checkoutId = checkout.id
         const lineItemsToUpdate = [
           { variantId, quantity: parseInt(quantity, 10) },
         ]
-  
+
         client.checkout
           .addLineItems(checkoutId, lineItemsToUpdate)
           .then(checkout => {
@@ -121,7 +121,6 @@ export class StoreProvider extends React.Component {
     const newCheckout = await createNewCheckout()
     setCheckoutInState(newCheckout)
   }
-
 
   componentDidMount() {
     this.initializeCheckout()

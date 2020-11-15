@@ -8,7 +8,7 @@ import { GlobalStyle } from '../utils/styles'
 const Layout = ({ children }) => (
   <StoreProvider>
     <LayoutProvider>
-      <GlobalStyle/>
+      <GlobalStyle />
       {children}
     </LayoutProvider>
   </StoreProvider>

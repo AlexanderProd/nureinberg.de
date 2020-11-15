@@ -10,18 +10,15 @@ import { useWindowDimensions } from '~/utils/hooks'
 import {
   breakpoints,
   Img,
-  Container, 
+  Container,
   TwoColumnGrid,
   MainContent,
 } from '~/utils/styles'
-import {
-  ProductTitle,
-  ProductDescription
-} from './styles'
+import { ProductTitle, ProductDescription } from './styles'
 
 const ProductPage = ({ data }) => {
   const product = data.shopifyProduct
-  
+
   const ProductImages = () => {
     const { width } = useWindowDimensions()
 
@@ -36,24 +33,25 @@ const ProductPage = ({ data }) => {
     if (product.images) {
       return (
         <div>
-          {width < breakpoints.l 
-            ? <Slide {...properties}>
-                {product.images.map(i => (
-                  <Img
-                    fluid={i.localFile.childImageSharp.fluid}
-                    alt={product.title}
-                    key={i.id}
-                  />
-                ))}
-              </Slide>
-            : product.images.map(image => (
+          {width < breakpoints.l ? (
+            <Slide {...properties}>
+              {product.images.map(i => (
+                <Img
+                  fluid={i.localFile.childImageSharp.fluid}
+                  alt={product.title}
+                  key={i.id}
+                />
+              ))}
+            </Slide>
+          ) : (
+            product.images.map(image => (
               <Img
                 fluid={image.localFile.childImageSharp.fluid}
                 alt={product.title}
                 key={image.id}
               />
             ))
-          }
+          )}
         </div>
       )
     }
@@ -62,16 +60,16 @@ const ProductPage = ({ data }) => {
   return (
     <>
       <SEO title={product.title} description={product.description} />
-      <Navigation/>
+      <Navigation />
       <Container>
         <MainContent>
           <TwoColumnGrid>
-            <ProductImages/>
+            <ProductImages />
             <div>
               <ProductTitle>{product.title}</ProductTitle>
               <ProductForm product={product} />
-              <ProductDescription 
-                dangerouslySetInnerHTML={{ __html: product.descriptionHtml }} 
+              <ProductDescription
+                dangerouslySetInnerHTML={{ __html: product.descriptionHtml }}
               />
             </div>
           </TwoColumnGrid>

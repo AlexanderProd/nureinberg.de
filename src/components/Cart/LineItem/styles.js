@@ -30,7 +30,7 @@ export const ProductName = styled.p`
 `
 
 export const LastRow = styled.div`
-  display: flex; 
+  display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
@@ -38,7 +38,7 @@ export const LastRow = styled.div`
 
 export const Price = styled.span`
   align-self: flex-end;
-  font-family: "Montserrat","HelveticaNeue","Helvetica Neue",sans-serif;
+  font-family: 'Montserrat', 'HelveticaNeue', 'Helvetica Neue', sans-serif;
   font-weight: 400;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -49,7 +49,7 @@ export const ButtonWrapper = styled.div`
 `
 
 export const QuantityInput = styled.input`
-  font-family: "Roboto","HelveticaNeue","Helvetica Neue",sans-serif;
+  font-family: 'Roboto', 'HelveticaNeue', 'Helvetica Neue', sans-serif;
   margin: 0;
   padding: 0;
   background-color: transparent;

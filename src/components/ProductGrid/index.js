@@ -1,25 +1,15 @@
 import React, { useContext } from 'react'
-import { useStaticQuery,  graphql, Link } from 'gatsby'
+import { useStaticQuery, graphql, Link } from 'gatsby'
 
 import StoreContext from '../../context/StoreContext'
-import { 
-  Grid, 
-  Product,
-  Title,
-  PriceTag
-} from './styles'
+import { Grid, Product, Title, PriceTag } from './styles'
 import { Img } from '../../utils/styles'
 
 const ProductGrid = () => {
   const { checkout } = useContext(StoreContext)
   const { allShopifyProduct } = useStaticQuery(graphql`
     query {
-      allShopifyProduct(
-        sort: {
-          fields: [createdAt]
-          order: DESC
-        }
-      ) {
+      allShopifyProduct(sort: { fields: [createdAt], order: DESC }) {
         edges {
           node {
             id
@@ -46,17 +36,18 @@ const ProductGrid = () => {
     }
   `)
 
-  const getPrice = price => Intl.NumberFormat(undefined, {
-    currency: checkout.currencyCode ? checkout.currencyCode : 'EUR',
-    minimumFractionDigits: 2,
-    style: 'currency',
-  }).format(parseFloat(price ? price : 0));
+  const getPrice = price =>
+    Intl.NumberFormat(undefined, {
+      currency: checkout.currencyCode ? checkout.currencyCode : 'EUR',
+      minimumFractionDigits: 2,
+      style: 'currency',
+    }).format(parseFloat(price ? price : 0))
 
   return (
     <Grid>
-      {allShopifyProduct.edges
-        ? allShopifyProduct.edges.map(({ node }) => (
-          <Product key={node.id} >
+      {allShopifyProduct.edges ? (
+        allShopifyProduct.edges.map(({ node }) => (
+          <Product key={node.id}>
             <Link to={`/product/${node.handle}/`}>
               <Img
                 fluid={node.images[0].localFile.childImageSharp.fluid}
@@ -67,7 +58,9 @@ const ProductGrid = () => {
             <PriceTag>{getPrice(node.variants[0].price)}</PriceTag>
           </Product>
         ))
-        : <p>No Products found!</p>}
+      ) : (
+        <p>No Products found!</p>
+      )}
     </Grid>
   )
 }

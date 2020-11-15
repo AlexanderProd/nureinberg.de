@@ -8,11 +8,11 @@ export const Wrapper = styled.div`
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr;
   grid-column-gap: 20px;
-  grid-template-areas: ". . . .";
+  grid-template-areas: '. . . .';
   margin-top: 6rem;
   margin-bottom: 1.45rem;
 
-  @media (max-width: ${breakpoints.s}px){
+  @media (max-width: ${breakpoints.s}px) {
     display: flex;
     flex-direction: column;
   }
@@ -25,7 +25,7 @@ export const Links = styled.div`
   align-content: flex-start;
   align-items: flex-start;
 
-  @media (max-width: ${breakpoints.s}px){
+  @media (max-width: ${breakpoints.s}px) {
     margin-bottom: 2rem;
     align-items: center;
   }
@@ -63,7 +63,7 @@ export const Cards = styled.div`
     margin-left: 0.5rem;
   }
 
-  @media (max-width: ${breakpoints.s}px){
+  @media (max-width: ${breakpoints.s}px) {
     text-align: center;
   }
 `

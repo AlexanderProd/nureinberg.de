@@ -3,12 +3,7 @@ import { navigate } from 'gatsby'
 
 import LayoutContext from './../../../context/LayoutContext'
 import { useSiteMetadata } from '../../../utils/hooks'
-import { 
-  Wrapper,
-  ItemsList,
-  PrimaryNavItem,
-  SecondaryNavItem,
-} from './styles'
+import { Wrapper, ItemsList, PrimaryNavItem, SecondaryNavItem } from './styles'
 
 const MobileNav = ({ visible }) => {
   const { toggleMobileNav } = useContext(LayoutContext)
@@ -21,18 +16,18 @@ const MobileNav = ({ visible }) => {
 
   const PrimaryNav = primaryNav
     ? primaryNav.map(({ name, link }) => (
-      <PrimaryNavItem key={name} onClick={() => handleClick(link)}>
-        {name}
-      </PrimaryNavItem>
-    ))
+        <PrimaryNavItem key={name} onClick={() => handleClick(link)}>
+          {name}
+        </PrimaryNavItem>
+      ))
     : null
 
   const SecondaryNav = secondaryNav
     ? secondaryNav.map(({ name, link }) => (
-      <SecondaryNavItem key={name} onClick={() => handleClick(link)}>
-        {name}
-      </SecondaryNavItem>
-    ))
+        <SecondaryNavItem key={name} onClick={() => handleClick(link)}>
+          {name}
+        </SecondaryNavItem>
+      ))
     : null
 
   return (

@@ -4,10 +4,10 @@ import { breakpoints } from '../../utils/styles'
 
 export const Wrapper = styled.div`
   right: 0;
-  visibility: ${({ visible }) => visible ? 'visible' : 'hidden'};
+  visibility: ${({ visible }) => (visible ? 'visible' : 'hidden')};
   z-index: 22;
-  position: fixed; 
-  width: ${({ visible }) => visible ? '100%' : '0'};
+  position: fixed;
+  width: ${({ visible }) => (visible ? '100%' : '0')};
   min-height: 100%;
   height: 100%;
   background-color: rgba(28, 29, 29, 1);
@@ -16,16 +16,16 @@ export const Wrapper = styled.div`
   overflow-x: hidden;
   transition: 0.5s;
 
-  @media (min-width: ${breakpoints.m}px){
-    width: ${({ visible }) => visible ? '45%' : '0'};
+  @media (min-width: ${breakpoints.m}px) {
+    width: ${({ visible }) => (visible ? '45%' : '0')};
   }
 
-  @media (min-width: ${breakpoints.l}px){
-    width: ${({ visible }) => visible ? '35%' : '0'};
+  @media (min-width: ${breakpoints.l}px) {
+    width: ${({ visible }) => (visible ? '35%' : '0')};
   }
 
-  @media (min-width: ${breakpoints.xl}px){
-    width: ${({ visible }) => visible ? '25%' : '0'};
+  @media (min-width: ${breakpoints.xl}px) {
+    width: ${({ visible }) => (visible ? '25%' : '0')};
   }
 `
 
@@ -44,28 +44,27 @@ export const Header = styled.div`
 export const Title = styled.h1`
   color: white;
   font-size: 1.8rem;
-  font-family: "Old Standard TT",serif;
+  font-family: 'Old Standard TT', serif;
   font-weight: 400;
   margin: 0;
   padding: 0;
 `
 
 export const SubtotalWrapper = styled.div`
-  display: flex; 
+  display: flex;
   justify-content: space-between;
   align-items: center;
 `
 
 export const Subtotal = styled.h3`
-  font-family: "Montserrat","HelveticaNeue","Helvetica Neue",sans-serif;
+  font-family: 'Montserrat', 'HelveticaNeue', 'Helvetica Neue', sans-serif;
   font-weight: 400;
   font-style: normal;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 `
 
-export const Price = styled.span`
-`
+export const Price = styled.span``
 
 export const Notice = styled.p`
   font-size: 16px;
@@ -75,7 +74,7 @@ export const Notice = styled.p`
 `
 
 export const BuyButton = styled.button`
-  background-color: #2AC0FB;
+  background-color: #2ac0fb;
   color: white;
   width: 100%;
   text-decoration: none;
@@ -92,7 +91,7 @@ export const BuyButton = styled.button`
   transition: 0.2s;
 
   &:hover {
-    background-color: RGBA(42, 192, 251, 0.80);
+    background-color: RGBA(42, 192, 251, 0.8);
   }
 `
 

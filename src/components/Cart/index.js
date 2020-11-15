@@ -13,18 +13,14 @@ import {
   BuyButton,
   Subtotal,
   SubtotalWrapper,
-  Notice
+  Notice,
 } from './styles'
 
 const Cart = ({ visible, setVisibility }) => {
-  const { 
-    client, 
-    checkout, 
-    updateLineItem 
-  } = useContext(StoreContext)
+  const { client, checkout, updateLineItem } = useContext(StoreContext)
   const innerRef = useRef(null)
 
-  useOuterClick(function () {
+  useOuterClick(function() {
     if (visible) setVisibility()
   }, innerRef)
 
@@ -32,11 +28,11 @@ const Cart = ({ visible, setVisibility }) => {
     window.open(checkout.webUrl)
   }
 
-  const lineItems = checkout.lineItems 
+  const lineItems = checkout.lineItems
     ? checkout.lineItems.map(item => (
-        <LineItem 
-          key={item.id.toString()} 
-          item={item} 
+        <LineItem
+          key={item.id.toString()}
+          item={item}
           currencyCode={checkout.currencyCode}
           client={client}
           checkout={checkout}
@@ -49,14 +45,14 @@ const Cart = ({ visible, setVisibility }) => {
     currency: checkout.currencyCode ? checkout.currencyCode : 'EUR',
     minimumFractionDigits: 2,
     style: 'currency',
-  }).format(parseFloat(checkout ? checkout.subtotalPrice : 0));
+  }).format(parseFloat(checkout ? checkout.subtotalPrice : 0))
 
   return (
     <Wrapper visible={visible} ref={innerRef}>
       <Content>
         <Header>
           <Title>Einkaufswagen</Title>
-          <CloseIcon color='white' onClick={setVisibility} />
+          <CloseIcon color="white" onClick={setVisibility} />
         </Header>
         {checkout && lineItems.length > 0 ? (
           <>
@@ -66,14 +62,13 @@ const Cart = ({ visible, setVisibility }) => {
               <Subtotal>{price}</Subtotal>
             </SubtotalWrapper>
             <Notice>
-              Rabattcodes, Versandkosten und Steuern<br/> werden bei der Bezahlung berechnet.
+              Rabattcodes, Versandkosten und Steuern
+              <br /> werden bei der Bezahlung berechnet.
             </Notice>
             <BuyButton onClick={handleCheckout}>Zur Kasse →</BuyButton>
           </>
         ) : (
-          <Notice>
-            Dein Einkaufswagen ist im Moment leer.
-          </Notice>
+          <Notice>Dein Einkaufswagen ist im Moment leer.</Notice>
         )}
       </Content>
     </Wrapper>

@@ -11,7 +11,7 @@ export const SlideshowImage = styled(Image)`
 `
 
 export const Caption = styled.div`
-  color: ${({ color }) => color ? color : 'black'};
+  color: ${({ color }) => (color ? color : 'black')};
   position: absolute;
   z-index: unset;
   top: 0;
@@ -27,13 +27,13 @@ export const Caption = styled.div`
 
   animation: fadedown 1s;
   @keyframes fadedown {
-    from { 
+    from {
       opacity: 0;
-      transform: translateY(-50px)
+      transform: translateY(-50px);
     }
-    to { 
-      opacity: 1; 
-      transform: translateY(0px)
+    to {
+      opacity: 1;
+      transform: translateY(0px);
     }
   }
 `
@@ -45,9 +45,9 @@ export const Title = styled.h1`
   font-size: 4rem;
   line-height: 1.25;
   margin: 0 0 0.5rem;
-  text-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
 
-  @media (max-width: ${breakpoints.l}px){
+  @media (max-width: ${breakpoints.l}px) {
     font-size: 3rem;
   }
 `

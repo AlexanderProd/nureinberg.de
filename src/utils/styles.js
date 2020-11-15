@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'gatsby-image'
 import styled from '@emotion/styled'
-import { Global, css } from "@emotion/core"
+import { Global, css } from '@emotion/core'
 
 export const colors = {
   whiteSmoke: '#F6F6F6',
@@ -42,7 +42,7 @@ export const GlobalStyle = () => (
 
       body {
         margin: 0;
-        font-family: "Roboto","HelveticaNeue","Helvetica Neue",sans-serif;
+        font-family: 'Roboto', 'HelveticaNeue', 'Helvetica Neue', sans-serif;
       }
 
       p {
@@ -50,7 +50,7 @@ export const GlobalStyle = () => (
       }
 
       h3 {
-        font-family: "Montserrat","HelveticaNeue","Helvetica Neue",sans-serif;
+        font-family: 'Montserrat', 'HelveticaNeue', 'Helvetica Neue', sans-serif;
         font-weight: 400;
         font-style: normal;
         letter-spacing: 0.1em;
@@ -83,7 +83,7 @@ export const MainContent = styled.main`
   margin-top: 80px;
   margin-bottom: 40px;
 
-  @media (max-width: ${breakpoints.l}px){
+  @media (max-width: ${breakpoints.l}px) {
     margin-top: 40px;
     margin-bottom: 20px;
   }
@@ -94,15 +94,16 @@ export const TwoColumnGrid = styled.div`
   grid-template-columns: repeat(2, 1fr);
   gap: 2.5rem;
 
-  @media (max-width: ${breakpoints.l}px){
+  @media (max-width: ${breakpoints.l}px) {
     display: block;
   }
 `
 
 export const Button = styled.button`
-  color: ${({ color }) => color ? color : 'white'};
-  background-color: ${({ backgroundColor }) => backgroundColor ? backgroundColor : 'black'};
-  font-family: "Montserrat","HelveticaNeue","Helvetica Neue",sans-serif;
+  color: ${({ color }) => (color ? color : 'white')};
+  background-color: ${({ backgroundColor }) =>
+    backgroundColor ? backgroundColor : 'black'};
+  font-family: 'Montserrat', 'HelveticaNeue', 'Helvetica Neue', sans-serif;
   font-weight: 400;
   font-style: normal;
   letter-spacing: 0.1em;
@@ -121,7 +122,7 @@ export const Button = styled.button`
   }
 
   &:disabled {
-    background-color: #F6F6F6;
+    background-color: #f6f6f6;
     color: #717171;
     cursor: default;
 
@@ -142,7 +143,7 @@ export const Select = styled.select`
   font-size: 0.8125rem;
   border: 1pt solid black;
   border-radius: 0px;
-  font-family: "Montserrat","HelveticaNeue","Helvetica Neue",sans-serif;
+  font-family: 'Montserrat', 'HelveticaNeue', 'Helvetica Neue', sans-serif;
   text-transform: uppercase;
   background-color: RGBA(255, 255, 255, 0);
 `

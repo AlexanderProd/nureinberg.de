@@ -1,10 +1,10 @@
 import styled from '@emotion/styled'
 
 export const Wrapper = styled.div`
-  visibility: ${({ visible }) => visible ? 'block' : 'hidden'};
+  visibility: ${({ visible }) => (visible ? 'block' : 'hidden')};
   z-index: 3;
-  position: absolute; 
-  width: ${({ visible }) => visible ? '100%' : '0'};
+  position: absolute;
+  width: ${({ visible }) => (visible ? '100%' : '0')};
   height: 100vh;
   background-color: rgba(28, 29, 29, 1);
   color: white;

@@ -5,7 +5,7 @@ import ProductGrid from '~/components/ProductGrid'
 
 const Produkte = () => (
   <Page title="Produkte">
-    <ProductGrid/>
+    <ProductGrid />
   </Page>
 )
 

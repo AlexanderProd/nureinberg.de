@@ -2,20 +2,22 @@ import { useState, useEffect } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 
 export const useWindowDimensions = () => {
-  const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions())
+  const [windowDimensions, setWindowDimensions] = useState(
+    getWindowDimensions()
+  )
 
   function getWindowDimensions() {
     if (typeof window !== 'undefined') {
       const { innerWidth: width, innerHeight: height } = window
       return {
         width,
-        height
+        height,
       }
     }
     // fallback for headless build process
-    return { 
-      width: 1920, 
-      height: 1080 
+    return {
+      width: 1920,
+      height: 1080,
     }
   }
 
@@ -36,14 +38,16 @@ export const useOuterClick = (onOuterClick, innerRef) => {
     () => {
       // only add listener, if the element exists
       if (innerRef.current) {
-        document.addEventListener("click", handleClick)
+        document.addEventListener('click', handleClick)
       }
 
       // unmount previous first in case inputs have changed
-      return () => document.removeEventListener("click", handleClick)
+      return () => document.removeEventListener('click', handleClick)
 
       function handleClick(e) {
-        innerRef.current && !innerRef.current.contains(e.target) && onOuterClick(e)
+        innerRef.current &&
+          !innerRef.current.contains(e.target) &&
+          onOuterClick(e)
       }
     },
     [onOuterClick, innerRef] // invoke again, if inputs have changed
@@ -63,13 +67,13 @@ export const useSiteMetadata = () => {
             link
           }
           primaryNav {
-						name
-						link
-					}
+            name
+            link
+          }
           secondaryNav {
-						name
-						link
-					}
+            name
+            link
+          }
         }
       }
     }

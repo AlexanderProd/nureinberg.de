@@ -2,7 +2,7 @@ import styled from '@emotion/styled'
 
 export const Title = styled.h1`
   font-size: 1.875rem;
-  font-family: "Old Standard TT",serif;
+  font-family: 'Old Standard TT', serif;
   font-weight: 400;
   margin: 0 0 0.5em;
   line-height: 1.4;

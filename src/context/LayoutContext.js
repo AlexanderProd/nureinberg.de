@@ -11,8 +11,12 @@ export const defaultLayoutContext = {
 const LayoutContext = React.createContext(defaultLayoutContext)
 
 export const LayoutProvider = ({ children }) => {
-  const [mobileNavVisible, setMobileNavVisible] = useState(defaultLayoutContext.mobileNavVisible)
-  const [cartVisible, setCartVisible] = useState(defaultLayoutContext.cartVisible)
+  const [mobileNavVisible, setMobileNavVisible] = useState(
+    defaultLayoutContext.mobileNavVisible
+  )
+  const [cartVisible, setCartVisible] = useState(
+    defaultLayoutContext.cartVisible
+  )
 
   const toggleCart = () => {
     setCartVisible(!cartVisible)
@@ -28,12 +32,10 @@ export const LayoutProvider = ({ children }) => {
     setMobileNavVisible,
     cartVisible,
     toggleCart,
-  } 
+  }
 
   return (
-    <LayoutContext.Provider value={layout}>
-      {children}
-    </LayoutContext.Provider>
+    <LayoutContext.Provider value={layout}>{children}</LayoutContext.Provider>
   )
 }
 

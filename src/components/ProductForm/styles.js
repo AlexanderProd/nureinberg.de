@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
 `
 
 export const ProductPrice = styled.span`
-  font-family: "Montserrat","HelveticaNeue","Helvetica Neue",sans-serif;
+  font-family: 'Montserrat', 'HelveticaNeue', 'Helvetica Neue', sans-serif;
   font-weight: 400;
   letter-spacing: 0.1rem;
   text-transform: uppercase;
@@ -48,21 +48,22 @@ export const ProductValue = styled.div`
   min-width: 38px;
   min-height: 38px;
   text-align: center;
-  border: ${({ active }) => (active ? '1pt solid black' : '1pt solid transparent')};
+  border: ${({ active }) =>
+    active ? '1pt solid black' : '1pt solid transparent'};
   padding: 0 ${layout.spacing}px;
   margin-right: ${layout.spacing}px;
   margin-bottom: ${layout.spacing}px;
   background-color: ${({ active }) => (active ? '#F2F2F2' : 'transparent')};
-  color: ${(({ disabled }) => (disabled ? 'grey' : 'black'))};
+  color: ${({ disabled }) => (disabled ? 'grey' : 'black')};
   overflow: hidden;
-  font-family: "Montserrat","HelveticaNeue","Helvetica Neue",sans-serif;
+  font-family: 'Montserrat', 'HelveticaNeue', 'Helvetica Neue', sans-serif;
   font-size: ${typo.small};
   font-weight: 400;
   cursor: pointer;
   opacity: ${({ active }) => (active ? 1 : 0.8)};
 
   &:hover {
-    opacity: ${(({ disabled }) => (disabled ? 0.8 : 1))};;
+    opacity: ${({ disabled }) => (disabled ? 0.8 : 1)};
   }
 `
 
@@ -83,7 +84,7 @@ export const ActiveWrapper = styled.div`
   &:hover {
     border-color: ${({ active }) => (active ? '#000' : '#dedede')};
   }
-  
+
   &:last-of-type {
     margin-right: 0;
   }
