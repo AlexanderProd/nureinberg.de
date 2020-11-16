@@ -17,16 +17,12 @@ module.exports = {
     ],
     primaryNav: [
       {
-        name: 'Produkte',
-        link: '/produkte',
+        name: 'Klassik',
+        link: '/modern',
       },
       {
-        name: 'Über Uns',
-        link: '/ueber-uns',
-      },
-      {
-        name: 'Kontakt',
-        link: '/kontakt',
+        name: 'Modern',
+        link: '/klassik',
       },
     ],
     secondaryNav: [

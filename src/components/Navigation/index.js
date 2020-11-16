@@ -57,33 +57,29 @@ const Navigation = ({ color }) => {
           ) : (
             <HamburgerIcon color={navBarColor} onClick={toggleMobileNav} />
           )}
-          <GridLeft>
-            <Logo
-              onClick={() => {
-                setMobileNavVisible(false)
-                navigate('/')
-              }}
-              color={navBarColor}
-              height={width > breakpoints.s ? '1.3rem' : '1.1rem'}
-            />
-          </GridLeft>
-          <GridRight>
-            <MenuWrapper>
-              {primaryNav.map(({ name, link }) => (
-                <MenuItem key={name} to={link} color={color}>
-                  {name}
-                </MenuItem>
-              ))}
-              <CartIcon
-                onClick={() => {
-                  setMobileNavVisible(false)
-                  toggleCart()
-                }}
-                color={navBarColor}
-                count={quantity}
-              />
-            </MenuWrapper>
-          </GridRight>
+          {width > breakpoints.m && <span>&nbsp;</span>}
+          <MenuItem to={'/klassik'} color={color}>
+            Klassik
+          </MenuItem>
+          <Logo
+            onClick={() => {
+              setMobileNavVisible(false)
+              navigate('/')
+            }}
+            color={navBarColor}
+            height={width > breakpoints.s ? '4rem' : '3rem'}
+          />
+          <MenuItem to={'/modern'} color={color}>
+            Modern
+          </MenuItem>
+          <CartIcon
+            onClick={() => {
+              setMobileNavVisible(false)
+              toggleCart()
+            }}
+            color={navBarColor}
+            count={quantity}
+          />
         </Wrapper>
       </Container>
     </>

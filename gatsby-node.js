@@ -1,4 +1,5 @@
-const path = require(`path`)
+const path = require('path')
+const { existsSync } = require('fs')
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
@@ -14,9 +15,13 @@ exports.createPages = ({ graphql, actions }) => {
     }
   `).then(result => {
     result.data.allShopifyProduct.edges.forEach(({ node }) => {
+      componentPath = existsSync(`./src/pages/products/${node.handle}.js`)
+        ? `./src/pages/products/${node.handle}.js`
+        : './src/templates/ProductPage/index.js'
+
       createPage({
-        path: `/product/${node.handle}/`,
-        component: path.resolve(`./src/templates/ProductPage/index.js`),
+        path: `/produkt/${node.handle}/`,
+        component: path.resolve(componentPath),
         context: {
           // Data passed to context is available
           // in page queries as GraphQL variables.

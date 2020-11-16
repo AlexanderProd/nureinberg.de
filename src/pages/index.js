@@ -4,15 +4,34 @@ import { useStaticQuery, graphql, navigate } from 'gatsby'
 
 import SEO from '~/components/seo'
 import Navigation from '~/components/Navigation'
-import Slideshow from '~/components/Slideshow'
 import Footer from '~/components/Footer'
 import { Container, TwoColumnGrid, Button, Img } from '~/utils/styles'
 import slide_1 from '~/images/slider_1.jpg'
-import slide_2 from '~/images/slider_2.jpg'
+import video from '~/images/optimized.mp4'
 
 const SlideWrapper = styled.div`
   position: absolute;
   max-width: 100vw;
+  z-index: 2;
+  top: 0;
+`
+
+const VideoBG = styled.video`
+  max-width: 100vw;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+`
+
+const ImageBG = styled.img`
+  max-width: 100vw;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: absolute;
   z-index: 2;
   top: 0;
 `
@@ -86,10 +105,11 @@ const Index = () => {
   return (
     <>
       <SEO title="Home" keywords={[`nureinberg`, `nürnberg`, `fashion`]} />
-      <Navigation color="white" />
-      <SlideWrapper>
-        <Slideshow slides={slides} />
-      </SlideWrapper>
+      <Navigation color="black" />
+      <VideoBG loop muted playsInline autoPlay>
+        <source src={video} type="video/mp4" />
+        <ImageBG src={slide_1} />
+      </VideoBG>
       <Wrapper>
         <Container>
           <TwoColumnGrid>

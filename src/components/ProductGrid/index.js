@@ -48,7 +48,7 @@ const ProductGrid = () => {
       {allShopifyProduct.edges ? (
         allShopifyProduct.edges.map(({ node }) => (
           <Product key={node.id}>
-            <Link to={`/product/${node.handle}/`}>
+            <Link to={`/produkt/${node.handle}/`}>
               <Img
                 fluid={node.images[0].localFile.childImageSharp.fluid}
                 alt={node.handle}

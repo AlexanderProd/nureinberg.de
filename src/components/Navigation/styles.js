@@ -10,10 +10,9 @@ export const Wrapper = styled.div`
   padding-bottom: 1.45rem;
   margin-left: auto;
   margin-right: auto;
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-template-rows: auto;
-  grid-template-areas: 'left right';
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 
   @media (max-width: ${breakpoints.l}px) {
     display: flex;
@@ -53,7 +52,7 @@ export const MenuWrapper = styled.div`
 export const MenuItem = styled(Link)`
   color: ${({ color }) => (color ? color : 'black')};
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 1.3rem;
   margin-right: 1.45rem;
   letter-spacing: 0.1rem;
   text-transform: uppercase;
