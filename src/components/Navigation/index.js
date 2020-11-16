@@ -12,7 +12,7 @@ import CloseIcon from './CloseIcon'
 import CartIcon from './CartIcon'
 import Logo from './Logo'
 import { breakpoints } from '~/utils/styles'
-import { MenuItem, Wrapper, GridLeft, GridRight, MenuWrapper } from './styles'
+import { MenuItem, Wrapper } from './styles'
 
 const countQuantity = ({ lineItems = [] }) => {
   let quantity = 0

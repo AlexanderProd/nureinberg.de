@@ -15,8 +15,8 @@ exports.createPages = ({ graphql, actions }) => {
     }
   `).then(result => {
     result.data.allShopifyProduct.edges.forEach(({ node }) => {
-      componentPath = existsSync(`./src/pages/products/${node.handle}.js`)
-        ? `./src/pages/products/${node.handle}.js`
+      componentPath = existsSync(`./src/templates/Products/${node.handle}.js`)
+        ? `./src/templates/Products/${node.handle}.js`
         : './src/templates/ProductPage/index.js'
 
       createPage({

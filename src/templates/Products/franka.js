@@ -32,7 +32,7 @@ export const ProductDescription = styled.div`
   font-weight: 300;
 `
 
-const ProductPage = ({ data }) => {
+const FrankaPage = ({ data }) => {
   const product = data.shopifyProduct
 
   const ProductImages = () => {
@@ -148,4 +148,4 @@ export const query = graphql`
   }
 `
 
-export default ProductPage
+export default FrankaPage
