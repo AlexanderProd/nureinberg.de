@@ -5,16 +5,15 @@ import { useStaticQuery, graphql, navigate } from 'gatsby'
 import SEO from '~/components/seo'
 import Navigation from '~/components/Navigation'
 import Footer from '~/components/Footer'
-import { Container, TwoColumnGrid, Button, Img } from '~/utils/styles'
+import {
+  Container,
+  TwoColumnGrid,
+  Button,
+  Img,
+  breakpoints,
+} from '~/utils/styles'
 import slide_1 from '~/images/slider_1.jpg'
 import video from '~/images/optimized.mp4'
-
-const SlideWrapper = styled.div`
-  position: absolute;
-  max-width: 100vw;
-  z-index: 2;
-  top: 0;
-`
 
 const VideoBG = styled.video`
   max-width: 100vw;
@@ -22,7 +21,7 @@ const VideoBG = styled.video`
   height: 100vh;
   object-fit: cover;
   position: absolute;
-  z-index: 2;
+  z-index: 1;
   top: 0;
 `
 
@@ -38,6 +37,61 @@ const ImageBG = styled.img`
 
 const Wrapper = styled.div`
   margin-top: 100vh;
+`
+
+const Caption = styled.div`
+  color: ${({ color }) => (color ? color : 'black')};
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+
+  animation: fadedown 1s;
+  @keyframes fadedown {
+    from {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+`
+
+const Title = styled.h1`
+  font-family: Old Standard TT, serif;
+  text-transform: capitalize;
+  font-weight: 400;
+  font-size: 4rem;
+  line-height: 1.25;
+  margin: 0 0 0.5rem;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+
+  @media (max-width: ${breakpoints.l}px) {
+    font-size: 3rem;
+  }
+`
+
+const Subtitle = styled.h2`
+  font-weight: 400;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  font-family: Montserrat, sans-serif;
+  letter-spacing 0.1rem;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+
+  @media (max-width: ${breakpoints.l}px){
+    font-size: 0.9rem;
+  }
 `
 
 const Index = () => {
@@ -106,6 +160,10 @@ const Index = () => {
     <>
       <SEO title="Home" keywords={[`nureinberg`, `nürnberg`, `fashion`]} />
       <Navigation color="black" />
+      <Caption color="white">
+        <Subtitle>MODE &amp; FASHION</Subtitle>
+        <Title>Im Zeichen der Burg</Title>
+      </Caption>
       <VideoBG loop muted playsInline autoPlay>
         <source src={video} type="video/mp4" />
         <ImageBG src={slide_1} />
