@@ -56,7 +56,7 @@ export const useOuterClick = (onOuterClick, innerRef) => {
 
 export const useSiteMetadata = () => {
   const { site } = useStaticQuery(graphql`
-    query siteMetadataQuery {
+    query {
       site {
         siteMetadata {
           title
