@@ -1,20 +1,13 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import styled from '@emotion/styled'
-import { Slide } from 'react-slideshow-image'
 
 import SEO from '~/components/seo'
 import Navigation from '~/components/Navigation'
 import ProductForm from '~/components/ProductForm'
 import Footer from '~/components/Footer'
-import { useWindowDimensions } from '~/utils/hooks'
-import {
-  breakpoints,
-  Img,
-  Container,
-  TwoColumnGrid,
-  MainContent,
-} from '~/utils/styles'
+import ProductImages from '~/components/ProductImages'
+import { Container, TwoColumnGrid, MainContent } from '~/utils/styles'
 
 export const ProductTitle = styled.h1`
   font-size: 2.25rem;
@@ -35,44 +28,6 @@ export const ProductDescription = styled.div`
 const FrankaPage = ({ data }) => {
   const product = data.shopifyProduct
 
-  const ProductImages = () => {
-    const { width } = useWindowDimensions()
-
-    const properties = {
-      duration: 5000,
-      transitionDuration: 350,
-      infinite: false,
-      indicators: true,
-      arrows: true,
-    }
-
-    if (product.images) {
-      return (
-        <div>
-          {width < breakpoints.l ? (
-            <Slide {...properties}>
-              {product.images.map(i => (
-                <Img
-                  fluid={i.localFile.childImageSharp.fluid}
-                  alt={product.title}
-                  key={i.id}
-                />
-              ))}
-            </Slide>
-          ) : (
-            product.images.map(image => (
-              <Img
-                fluid={image.localFile.childImageSharp.fluid}
-                alt={product.title}
-                key={image.id}
-              />
-            ))
-          )}
-        </div>
-      )
-    }
-  }
-
   return (
     <>
       <SEO title={product.title} description={product.description} />
@@ -80,7 +35,7 @@ const FrankaPage = ({ data }) => {
       <Container>
         <MainContent>
           <TwoColumnGrid>
-            <ProductImages />
+            <ProductImages product={product} />
             <div>
               <ProductTitle>{product.title}</ProductTitle>
               <p>test</p>

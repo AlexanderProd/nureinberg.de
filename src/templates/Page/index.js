@@ -6,8 +6,8 @@ import { Container, MainContent } from '~/utils/styles'
 import Footer from '~/components/Footer'
 import { Title } from './styles'
 
-const Page = ({ title, children }) => (
-  <>
+const Page = ({ title, children, color = 'transparent' }) => (
+  <div style={{ backgroundColor: color }}>
     <SEO title={title} />
     <Navigation />
     <Container>
@@ -17,7 +17,7 @@ const Page = ({ title, children }) => (
       </MainContent>
       <Footer />
     </Container>
-  </>
+  </div>
 )
 
 export default Page
