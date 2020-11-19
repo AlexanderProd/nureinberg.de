@@ -32,7 +32,7 @@ export const Links = styled.div`
 `
 
 export const Item = styled(Link)`
-  color: black;
+  color: ${({ color }) => (color ? color : 'black')};
   line-height: 1.563;
   font-size: 16px;
   text-decoration: none;
@@ -50,8 +50,8 @@ export const SocialMediaLinks = styled.ul`
   }
 
   a {
+    color: ${({ color }) => (color ? color : 'black')};
     text-decoration: none;
-    color: black;
     margin-left: 5px;
   }
 `
@@ -60,6 +60,7 @@ export const Cards = styled.div`
   text-align: right;
 
   svg {
+    ${({ color }) => (color ? color : 'black')};
     margin-left: 0.5rem;
   }
 
