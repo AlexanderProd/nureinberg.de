@@ -9,6 +9,7 @@ export const Wrapper = styled.div`
 `
 
 export const ProductPrice = styled.span`
+  color: ${({ dark }) => (dark ? 'white' : 'black')};
   font-family: 'Montserrat', 'HelveticaNeue', 'Helvetica Neue', sans-serif;
   font-weight: 400;
   letter-spacing: 0.1rem;
@@ -24,6 +25,7 @@ export const ProductOptions = styled.div`
 
 export const OptionName = styled.h3`
   text-align: center;
+  color: ${({ dark }) => (dark ? 'white' : 'black')};
   font-size: ${typo.small};
   line-height: ${typo.lineRegular};
   font-weight: 300;
@@ -48,13 +50,15 @@ export const ProductValue = styled.div`
   min-width: 38px;
   min-height: 38px;
   text-align: center;
-  border: ${({ active }) =>
-    active ? '1pt solid black' : '1pt solid transparent'};
+  border: ${({ active, dark }) =>
+    active ? `1pt solid ${dark ? 'white' : 'black'}` : '1pt solid transparent'};
   padding: 0 ${layout.spacing}px;
   margin-right: ${layout.spacing}px;
   margin-bottom: ${layout.spacing}px;
-  background-color: ${({ active }) => (active ? '#F2F2F2' : 'transparent')};
-  color: ${({ disabled }) => (disabled ? 'grey' : 'black')};
+  background-color: ${({ active, dark }) =>
+    active ? (dark ? 'transparent' : '#F2F2F2') : 'transparent'};
+  color: ${({ disabled, dark }) =>
+    disabled ? 'grey' : dark ? 'white' : 'black'};
   overflow: hidden;
   font-family: 'Montserrat', 'HelveticaNeue', 'Helvetica Neue', sans-serif;
   font-size: ${typo.small};
@@ -76,7 +80,8 @@ export const ActiveWrapper = styled.div`
   border-radius: 50%;
   cursor: pointer;
   border: 1px solid;
-  border-color: ${({ active }) => (active ? '#000' : 'transparent')};
+  border-color: ${({ active, dark }) =>
+    active ? (dark ? '#fff' : '#000') : 'transparent'};
   background-color: transparent;
   margin-right: ${layout.spacing}px;
   transition: all 0.3s ease;

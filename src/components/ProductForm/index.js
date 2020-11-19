@@ -15,7 +15,7 @@ import {
   ProductValue,
 } from './styles'
 
-const ProductForm = ({ product }) => {
+const ProductForm = ({ product, dark = false }) => {
   const {
     options,
     variants,
@@ -90,13 +90,14 @@ const ProductForm = ({ product }) => {
 
   return (
     <Wrapper>
-      <ProductPrice>{price}</ProductPrice>
+      <ProductPrice dark={dark}>{price}</ProductPrice>
       {options.map(({ id, name, values }, optionIndex) => (
         <ProductOptions key={id}>
-          <OptionName>{name}</OptionName>
+          <OptionName dark={dark}>{name}</OptionName>
           <OptionValues>
             {values.map(value => (
               <ProductValue
+                dark={dark}
                 key={`${id}-${value}`}
                 active={variant.selectedOptions[optionIndex].value === value}
                 onClick={() => handleClick(optionIndex, value)}
@@ -109,6 +110,8 @@ const ProductForm = ({ product }) => {
         </ProductOptions>
       ))}
       <Button
+        color={dark ? 'black' : 'white'}
+        backgroundColor={dark ? 'white' : 'black'}
         type="submit"
         disabled={!available || adding}
         onClick={handleAddToCart}
