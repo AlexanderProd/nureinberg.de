@@ -3,7 +3,7 @@ import { navigate } from 'gatsby'
 
 import StoreContext from '~/context/StoreContext'
 import LayoutContext from '~/context/LayoutContext'
-import { useWindowDimensions, useSiteMetadata } from '~/utils/hooks'
+import { useWindowDimensions } from '~/utils/hooks'
 import { Container } from '~/utils/styles'
 import Cart from '../Cart'
 import MobileNav from './MobileNav'
@@ -32,7 +32,6 @@ const Navigation = ({ color }) => {
   const [quantity, setQuantity] = useState(countQuantity(checkout))
   const [navBarColor, setNavBarColor] = useState(color)
   const { width } = useWindowDimensions()
-  const { primaryNav } = useSiteMetadata()
 
   useEffect(() => {
     setQuantity(countQuantity(checkout))

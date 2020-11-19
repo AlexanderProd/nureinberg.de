@@ -1,5 +1,6 @@
 import React from 'react'
 import { Slide } from 'react-slideshow-image'
+import 'react-slideshow-image/dist/styles.css'
 
 import { useWindowDimensions } from '~/utils/hooks'
 import { breakpoints, Img } from '~/utils/styles'

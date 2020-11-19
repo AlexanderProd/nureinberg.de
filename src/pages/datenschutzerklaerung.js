@@ -116,7 +116,10 @@ const Agb = () => (
     <p>
       Zusätzlich oder als Alternative zum Browser-Add-On können Sie das Tracking
       durch Google Analytics auf unseren Seiten unterbinden,{' '}
-      <a title="Google Analytics Opt-Out-Cookie setzen">
+      <a
+        title="Google Analytics Opt-Out-Cookie setzen"
+        href="http://tools.google.com/dlpage/gaoptout?hl=de"
+      >
         {' '}
         indem Sie diesen Link anklicken
       </a>

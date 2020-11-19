@@ -8,14 +8,15 @@ const Impressum = () => (
       <strong>Angaben gemäss § 5 TMG:</strong>
     </h1>
     <p>
-      H2 E-Commerce GbR
+      1050 GbR
       <br />
-      Am Stadtwald 22
+      Steilstraße 1a
       <br />
-      90768 Fürth
+      90743 Zirndorf
       <br />
       <br />
-      Vertreten durch die Gesellschafter: Jens Herga, Alexander Hörl
+      Vertreten durch die Gesellschafter: Jens Herga, Kai Zippe, Anvar
+      Gallyaniev, Rabije Dzaferi, Ole Preisig
     </p>
     <h1>
       <strong>
@@ -31,7 +32,7 @@ const Impressum = () => (
         </tr>
         <tr>
           <td>Telefon:</td>
-          <td>0176 77251685</td>
+          <td>0172 9812772‬</td>
         </tr>
       </tbody>
     </table>

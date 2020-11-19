@@ -18,11 +18,11 @@ module.exports = {
     primaryNav: [
       {
         name: 'Klassik',
-        link: '/modern',
+        link: '/klassik',
       },
       {
         name: 'Modern',
-        link: '/klassik',
+        link: '/modern',
       },
     ],
     secondaryNav: [
@@ -70,7 +70,14 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        useMozJpeg: true,
+        stripMetadata: true,
+        defaultQuality: 75,
+      },
+    },
     `gatsby-plugin-layout`,
     {
       resolve: `gatsby-plugin-manifest`,
