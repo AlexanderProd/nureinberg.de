@@ -92,7 +92,7 @@ export const MainContent = styled.main`
 export const TwoColumnGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2.5rem;
+  gap: ${({ gap }) => (gap ? gap : '2.5rem')};
 
   @media (max-width: ${breakpoints.l}px) {
     display: block;
