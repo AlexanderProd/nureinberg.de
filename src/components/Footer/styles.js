@@ -10,7 +10,7 @@ export const Wrapper = styled.div`
   grid-column-gap: 20px;
   grid-template-areas: '. . . .';
   margin-top: 6rem;
-  margin-bottom: 1.45rem;
+  padding-bottom: 1.45rem;
 
   @media (max-width: ${breakpoints.s}px) {
     display: flex;
