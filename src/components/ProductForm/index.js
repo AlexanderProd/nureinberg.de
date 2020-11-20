@@ -15,7 +15,7 @@ import {
   ProductValue,
 } from './styles'
 
-const ProductForm = ({ product, dark = false }) => {
+const ProductForm = ({ product, dark = false, color }) => {
   const {
     options,
     variants,
@@ -90,10 +90,10 @@ const ProductForm = ({ product, dark = false }) => {
 
   return (
     <Wrapper>
-      <ProductPrice dark={dark}>{price}</ProductPrice>
+      <ProductPrice color={color}>{price}</ProductPrice>
       {options.map(({ id, name, values }, optionIndex) => (
         <ProductOptions key={id}>
-          <OptionName dark={dark}>{name}</OptionName>
+          <OptionName color={color}>{name}</OptionName>
           <OptionValues>
             {values.map(value => (
               <ProductValue

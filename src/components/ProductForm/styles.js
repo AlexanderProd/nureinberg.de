@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
 `
 
 export const ProductPrice = styled.span`
-  color: ${({ dark }) => (dark ? 'white' : 'black')};
+  color: ${({ color }) => (color ? color : 'black')};
   font-family: 'Montserrat', 'HelveticaNeue', 'Helvetica Neue', sans-serif;
   font-weight: 400;
   letter-spacing: 0.1rem;
@@ -25,7 +25,7 @@ export const ProductOptions = styled.div`
 
 export const OptionName = styled.h3`
   text-align: center;
-  color: ${({ dark }) => (dark ? 'white' : 'black')};
+  color: ${({ color }) => (color ? color : 'black')};
   font-size: ${typo.small};
   line-height: ${typo.lineRegular};
   font-weight: 300;
