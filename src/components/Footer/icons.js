@@ -259,7 +259,7 @@ export const Visa = ({ height }) => (
   </svg>
 )
 
-export const Instagram = ({ height }) => (
+export const Instagram = ({ height, color = 'black' }) => (
   <svg
     version="1.1"
     id="Logo"
@@ -268,7 +268,7 @@ export const Instagram = ({ height }) => (
     viewBox="0 0 512 512"
     height={height}
   >
-    <g>
+    <g fill={color}>
       <path
         d="M256,49.5c67.3,0,75.2,0.3,101.8,1.5c24.6,1.1,37.9,5.2,46.8,8.7c11.8,4.6,20.2,10,29,18.8c8.8,8.8,14.3,17.2,18.8,29
 				c3.4,8.9,7.6,22.2,8.7,46.8c1.2,26.6,1.5,34.5,1.5,101.8s-0.3,75.2-1.5,101.8c-1.1,24.6-5.2,37.9-8.7,46.8

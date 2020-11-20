@@ -41,7 +41,7 @@ const Footer = ({ color = 'black' }) => {
               return (
                 <li key={name}>
                   {name.toLowerCase() === 'instagram' ? (
-                    <Instagram height="18px" />
+                    <Instagram color={color} height="18px" />
                   ) : null}
                   <a
                     href={link}
