@@ -93,6 +93,56 @@ export const TwoColumnGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: ${({ gap }) => (gap ? gap : '2.5rem')};
+  grid-auto-flow: row dense;
+
+  & > :nth-of-type(4n - 1) {
+    grid-column-start: 2;
+  }
+
+  @media (max-width: ${breakpoints.l}px) {
+    display: block;
+  }
+`
+
+export const LeftTwoThirds = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 66%;
+  gap: ${({ gap }) => (gap ? gap : '2.5rem')};
+
+  @media (max-width: ${breakpoints.l}px) {
+    display: block;
+  }
+`
+
+export const RightTwoThirds = styled.div`
+  display: grid;
+  grid-template-columns: 66% 1fr;
+  gap: ${({ gap }) => (gap ? gap : '2.5rem')};
+
+  @media (max-width: ${breakpoints.l}px) {
+    display: block;
+  }
+`
+
+export const AlternatingTwoThirdsGrid = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 66%;
+  grid-auto-flow: row dense;
+
+  & > :nth-child(4n - 1) {
+    grid-column-start: 2;
+  }
+
+  @media (max-width: ${breakpoints.l}px) {
+    display: block;
+  }
+`
+
+export const ThreeThirdsGrid = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-flow: row dense;
+  gap: ${({ gap }) => (gap ? gap : '2.5rem')};
 
   @media (max-width: ${breakpoints.l}px) {
     display: block;
