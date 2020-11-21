@@ -15,8 +15,8 @@ const Page = ({ title, children, color = 'transparent' }) => (
         <Title>{title}</Title>
         {children}
       </MainContent>
-      <Footer />
     </Container>
+    <Footer />
   </div>
 )
 

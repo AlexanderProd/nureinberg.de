@@ -57,7 +57,11 @@ const Navigation = ({ color }) => {
             <HamburgerIcon color={navBarColor} onClick={toggleMobileNav} />
           )}
           {width > breakpoints.m && <span>&nbsp;</span>}
-          <MenuItem to={'/klassik'} color={color}>
+          <MenuItem
+            to={'/klassik'}
+            color={color}
+            style={{ fontFamily: `'Old Standard TT', serif` }}
+          >
             Klassik
           </MenuItem>
           <Logo

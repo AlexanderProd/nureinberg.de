@@ -121,6 +121,13 @@ module.exports = {
         '~': path.join(__dirname, 'src/'),
       },
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/src/images/collage`,
+        name: 'collage', // IMPORTANT: the name of your source instance
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',

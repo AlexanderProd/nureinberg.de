@@ -1,19 +1,14 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import { useStaticQuery, graphql, navigate } from 'gatsby'
+import { graphql, Link } from 'gatsby'
+import Image from 'gatsby-image'
 
 import SEO from '~/components/seo'
 import Navigation from '~/components/Navigation'
 import Footer from '~/components/Footer'
-import {
-  Container,
-  TwoColumnGrid,
-  Button,
-  Img,
-  breakpoints,
-} from '~/utils/styles'
+import { TwoColumnGrid, Button, breakpoints } from '~/utils/styles'
 import slide_1 from '~/images/slider_1.jpg'
-import video from '~/images/optimized.mp4'
+import video from '~/images/website.mp4'
 
 const VideoBG = styled.video`
   max-width: 100vw;
@@ -94,67 +89,14 @@ const Subtitle = styled.h2`
   }
 `
 
-const Index = () => {
-  const data = useStaticQuery(graphql`
-    query IndexPageImages {
-      image1: file(relativePath: { eq: "heart.png" }) {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
-      image2: file(relativePath: { eq: "DSC_6561_ret.jpg" }) {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
-      image3: file(relativePath: { eq: "label.jpeg" }) {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
-      slide1: file(relativePath: { eq: "slider_1.jpg" }) {
-        childImageSharp {
-          fluid(quality: 100) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
-      slide2: file(relativePath: { eq: "slider_2.jpg" }) {
-        childImageSharp {
-          fluid(quality: 100) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
-    }
-  `)
+const ImageWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
+`
 
-  const slides = [
-    {
-      id: 1,
-      image: data.slide1.childImageSharp.fluid,
-      firstText: 'Mode & Fashion',
-      secondText: 'Im Zeichen der Burg',
-      buttonLink: '/produkte',
-      buttonText: 'Jetzt Shoppen',
-      color: 'white',
-    },
-    {
-      id: 2,
-      image: data.slide2.childImageSharp.fluid,
-      firstText: 'Mode & Fashion',
-      secondText: 'Eine Stadt, Eine Marke',
-      buttonLink: '/product/nureinberg-pocket/',
-      buttonText: 'Zum Pocket Shirt',
-      color: 'white',
-    },
-  ]
+const Index = ({ data }) => {
+  const { klassik, modern } = data
 
   return (
     <>
@@ -169,68 +111,53 @@ const Index = () => {
         <ImageBG src={slide_1} />
       </VideoBG>
       <Wrapper>
-        <Container>
-          <TwoColumnGrid>
-            <Img fluid={data.image1.childImageSharp.fluid} alt="NurEinHerz" />
-            <div>
-              <h3>NUREINHERZ</h3>
-              <p>
-                Pro verkauftem NurEinHerz Shirt spenden wir 2€ an die Nürnberger
-                Bahnhofsmission. Jetzt kaufen und Gutes tun.
-              </p>
-              <Button
-                onClick={() => navigate('product/nureinherz-charity-shirt/')}
-              >
-                Zum Shirt
-              </Button>
-            </div>
-            <div>
-              <h3>NUREINBERG BLACK SHIRT</h3>
-              <p>
-                Unser NurEinBerg Black Shirt wurde mit einer Speziellen Technik
-                hergestellt, bei welcher der Druck nicht auf das Shirt
-                aufgetragen, sondern aus dem Hintergrund geblichen wurde.
-                Dadurch schaut der Druck auch nach sehr vielen Waschungen immer
-                noch wie am ersten Tag aus.
-              </p>
-              <Button
-                onClick={() =>
-                  navigate('product/schwarzes-shirt-mit-gegerbtem-druck/')
-                }
-              >
-                Zum Shirt
-              </Button>
-            </div>
-            <Img fluid={data.image2.childImageSharp.fluid} alt="NurEinHerz" />
-            <Img fluid={data.image3.childImageSharp.fluid} alt="NurEinHerz" />
-            <div>
-              <h3>NUREINBERG LABEL</h3>
-              <p>
-                Alle unsere Produkte kommen mit dem offiziellen NurEinBerg
-                Label. Angenäht mit Hand und{' '}
-                <span role="img" aria-label="heart">
-                  ❤️
-                </span>{' '}
-                in Nürnberg.
-              </p>
-              <Button
-                onClick={() => navigate('product/nureinberg-basic-black/')}
-              >
-                Zum Shirt
-              </Button>
-            </div>
-          </TwoColumnGrid>
-          <h3>UNSERE VERANTWORTUNG</h3>
-          <p>
-            Weil wir finden das Nachhaltigkeit und ein gesunder Lebenstil
-            wichtig sind, verwenden wir bei allen unseren Shirts Textilien aus
-            nachhaltiger und ökoligscher Produktion.
-          </p>
-          <Footer />
-        </Container>
+        <TwoColumnGrid gap={'0'}>
+          <Link to={`/klassik/`}>
+            <ImageWrapper>
+              <Caption>
+                <Title style={{ color: 'white' }}>Klassik</Title>
+                <Button>Zu den Produkten</Button>
+              </Caption>
+              <Image fluid={klassik.childImageSharp.fluid} alt="Klassik" />
+            </ImageWrapper>
+          </Link>
+          <Link to={`/modern/`}>
+            <ImageWrapper>
+              <Caption>
+                <Title
+                  style={{ fontFamily: 'Roboto, sans-serif', color: 'white' }}
+                >
+                  Modern
+                </Title>
+                <Button>Zu den Produkten</Button>
+              </Caption>
+              <Image fluid={modern.childImageSharp.fluid} alt="Modern" />
+            </ImageWrapper>
+          </Link>
+        </TwoColumnGrid>
+        <Footer />
       </Wrapper>
     </>
   )
 }
+
+export const query = graphql`
+  query {
+    klassik: file(relativePath: { eq: "klassik.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 600) {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        }
+      }
+    }
+    modern: file(relativePath: { eq: "modern.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 600) {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        }
+      }
+    }
+  }
+`
 
 export default Index

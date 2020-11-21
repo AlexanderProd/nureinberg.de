@@ -2,8 +2,10 @@ import React from 'react'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 import styled from '@emotion/styled'
 
-import Page from '~/templates/Page'
-import { Img, breakpoints } from '~/utils/styles'
+import SEO from '~/components/seo'
+import Navigation from '~/components/Navigation'
+import Footer from '~/components/Footer'
+import { Img, breakpoints, MainContent } from '~/utils/styles'
 
 const Grid = styled.div`
   display: grid;
@@ -76,7 +78,7 @@ const Klassik = () => {
                 originalSrc
                 localFile {
                   childImageSharp {
-                    fluid(maxWidth: 400, maxHeight: 300) {
+                    fluid(maxWidth: 800, maxHeight: 600) {
                       ...GatsbyImageSharpFluid_withWebp
                     }
                   }
@@ -90,34 +92,41 @@ const Klassik = () => {
   `)
 
   return (
-    <Page title="Klassik">
-      <Grid>
-        {allShopifyCollection.edges[0].node.products ? (
-          allShopifyCollection.edges[0].node.products.map(product => (
-            <Link key={product.id} to={`/produkt/${product.handle}/`}>
-              <Product>
-                <ImgWrapper>
-                  <ImgAbove
-                    fluid={
-                      product.images[product.images.length - 1].localFile
-                        .childImageSharp.fluid
-                    }
-                    alt={product.handle}
-                  />
-                  <ImgBelow
-                    src={product.images[0].localFile.childImageSharp.fluid.src}
-                    alt={product.handle}
-                  />
-                </ImgWrapper>
-                <Title>{product.title}</Title>
-              </Product>
-            </Link>
-          ))
-        ) : (
-          <p>No Products found!</p>
-        )}
-      </Grid>
-    </Page>
+    <>
+      <SEO title="Klassik" />
+      <Navigation />
+      <MainContent>
+        <Grid>
+          {allShopifyCollection.edges[0].node.products ? (
+            allShopifyCollection.edges[0].node.products.map(product => (
+              <Link key={product.id} to={`/produkt/${product.handle}/`}>
+                <Product>
+                  <ImgWrapper>
+                    <ImgAbove
+                      fluid={
+                        product.images[product.images.length - 1].localFile
+                          .childImageSharp.fluid
+                      }
+                      alt={product.handle}
+                    />
+                    <ImgBelow
+                      src={
+                        product.images[0].localFile.childImageSharp.fluid.src
+                      }
+                      alt={product.handle}
+                    />
+                  </ImgWrapper>
+                  <Title>{product.title}</Title>
+                </Product>
+              </Link>
+            ))
+          ) : (
+            <p>No Products found!</p>
+          )}
+        </Grid>
+      </MainContent>
+      <Footer />
+    </>
   )
 }
 

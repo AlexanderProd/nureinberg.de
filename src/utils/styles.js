@@ -101,6 +101,14 @@ export const TwoColumnGrid = styled.div`
 
   @media (max-width: ${breakpoints.l}px) {
     display: block;
+
+    & > * {
+      margin-bottom: ${({ gap }) => (gap ? gap : '2.5rem')};
+    }
+
+    & > :last-child {
+      margin-bottom: 0rem;
+    }
   }
 `
 
@@ -146,6 +154,14 @@ export const ThreeThirdsGrid = styled.div`
 
   @media (max-width: ${breakpoints.l}px) {
     display: block;
+
+    & > * {
+      margin-bottom: ${({ gap }) => (gap ? gap : '2.5rem')};
+    }
+
+    & > :last-child {
+      margin-bottom: 0rem;
+    }
   }
 `
 

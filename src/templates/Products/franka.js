@@ -1,15 +1,71 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import styled from '@emotion/styled'
+import Image from 'gatsby-image'
 
 import SEO from '~/components/seo'
 import Navigation from '~/components/Navigation'
 import ProductForm from '~/components/ProductForm'
 import Footer from '~/components/Footer'
-import ProductImages from '~/components/ProductImages'
-import { Container, TwoColumnGrid, MainContent } from '~/utils/styles'
+import {
+  Container,
+  TwoColumnGrid,
+  MainContent,
+  breakpoints,
+} from '../../utils/styles'
+import pfeile from '~/images/pfeile.png'
+
+const H2 = styled.h2`
+  font-size: 2.25rem;
+  margin-bottom: 15px;
+  word-wrap: break-word;
+  font-family: 'Old Standard TT', serif;
+  font-weight: 400;
+  margin: 0 0 0.5rem;
+  line-height: 1.4;
+  color: #9a694f;
+`
+
+const Text = styled.p`
+  font-family: 'Old Standard TT', serif;
+  line-height: 1.6;
+  font-size: 1.2rem;
+  color: #9a694f;
+`
+
+const TextWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content center;
+`
+
+const PfeileWrapper = styled.div`
+  text-align: center;
+  height: 100vh;
+
+  img {
+    height: 400px;
+    animation: fadedown 2s;
+
+    @keyframes fadedown {
+      from {
+        opacity: 0;
+        transform: translateY(-100px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0px);
+      }
+    }
+
+    @media (min-width: ${breakpoints.l}px) {
+      height: 500px;
+    }
+  }
+`
 
 export const ProductTitle = styled.h1`
+  color: #9a694f;
   font-size: 2.25rem;
   margin-bottom: 15px;
   word-wrap: break-word;
@@ -21,34 +77,100 @@ export const ProductTitle = styled.h1`
 `
 
 export const ProductDescription = styled.div`
+  color: #9a694f;
   margin-top: 40px;
   font-weight: 300;
 `
 
 const FrankaPage = ({ data }) => {
   const product = data.shopifyProduct
+  const { frankaModel1, frankaModel2, frankaModel3, frankaCollage } = data
 
   return (
-    <>
+    <div style={{ backgroundColor: 'black' }}>
       <SEO title={product.title} description={product.description} />
-      <Navigation />
+      <Navigation color="#9A694F" />
       <Container>
         <MainContent>
+          <PfeileWrapper>
+            <img src={pfeile} alt="pfeile" />
+          </PfeileWrapper>
           <TwoColumnGrid>
-            <ProductImages product={product} />
+            <Image
+              fluid={frankaModel1.childImageSharp.fluid}
+              alt="Franka Model 1"
+            />
+            <TextWrapper>
+              <H2>Franka - die Franken Jacke</H2>
+              <Text>
+                Unsere Jeans Jacke "Franka" ist ein Sammlerstück für echte
+                Nürnberg Liebhaber. Mit sehr viel Liebe zum Detail ist die
+                Silhouette der Burg auf der Brust aufgestickt.
+                <br />
+                <br />
+                Auch die Farben unseres Frankenlandes sind auf dem rechten Ärmel
+                unverkennbar angebracht, um die Identität unserer Heimat und
+                Marke widerzuspiegeln. Die Rückseite ist mit unserem Label Namen
+                "NurEinBerg" ebenfalls per Stick veredelt.
+                <br />
+                <br />
+                Mehr als NurEineJacke - denn Heimat tragt man nicht nur im
+                Herzen, sondern auch auf der Haut.
+              </Text>
+            </TextWrapper>
+            <Image
+              fluid={frankaModel2.childImageSharp.fluid}
+              alt="Franka Model 2"
+            />
+            <TextWrapper>
+              <H2>Streng Limitiert</H2>
+              <Text>
+                Um die Besonderheit dieses Produkts zu garantieren ist unsere
+                Jeans Jacke auf 10 Exemplare limitiert. Wir legen Wert auf hohe
+                Qualität und perfekte Verbreitung. Nur durch eine geringe
+                Auflage kann das gewährleistet werden.
+              </Text>
+            </TextWrapper>
+            <Image
+              fluid={frankaModel3.childImageSharp.fluid}
+              alt="Franka Model 3"
+            />
+            <TextWrapper>
+              <H2>Hergestellt in Franken</H2>
+              <Text>
+                Für 100% Heimatgefühl werden unsere Jacken in der Region
+                hergestellt. Denn NurEinBerg steht wie der Name schon sagt für
+                Nürnberg. So ist es unsere Pflicht von der Produktentwicklung,
+                über Shootings, bis hin zur Produktion lokal zu handeln.
+                <br />
+                <br /> Durch die Herstellung in Franken können wir nicht nur
+                Qualität garantieren, sondern auch Nachhaltig produzieren, um
+                den Konsum umweltgerecht zu gestalten.
+              </Text>
+            </TextWrapper>
+          </TwoColumnGrid>
+          <Image
+            fluid={frankaCollage.childImageSharp.fluid}
+            alt="Franka Collage"
+            style={{ marginTop: '10rem', marginBottom: '10rem' }}
+          />
+          <TwoColumnGrid>
+            <Image
+              fluid={product.images[0].localFile.childImageSharp.fluid}
+              alt="Produktfoto Karl"
+            />
             <div>
               <ProductTitle>{product.title}</ProductTitle>
-              <p>test</p>
-              <ProductForm product={product} />
+              <ProductForm dark={true} product={product} color="#9A694F" />
               <ProductDescription
                 dangerouslySetInnerHTML={{ __html: product.descriptionHtml }}
               />
             </div>
           </TwoColumnGrid>
         </MainContent>
-        <Footer />
+        <Footer color="#9A694F" />
       </Container>
-    </>
+    </div>
   )
 }
 
@@ -93,10 +215,38 @@ export const query = graphql`
         id
         localFile {
           childImageSharp {
-            fluid(maxWidth: 910) {
+            fluid(maxWidth: 600) {
               ...GatsbyImageSharpFluid_withWebp_tracedSVG
             }
           }
+        }
+      }
+    }
+    frankaModel1: file(relativePath: { eq: "Franka_Model_1.jpg" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    frankaModel2: file(relativePath: { eq: "Franka_Model_2.jpg" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    frankaModel3: file(relativePath: { eq: "Franka_Model_3.jpg" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    frankaCollage: file(relativePath: { eq: "Franka_Collage.jpg" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }

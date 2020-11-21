@@ -6,12 +6,13 @@ import { useWindowDimensions } from '~/utils/hooks'
 import { breakpoints, Img } from '~/utils/styles'
 
 const ProductImages = ({ product }) => {
+  const { images } = product
   const { width } = useWindowDimensions()
 
   const properties = {
     duration: 5000,
     transitionDuration: 350,
-    infinite: false,
+    infinite: true,
     indicators: true,
     arrows: true,
   }
@@ -21,7 +22,7 @@ const ProductImages = ({ product }) => {
       <div>
         {width < breakpoints.l ? (
           <Slide {...properties}>
-            {product.images.map(i => (
+            {images.map(i => (
               <Img
                 fluid={i.localFile.childImageSharp.fluid}
                 alt={product.title}
@@ -30,7 +31,7 @@ const ProductImages = ({ product }) => {
             ))}
           </Slide>
         ) : (
-          product.images.map(image => (
+          images.map(image => (
             <Img
               fluid={image.localFile.childImageSharp.fluid}
               alt={product.title}
