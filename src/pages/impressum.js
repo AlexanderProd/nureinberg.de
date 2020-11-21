@@ -28,7 +28,7 @@ const Impressum = () => (
       <tbody>
         <tr>
           <td>E-Mail:</td>
-          <td>mail@nureinberg.de</td>
+          <td>info@nureinberg.de</td>
         </tr>
         <tr>
           <td>Telefon:</td>

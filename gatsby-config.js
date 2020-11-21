@@ -31,8 +31,8 @@ module.exports = {
         link: '/versand',
       },
       {
-        name: 'Nachhaltigkeit',
-        link: '/nachhaltigkeit',
+        name: 'Kontakt',
+        link: '/kontakt',
       },
       {
         name: 'Pflegeanleitung',
