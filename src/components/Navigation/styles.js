@@ -7,7 +7,6 @@ export const Wrapper = styled.div`
   position: relative;
   z-index: 20;
   padding-top: 1.45rem;
-  padding-bottom: 1.45rem;
   margin-left: auto;
   margin-right: auto;
   display: flex;

@@ -56,9 +56,9 @@ const Footer = ({ color = 'black' }) => {
             })}
           </SocialMediaLinks>
         </Links>
-        <span style={{ color: color }}>
+        <Links style={{ color: color }}>
           © {new Date().getFullYear()} {title}
-        </span>
+        </Links>
       </Wrapper>
     </Container>
   )
