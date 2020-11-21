@@ -15,8 +15,8 @@ const Impressum = () => (
       90513 Zirndorf
       <br />
       <br />
-      Vertreten durch die Gesellschafter: Jens Herga, Kai Zippe, Anvar
-      Gallyaniev, Rabije Dzaferi, Ole Preisig
+      Vertreten durch die Gesellschafter: Jens Herga, Alexander Hörl, Kai Zippe,
+      Anvar Gallyaniev, Rabije Dzaferi, Ole Preisig
     </p>
     <h1>
       <strong>
