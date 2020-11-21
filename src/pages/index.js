@@ -8,7 +8,7 @@ import Navigation from '~/components/Navigation'
 import Footer from '~/components/Footer'
 import { TwoColumnGrid, Button, breakpoints } from '~/utils/styles'
 import slide_1 from '~/images/slider_1.jpg'
-import video from '~/images/website.mp4'
+import video from '~/images/Website.mp4'
 
 const VideoBG = styled.video`
   max-width: 100vw;
