@@ -14,6 +14,14 @@ module.exports = {
         name: 'Instagram',
         link: 'https://instagram.com/nureinberg',
       },
+      {
+        name: 'Pinterest',
+        link: 'https://pinterest.com/nureinberg',
+      },
+      {
+        name: 'Facebook',
+        link: 'https://facebook.com/nureinberg',
+      },
     ],
     primaryNav: [
       {

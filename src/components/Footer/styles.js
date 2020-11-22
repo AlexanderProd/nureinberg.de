@@ -47,6 +47,8 @@ export const SocialMediaLinks = styled.ul`
   li {
     display: flex;
     align-items: center;
+    line-height: 1.563;
+    margin-bottom: 0.25rem;
   }
 
   a {

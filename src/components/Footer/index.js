@@ -3,7 +3,7 @@ import React from 'react'
 import { useSiteMetadata } from '~/utils/hooks'
 import { Container } from '~/utils/styles'
 import { Wrapper, Links, Item, SocialMediaLinks } from './styles'
-import { Instagram } from './icons'
+import { Instagram, Facebook, Pinterest } from './icons'
 
 const Footer = ({ color = 'black' }) => {
   const { title, secondaryNav, socialLinks } = useSiteMetadata()
@@ -16,6 +16,22 @@ const Footer = ({ color = 'black' }) => {
         chunks.push(arr.slice(chunkLength * i, chunkLength * (i + 1)))
     }
     return chunks
+  }
+
+  const socialMediaIcons = (name, color) => {
+    switch (name.toLowerCase()) {
+      case 'instagram':
+        return <Instagram color={color} height="18px" />
+
+      case 'facebook':
+        return <Facebook color={color} height="18px" />
+
+      case 'pinterest':
+        return <Pinterest color={color} height="18px" />
+
+      default:
+        break
+    }
   }
 
   return (
@@ -40,9 +56,7 @@ const Footer = ({ color = 'black' }) => {
             {socialLinks.map(({ name, link }) => {
               return (
                 <li key={name}>
-                  {name.toLowerCase() === 'instagram' ? (
-                    <Instagram color={color} height="18px" />
-                  ) : null}
+                  {socialMediaIcons(name, color)}
                   <a
                     href={link}
                     key={name}
