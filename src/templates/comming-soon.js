@@ -5,7 +5,7 @@ import Page from '~/templates/Page'
 const CommingSoon = () => (
   <Page>
     <div style={{ textAlign: 'center' }}>
-      <h1>Comming Soon</h1>
+      <h1>Coming Soon</h1>
     </div>
   </Page>
 )
