@@ -80,6 +80,10 @@ export const ProductDescription = styled.div`
   color: #9a694f;
   margin-top: 40px;
   font-weight: 300;
+
+  a {
+    color: inherit;
+  }
 `
 
 const FrankaPage = ({ data }) => {
@@ -144,7 +148,7 @@ const FrankaPage = ({ data }) => {
                 über Shootings, bis hin zur Produktion lokal zu handeln.
                 <br />
                 <br /> Durch die Herstellung in Franken können wir nicht nur
-                Qualität garantieren, sondern auch Nachhaltig produzieren, um
+                Qualität garantieren, sondern auch hachhaltig produzieren, um
                 den Konsum umweltgerecht zu gestalten.
               </Text>
             </TextWrapper>

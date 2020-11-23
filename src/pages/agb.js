@@ -4,7 +4,7 @@ import Page from '~/templates/Page'
 
 const Agb = () => (
   <Page title="AGB">
-    Allgemeine Geschäftsbedingungen der Firma H2 E-Commerce GbR
+    Allgemeine Geschäftsbedingungen der Firma 1050 GbR
     <br /> <br />
     <p>§1 Geltung gegenüber Unternehmern und Begriffsdefinitionen</p>
     (1) Die nachfolgenden Allgemeinen Geschäftbedingungen gelten für alle
@@ -24,10 +24,11 @@ const Agb = () => (
     (2) Im Falle des Vertragsschlusses kommt der Vertrag mit
     <br />
     <div>
-      <br /> H2 E-Commerce GbR
-      <br /> Jens Herga, Alexander Hörl
-      <br /> Am Stadtwald 22
-      <br /> D-90768 Fürth
+      <br /> 1050 GbR
+      <br /> Vertreten durch die Gesellschafter: Jens Herga, Alexander Hörl, Kai
+      Zippe, Anvar Gallyaniev, Rabije Dzaferi, Ole Preisig
+      <br /> Steilstraße 1a
+      <br /> D-90513 Zirndorf
     </div>
     <br />
     zustande.
@@ -116,11 +117,11 @@ const Agb = () => (
     <br /> Um Ihr Widerrufsrecht auszuüben, müssen Sie uns
     <br />
     <div>
-      H2 E-Commerce GbR
-      <br /> Jens Herga, Alexander Hörl
-      <br /> Am Stadtwald 22
-      <br /> D-90768 Fürth
-      <br /> E-Mail mail@nureinberg.de
+      1050 GbR
+      <br /> Vertreten durch die Gesellschafter: Jens Herga, Alexander Hörl, Kai
+      Zippe, Anvar Gallyaniev, Rabije Dzaferi, Ole Preisig
+      <br /> Steilstraße 1a
+      <br /> D-90513 Zirndorf
     </div>
     mittels einer eindeutigen Erklärung (z.B. ein mit der Post versandter Brief,
     Telefax oder E-Mail) über Ihren Entschluss, diesen Vertrag zu widerrufen,
@@ -155,10 +156,11 @@ const Agb = () => (
     Formular aus und senden Sie es zurück.)
     <br />
     <div>
-      An :<br /> H2 E-Commerce GbR
-      <br /> Am Stadtwald 22
-      <br /> D-90768 Fürth
-      <br /> E-Mail mail@nureinberg.de
+      An :<br /> 1050 GbR
+      <br /> Vertreten durch die Gesellschafter: Jens Herga, Alexander Hörl, Kai
+      Zippe, Anvar Gallyaniev, Rabije Dzaferi, Ole Preisig
+      <br /> Steilstraße 1a
+      <br /> D-90513 Zirndorf
       <br /> <br /> Hiermit widerrufe(n) ich/wir (*) den von mir/uns (*)
       abgeschlossenen Vertrag über den Kauf der folgenden Waren (*)/die
       Erbringung der folgenden Dienstleistung (*)
