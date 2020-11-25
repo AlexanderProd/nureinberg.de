@@ -108,7 +108,7 @@ const FrankaPage = ({ data }) => {
               <H2>Franka - die Franken Jacke</H2>
               <Text>
                 Unsere Jeans Jacke "Franka" ist ein Sammlerstück für echte
-                Nürnberg Liebhaber. Mit sehr viel Liebe zum Detail ist die
+                Nürnberg Liebhaber. Mit sehr viel Liebe zum Detail wurde die
                 Silhouette der Burg auf der Brust aufgestickt.
                 <br />
                 <br />
