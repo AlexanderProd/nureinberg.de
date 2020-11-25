@@ -118,7 +118,7 @@ const FrankaPage = ({ data }) => {
                 "NurEinBerg" ebenfalls per Stick veredelt.
                 <br />
                 <br />
-                Mehr als NurEineJacke - denn Heimat tragt man nicht nur im
+                Mehr als NurEineJacke - denn Heimat trägt man nicht nur im
                 Herzen, sondern auch auf der Haut.
               </Text>
             </TextWrapper>
