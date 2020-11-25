@@ -118,10 +118,10 @@ const KarlPage = ({ data }) => {
             />
             <H2>Alltagsfähig - Minimalistisch - Heimatliebe</H2>
             <Text>
-              Unser Karl Shirt verkörpert wie kein anderes Produkt die Grundidee
-              von NurEinBerg: Alltagsfähige Mode mit Bezug zu unserer geliebten
-              Stadt. Die Frauenkirche ist minimalistisch auf Herzhöhe gestickt
-              um die Heimatliebe zu symbolisieren.
+              Unser Karl Shirt verkörpert, wie kein anderes Produkt die
+              Grundidee von NurEinBerg: Alltagsfähige Mode mit Bezug zu unserer
+              geliebten Stadt. Die Frauenkirche ist minimalistisch auf Herzhöhe
+              gestickt, um die Heimatliebe zu symbolisieren.
             </Text>
           </HeroWrapper>
           <TwoColumnGrid>
@@ -140,7 +140,7 @@ const KarlPage = ({ data }) => {
                 Rittergesellschaft.
                 <br />
                 <br />
-                Zudem wurden dort in einer feierlichen Veranstaltung die
+                Zudem wurden dort in einer feierlichen Veranstaltung, die
                 kostbaren Reliquien des Reiches präsentiert, welche ebenfalls
                 von Kaiser Karl IV gespendet wurden.
               </Text>
@@ -159,7 +159,7 @@ const KarlPage = ({ data }) => {
                 veredeln.
                 <br />
                 <br />
-                Unsere minimalistische Darstellung der Frauenkirche wurde als
+                Unsere minimalistische Darstellung der Frauenkirche, wurde als
                 Patch in Franken hergestellt und wird dann per Hand auf jedes
                 Shirt aufgenäht. So garantieren wir höchste Qualität und jedes
                 Shirt ist ein handgemachtes Unikat.
