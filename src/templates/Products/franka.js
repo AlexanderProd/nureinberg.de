@@ -114,8 +114,8 @@ const FrankaPage = ({ data }) => {
                 <br />
                 Auch die Farben unseres Frankenlandes sind auf dem rechten Ärmel
                 unverkennbar angebracht, um die Identität unserer Heimat und
-                Marke widerzuspiegeln. Die Rückseite ist mit unserem Label Namen
-                "NurEinBerg" ebenfalls per Stick veredelt.
+                Marke widerzuspiegeln. Die Rückseite ist, mit unserem Label
+                Namen "NurEinBerg", ebenfalls per Stick veredelt.
                 <br />
                 <br />
                 Mehr als NurEineJacke - denn Heimat trägt man nicht nur im
@@ -129,7 +129,7 @@ const FrankaPage = ({ data }) => {
             <TextWrapper>
               <H2>Streng Limitiert</H2>
               <Text>
-                Um die Besonderheit dieses Produkts zu garantieren ist unsere
+                Um die Besonderheit dieses Produkts zu garantieren, ist unsere
                 Jeans Jacke auf 10 Exemplare limitiert. Wir legen Wert auf hohe
                 Qualität und perfekte Verbreitung. Nur durch eine geringe
                 Auflage kann das gewährleistet werden.
@@ -143,7 +143,7 @@ const FrankaPage = ({ data }) => {
               <H2>Hergestellt in Franken</H2>
               <Text>
                 Für 100% Heimatgefühl werden unsere Jacken in der Region
-                hergestellt. Denn NurEinBerg steht wie der Name schon sagt für
+                hergestellt. Denn NurEinBerg steht, wie der Name schon sagt für
                 Nürnberg. So ist es unsere Pflicht von der Produktentwicklung,
                 über Shootings, bis hin zur Produktion lokal zu handeln.
                 <br />
