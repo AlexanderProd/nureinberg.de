@@ -48,7 +48,7 @@ module.exports = {
       },
       {
         name: 'Größentabelle',
-        link: '/groesentabelle',
+        link: '/groessentabelle',
       },
       {
         name: 'Impressum',
