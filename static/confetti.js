@@ -230,5 +230,5 @@ var confetti = {
     }
   }
 
-  setTimeout(startConfetti(8000), 1000)
+  startConfetti(9000)
 })()
