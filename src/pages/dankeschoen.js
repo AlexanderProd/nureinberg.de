@@ -15,13 +15,13 @@ const Dankeschoen = () => {
   }, [])
 
   return (
-    <div style={{ textAlign: 'center' }}>
-      <Page title="">
+    <Page title="">
+      <div style={{ textAlign: 'center' }}>
         <h1>Vielen Dank!</h1>
         <h2>Vom gesammten NurEinBerg Team</h2>
         <p>❤️</p>
-      </Page>
-    </div>
+      </div>
+    </Page>
   )
 }
 
