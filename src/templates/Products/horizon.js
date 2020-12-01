@@ -96,14 +96,13 @@ const GridItemSix = styled.div`
   grid-column-end: 9;
   grid-row-start: 6;
   grid-row-end: 9;
+`
 
-  picture img {
-    z-index: 20;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
+const GridItemSeven = styled.div`
+  grid-column-start: 9;
+  grid-column-end: 13;
+  grid-row-start: 10;
+  grid-row-end: 14;
 `
 
 const ProductTitle = styled.h1`
@@ -142,6 +141,7 @@ const HorizonPage = ({ data }) => {
     horizon_shooting_4,
     horizon_shooting_5,
     horizon_detail_1,
+    label_weiss,
   } = data
 
   useEffect(() => {
@@ -303,6 +303,12 @@ const HorizonPage = ({ data }) => {
                 alt="horizon_detail_1"
               />
             </GridItemSix>
+            <GridItemSeven>
+              <GridImage
+                fluid={label_weiss.childImageSharp.fluid}
+                alt="label"
+              />
+            </GridItemSeven>
           </CollageGrid>
           <TwoColumnGrid>
             <Image
@@ -483,6 +489,13 @@ export const query = graphql`
       }
     }
     horizon_detail_1: file(relativePath: { eq: "horizon_detail_1.jpg" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        }
+      }
+    }
+    label_weiss: file(relativePath: { eq: "Label_weiß.jpg" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid_withWebp_tracedSVG
