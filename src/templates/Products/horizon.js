@@ -53,6 +53,7 @@ const GridImage = styled(Image)`
   height: 100%;
   object-fit: cover;
   display: block;
+  z-index: 20;
 `
 
 const GridItemOne = styled.div`
