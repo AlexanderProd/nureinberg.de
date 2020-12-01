@@ -83,14 +83,6 @@ const GridItemFour = styled.div`
   grid-row-start: 8;
   grid-row-end: 12;
 `
-
-const GridItemFive = styled.div`
-  grid-column-start: 1;
-  grid-column-end: 5;
-  grid-row-start: 6;
-  grid-row-end: 9;
-`
-
 const GridItemSix = styled.div`
   grid-column-start: 5;
   grid-column-end: 9;
@@ -140,7 +132,6 @@ const HorizonPage = ({ data }) => {
     horizon_shooting_2,
     horizon_shooting_3,
     horizon_shooting_4,
-    horizon_shooting_5,
     horizon_detail_1,
   } = data
 
