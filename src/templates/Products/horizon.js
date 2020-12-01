@@ -35,15 +35,7 @@ const CollageGrid = styled.div`
   grid-gap: 1.5rem;
   margin: 10rem 0 10rem 0;
 
-  picture img {
-    z-index: 20;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-
-  @media (max-width: ${breakpoints.l}px) {
+  @media (max-width: ${breakpoints.s}px) {
     display: block;
 
     & > * {
@@ -56,38 +48,53 @@ const CollageGrid = styled.div`
   }
 `
 
+const GridImage = styled(Image)`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+`
+
 const GridItemOne = styled.div`
   grid-column-start: 1;
   grid-column-end: 5;
   grid-row-start: 2;
-  grid-row-end: 6;
+  grid-row-end: 8;
 `
 
 const GridItemTwo = styled.div`
   grid-column-start: 5;
   grid-column-end: 9;
   grid-row-start: 1;
-  grid-row-end: 3;
+  grid-row-end: 6;
 `
 
 const GridItemThree = styled.div`
   grid-column-start: 9;
   grid-column-end: 13;
   grid-row-start: 3;
-  grid-row-end: 8;
+  grid-row-end: 10;
 `
 
 const GridItemFour = styled.div`
   grid-column-start: 5;
   grid-column-end: 9;
-  grid-row-start: 8;
-  grid-row-end: 12;
+  grid-row-start: 9;
+  grid-row-end: 15;
 `
+
+const GridItemFive = styled.div`
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 8;
+  grid-row-end: 15;
+`
+
 const GridItemSix = styled.div`
   grid-column-start: 5;
   grid-column-end: 9;
-  grid-row-start: 5;
-  grid-row-end: 8;
+  grid-row-start: 6;
+  grid-row-end: 9;
 
   picture img {
     z-index: 20;
@@ -132,6 +139,7 @@ const HorizonPage = ({ data }) => {
     horizon_shooting_2,
     horizon_shooting_3,
     horizon_shooting_4,
+    horizon_shooting_5,
     horizon_detail_1,
   } = data
 
@@ -259,31 +267,37 @@ const HorizonPage = ({ data }) => {
           </main>
           <CollageGrid>
             <GridItemOne>
-              <Image
+              <GridImage
                 fluid={horizon_shooting_1.childImageSharp.fluid}
                 alt="horizon_shooting_1"
               />
             </GridItemOne>
             <GridItemTwo>
-              <Image
+              <GridImage
                 fluid={horizon_shooting_2.childImageSharp.fluid}
                 alt="horizon_shooting_2"
               />
             </GridItemTwo>
             <GridItemThree>
-              <Image
+              <GridImage
                 fluid={horizon_shooting_3.childImageSharp.fluid}
                 alt="horizon_shooting_3"
               />
             </GridItemThree>
             <GridItemFour>
-              <Image
+              <GridImage
                 fluid={horizon_shooting_4.childImageSharp.fluid}
                 alt="horizon_shooting_4"
               />
             </GridItemFour>
+            <GridItemFive>
+              <GridImage
+                fluid={horizon_shooting_5.childImageSharp.fluid}
+                alt="horizon_shooting_5"
+              />
+            </GridItemFive>
             <GridItemSix>
-              <Image
+              <GridImage
                 fluid={horizon_detail_1.childImageSharp.fluid}
                 alt="horizon_detail_1"
               />
@@ -431,6 +445,9 @@ export const query = graphql`
     }
     horizon_shooting_1: file(relativePath: { eq: "horizon_shooting_1.jpg" }) {
       childImageSharp {
+        original {
+          src
+        }
         fluid {
           ...GatsbyImageSharpFluid_withWebp_tracedSVG
         }
