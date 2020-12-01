@@ -87,7 +87,7 @@ const GridItemSix = styled.div`
   grid-column-start: 5;
   grid-column-end: 9;
   grid-row-start: 5;
-  grid-row-end: 9;
+  grid-row-end: 8;
 
   picture img {
     z-index: 20;
@@ -124,7 +124,7 @@ const HorizonPage = ({ data }) => {
     fragment_portrait_half_copy,
     fragment_portrait_neck,
     fragment_portrait_shirt_left,
-    fragment_eye,
+    /* fragment_eye, */
     fragment_portrait_shirt,
     fragment_bg_1,
     fragment_bg_2,
@@ -199,7 +199,7 @@ const HorizonPage = ({ data }) => {
                       alt="fragment_portrait_shirt_left"
                     />
                   </div>
-                  <div
+                  {/* <div
                     className="grid__item grid__item--portrait-eye rellax"
                     data-rellax-speed="1"
                   >
@@ -207,7 +207,7 @@ const HorizonPage = ({ data }) => {
                       fluid={fragment_eye.childImageSharp.fluid}
                       alt="fragment_eye"
                     />
-                  </div>
+                  </div> */}
                   <div
                     className="grid__item grid__item--portrait-shirt rellax"
                     data-rellax-speed="4"
