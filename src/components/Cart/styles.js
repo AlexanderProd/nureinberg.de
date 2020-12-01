@@ -5,7 +5,7 @@ import { breakpoints } from '../../utils/styles'
 export const Wrapper = styled.div`
   right: 0;
   visibility: ${({ visible }) => (visible ? 'visible' : 'hidden')};
-  z-index: 22;
+  z-index: 200;
   position: fixed;
   width: ${({ visible }) => (visible ? '100%' : '0')};
   min-height: 100%;
