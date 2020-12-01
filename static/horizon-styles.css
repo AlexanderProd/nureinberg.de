@@ -1,14 +1,3 @@
-.main {
-  margin-top: 2rem;
-  width: 100%;
-  margin: 5rem auto;
-  max-width: 65rem;
-}
-
-.container {
-  position: relative;
-}
-
 .heading {
   font-size: 2rem;
   text-transform: uppercase;
@@ -48,7 +37,7 @@ img {
 }
 
 .grid__item--bg {
-  grid-column: 2 / span 9;
+  grid-column: 2 / span 10;
   z-index: 0;
   grid-row: 1 / -1;
 }

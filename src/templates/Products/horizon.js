@@ -28,6 +28,14 @@ const Background = styled.div`
   min-height: 100vh;
 `
 
+const HeroWrapper = styled.div`
+  margin-top: 2rem;
+  width: 100%;
+  margin: 5rem auto;
+  max-width: 65rem;
+  position: relative;
+`
+
 const CollageGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -163,109 +171,107 @@ const HorizonPage = ({ data }) => {
       <Navigation color={'white'} />
       <Container>
         <MainContent>
-          <main className="main">
-            <div className="container">
-              <h1 className="heading rellax" data-rellax-speed="-5">
-                <mark>2020</mark>
-                <br />
-                <mark>Horizon</mark>
-                <br />
-                <mark>By NurEinBerg</mark>
-              </h1>
+          <HeroWrapper>
+            <h1 className="heading rellax" data-rellax-speed="-5">
+              <mark>2020</mark>
+              <br />
+              <mark>Horizon</mark>
+              <br />
+              <mark>By NurEinBerg</mark>
+            </h1>
 
-              <div className="grid-container" aria-hidden="true">
-                <div className="grid">
-                  <div className="grid__item grid__item--bg">
-                    <Image
-                      fluid={fragment_portrait_bg.childImageSharp.fluid}
-                      alt="fragment_portrait_bg"
-                    />
-                  </div>
-                  <div
-                    className="grid__item grid__item--portrait-half rellax"
-                    data-rellax-speed="3"
-                  >
-                    <Image
-                      fluid={fragment_portrait_half_copy.childImageSharp.fluid}
-                      alt="fragment_portrait_half_copy"
-                    />
-                  </div>
-                  <div
-                    className="grid__item grid__item--portrait-neck rellax"
-                    data-rellax-speed="-2"
-                  >
-                    <Image
-                      fluid={fragment_portrait_neck.childImageSharp.fluid}
-                      alt="fragment_portrait_neck"
-                    />
-                  </div>
-                  <div
-                    className="grid__item grid__item--portrait-left rellax"
-                    data-rellax-speed="-4"
-                  >
-                    <Image
-                      fluid={fragment_portrait_shirt_left.childImageSharp.fluid}
-                      alt="fragment_portrait_shirt_left"
-                    />
-                  </div>
-                  {/* <div
-                    className="grid__item grid__item--portrait-eye rellax"
-                    data-rellax-speed="1"
-                  >
-                    <Image
-                      fluid={fragment_eye.childImageSharp.fluid}
-                      alt="fragment_eye"
-                    />
-                  </div> */}
-                  <div
-                    className="grid__item grid__item--portrait-shirt rellax"
-                    data-rellax-speed="4"
-                  >
-                    <Image
-                      fluid={fragment_portrait_shirt.childImageSharp.fluid}
-                      alt="fragment_portrait_shirt"
-                    />
-                  </div>
-                  <div
-                    className="grid__item grid__item--portrait-bg-1 rellax"
-                    data-rellax-speed="-2"
-                  >
-                    <Image
-                      fluid={fragment_bg_1.childImageSharp.fluid}
-                      alt="fragment_bg_1"
-                    />
-                  </div>
-                  <div
-                    className="grid__item grid__item--portrait-bg-2 rellax"
-                    data-rellax-speed="3"
-                  >
-                    <Image
-                      fluid={fragment_bg_2.childImageSharp.fluid}
-                      alt="fragment_bg_2"
-                    />
-                  </div>
-                  <div
-                    className="grid__item grid__item--portrait-bg-3 rellax"
-                    data-rellax-speed="3"
-                  >
-                    <Image
-                      fluid={fragment_bg_1.childImageSharp.fluid}
-                      alt="fragment_bg_1"
-                    />
-                  </div>
-                  <div
-                    className="grid__item grid__item--portrait-bg-4 rellax"
-                    data-rellax-speed="-6"
-                  >
-                    <Image
-                      fluid={fragment_bg_2.childImageSharp.fluid}
-                      alt="fragment_bg_2"
-                    />
-                  </div>
+            <div className="grid-container" aria-hidden="true">
+              <div className="grid">
+                <div className="grid__item grid__item--bg">
+                  <Image
+                    fluid={fragment_portrait_bg.childImageSharp.fluid}
+                    alt="fragment_portrait_bg"
+                  />
+                </div>
+                <div
+                  className="grid__item grid__item--portrait-half rellax"
+                  data-rellax-speed="3"
+                >
+                  <Image
+                    fluid={fragment_portrait_half_copy.childImageSharp.fluid}
+                    alt="fragment_portrait_half_copy"
+                  />
+                </div>
+                <div
+                  className="grid__item grid__item--portrait-neck rellax"
+                  data-rellax-speed="-2"
+                >
+                  <Image
+                    fluid={fragment_portrait_neck.childImageSharp.fluid}
+                    alt="fragment_portrait_neck"
+                  />
+                </div>
+                <div
+                  className="grid__item grid__item--portrait-left rellax"
+                  data-rellax-speed="-4"
+                >
+                  <Image
+                    fluid={fragment_portrait_shirt_left.childImageSharp.fluid}
+                    alt="fragment_portrait_shirt_left"
+                  />
+                </div>
+                {/* <div
+                      className="grid__item grid__item--portrait-eye rellax"
+                      data-rellax-speed="1"
+                    >
+                      <Image
+                        fluid={fragment_eye.childImageSharp.fluid}
+                        alt="fragment_eye"
+                      />
+                    </div> */}
+                <div
+                  className="grid__item grid__item--portrait-shirt rellax"
+                  data-rellax-speed="4"
+                >
+                  <Image
+                    fluid={fragment_portrait_shirt.childImageSharp.fluid}
+                    alt="fragment_portrait_shirt"
+                  />
+                </div>
+                <div
+                  className="grid__item grid__item--portrait-bg-1 rellax"
+                  data-rellax-speed="-2"
+                >
+                  <Image
+                    fluid={fragment_bg_1.childImageSharp.fluid}
+                    alt="fragment_bg_1"
+                  />
+                </div>
+                <div
+                  className="grid__item grid__item--portrait-bg-2 rellax"
+                  data-rellax-speed="3"
+                >
+                  <Image
+                    fluid={fragment_bg_2.childImageSharp.fluid}
+                    alt="fragment_bg_2"
+                  />
+                </div>
+                <div
+                  className="grid__item grid__item--portrait-bg-3 rellax"
+                  data-rellax-speed="3"
+                >
+                  <Image
+                    fluid={fragment_bg_1.childImageSharp.fluid}
+                    alt="fragment_bg_1"
+                  />
+                </div>
+                <div
+                  className="grid__item grid__item--portrait-bg-4 rellax"
+                  data-rellax-speed="-6"
+                >
+                  <Image
+                    fluid={fragment_bg_2.childImageSharp.fluid}
+                    alt="fragment_bg_2"
+                  />
                 </div>
               </div>
             </div>
-          </main>
+          </HeroWrapper>
           <CollageGrid>
             <GridItemOne>
               <GridImage
