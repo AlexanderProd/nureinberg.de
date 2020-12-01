@@ -19,7 +19,9 @@ const Dankeschoen = () => {
       <div style={{ textAlign: 'center' }}>
         <h1>Vielen Dank!</h1>
         <h2>Vom gesammten NurEinBerg Team</h2>
-        <p>❤️</p>
+        <span role="img" aria-label="Heart">
+          ❤️
+        </span>
       </div>
     </Page>
   )
