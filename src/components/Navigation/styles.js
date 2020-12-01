@@ -5,7 +5,7 @@ import { colors, breakpoints } from '~/utils/styles'
 
 export const Wrapper = styled.div`
   position: relative;
-  z-index: 20;
+  z-index: 199;
   padding-top: 1.45rem;
   margin-left: auto;
   margin-right: auto;

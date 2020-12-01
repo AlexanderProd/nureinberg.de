@@ -2,7 +2,7 @@ import styled from '@emotion/styled'
 
 export const Wrapper = styled.div`
   visibility: ${({ visible }) => (visible ? 'block' : 'hidden')};
-  z-index: 3;
+  z-index: 99;
   position: absolute;
   width: ${({ visible }) => (visible ? '100%' : '0')};
   height: 100vh;
