@@ -1,8 +1,11 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useContext } from 'react'
 
 import Page from '~/templates/Page'
+import StoreContext from '~/context/StoreContext'
 
 const Dankeschoen = () => {
+  const { client, checkout, removeLineItem } = useContext(StoreContext)
+
   useEffect(() => {
     const script = document.createElement('script')
     script.src = '/confetti.js'
@@ -13,6 +16,12 @@ const Dankeschoen = () => {
       document.body.removeChild(script)
     }
   }, [])
+
+  useEffect(() => {
+    checkout.lineItems.forEach(({ id }) => {
+      removeLineItem(client, checkout.id, id)
+    })
+  }, [checkout.lineItems, removeLineItem, checkout.id, client])
 
   return (
     <Page title="">
