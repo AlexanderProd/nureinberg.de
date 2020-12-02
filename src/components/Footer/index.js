@@ -72,6 +72,12 @@ const Footer = ({ color = 'black' }) => {
         </Links>
         <Links style={{ color: color }}>
           © {new Date().getFullYear()} {title}
+          <br />
+          <br />
+          Design &amp; Entwicklung:
+          <a style={{ color: color }} href="mailto:info@wertgebung.de">
+            WERTGEBUNG
+          </a>
         </Links>
       </Wrapper>
     </Container>
