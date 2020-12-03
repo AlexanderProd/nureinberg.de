@@ -104,7 +104,7 @@ const Index = ({ data }) => {
       <Navigation color="black" />
       <Caption color="white">
         <Subtitle>MODE &amp; FASHION</Subtitle>
-        <Title>Im Zeichen der Burg</Title>
+        <Title>Eine Stadt - Eine Marke</Title>
       </Caption>
       <VideoBG loop muted playsInline autoPlay>
         <source src={video} type="video/mp4" />
