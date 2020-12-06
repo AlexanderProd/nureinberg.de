@@ -139,7 +139,7 @@ const HorizonPage = ({ data }) => {
     fragment_portrait_half_copy,
     fragment_portrait_neck,
     fragment_portrait_shirt_left,
-    /* fragment_eye, */
+    fragment_eye,
     fragment_portrait_shirt,
     fragment_bg_1,
     fragment_bg_2,
@@ -215,18 +215,18 @@ const HorizonPage = ({ data }) => {
                     alt="fragment_portrait_shirt_left"
                   />
                 </div>
-                {/* <div
-                      className="grid__item grid__item--portrait-eye rellax"
-                      data-rellax-speed="1"
-                    >
-                      <Image
-                        fluid={fragment_eye.childImageSharp.fluid}
-                        alt="fragment_eye"
-                      />
-                    </div> */}
+                <div
+                  className="grid__item grid__item--portrait-eye rellax"
+                  data-rellax-speed="4"
+                >
+                  <Image
+                    fluid={fragment_eye.childImageSharp.fluid}
+                    alt="fragment_eye"
+                  />
+                </div>
                 <div
                   className="grid__item grid__item--portrait-shirt rellax"
-                  data-rellax-speed="4"
+                  data-rellax-speed="-6"
                 >
                   <Image
                     fluid={fragment_portrait_shirt.childImageSharp.fluid}
@@ -244,7 +244,7 @@ const HorizonPage = ({ data }) => {
                 </div>
                 <div
                   className="grid__item grid__item--portrait-bg-2 rellax"
-                  data-rellax-speed="3"
+                  data-rellax-speed="-10"
                 >
                   <Image
                     fluid={fragment_bg_2.childImageSharp.fluid}
@@ -253,7 +253,7 @@ const HorizonPage = ({ data }) => {
                 </div>
                 <div
                   className="grid__item grid__item--portrait-bg-3 rellax"
-                  data-rellax-speed="3"
+                  data-rellax-speed="18"
                 >
                   <Image
                     fluid={fragment_bg_1.childImageSharp.fluid}
@@ -403,7 +403,7 @@ export const query = graphql`
       }
     }
     fragment_portrait_half_copy: file(
-      relativePath: { eq: "horizon_fragments/fragment_portrait_half_copy.jpg" }
+      relativePath: { eq: "horizon_fragments/fragment_portrait_half_3.jpg" }
     ) {
       childImageSharp {
         fluid {
@@ -412,7 +412,7 @@ export const query = graphql`
       }
     }
     fragment_portrait_neck: file(
-      relativePath: { eq: "horizon_fragments/fragment_portrait_neck.jpg" }
+      relativePath: { eq: "horizon_fragments/fragment_portrait_neck_alt.jpg" }
     ) {
       childImageSharp {
         fluid {
@@ -421,7 +421,9 @@ export const query = graphql`
       }
     }
     fragment_portrait_shirt_left: file(
-      relativePath: { eq: "horizon_fragments/fragment_portrait_shirt_left.jpg" }
+      relativePath: {
+        eq: "horizon_fragments/fragment_portrait_shirt_left_3.jpg"
+      }
     ) {
       childImageSharp {
         fluid {
@@ -430,7 +432,7 @@ export const query = graphql`
       }
     }
     fragment_portrait_shirt: file(
-      relativePath: { eq: "horizon_fragments/fragment_portrait_shirt.jpg" }
+      relativePath: { eq: "horizon_fragments/fragment_portrait_shirt_3.jpg" }
     ) {
       childImageSharp {
         fluid {
