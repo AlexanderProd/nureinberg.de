@@ -33,12 +33,12 @@ const ProductForm = ({ product, dark = false, color }) => {
 
   const checkAvailability = useCallback(
     productId => {
-      client.product.fetch(productId).then(() => {
+      client.product.fetch(productId).then(product => {
         // this checks the currently selected variant for availability
-        const result = variants.filter(
-          variant => variant.shopifyId === productVariant.shopifyId
+        const result = product.variants.filter(
+          variant => variant.id === productVariant.shopifyId
         )
-        setAvailable(result[0].availableForSale)
+        setAvailable(result[0].available)
       })
     },
     [client.product, productVariant.shopifyId, variants]
@@ -46,7 +46,7 @@ const ProductForm = ({ product, dark = false, color }) => {
 
   useEffect(() => {
     checkAvailability(product.shopifyId)
-  }, [productVariant, checkAvailability, product.shopifyId])
+  }, [checkAvailability, product.shopifyId])
 
   const handleClick = (optionIndex, value) => {
     const currentOptions = [...variant.selectedOptions]
@@ -68,20 +68,6 @@ const ProductForm = ({ product, dark = false, color }) => {
     toggleCart()
   }
 
-  const checkDisabled = (name, value) => {
-    const match = find(variants, {
-      selectedOptions: [
-        {
-          name: name,
-          value: value,
-        },
-      ],
-    })
-    if (match === undefined) return true
-    if (match.availableForSale === true) return false
-    return true
-  }
-
   const price = Intl.NumberFormat(undefined, {
     currency: minVariantPrice.currencyCode,
     minimumFractionDigits: 2,
@@ -101,7 +87,6 @@ const ProductForm = ({ product, dark = false, color }) => {
                 key={`${id}-${value}`}
                 active={variant.selectedOptions[optionIndex].value === value}
                 onClick={() => handleClick(optionIndex, value)}
-                disabled={checkDisabled(name, value)}
               >
                 {value}
               </ProductValue>
