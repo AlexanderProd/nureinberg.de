@@ -36,7 +36,7 @@ const Text = styled.p`
 const TextWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content center;
+  justify-content: center;
 `
 
 const PfeileWrapper = styled.div`
