@@ -34,15 +34,15 @@ const Widerrufsbelehrung = () => (
     <span>Um Ihr Widerrufsrecht auszuüben, müssen Sie uns</span>
     <br />
     <div>
-      H2 E-Commerce GbR
+      1050 GbR
       <br />
-      Jens Herga, Alexander Hörl
+      Steilstraße 1a
       <br />
-      Am Stadtwald 22
+      90513 Zirndorf
       <br />
-      D-90768 Fürth
       <br />
-      E-Mail mail@nureinberg.de
+      Vertreten durch die Gesellschafter: Jens Herga, Alexander Hörl, Kai Zippe,
+      Anvar Gallyaniev, Rabije Dzaferi, Ole Preisig
     </div>
     <span>
       mittels einer eindeutigen Erklärung (z.B. ein mit der Post versandter
