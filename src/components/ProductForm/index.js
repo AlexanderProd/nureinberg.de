@@ -6,6 +6,7 @@ import PropTypes from 'prop-types'
 import StoreContext from '../../context/StoreContext'
 import LayoutContext from '../../context/LayoutContext'
 import { Button } from '../../utils/styles'
+import Spinner from '../ui/Spinner'
 import {
   Wrapper,
   ProductOptions,
@@ -24,6 +25,7 @@ const ProductForm = ({ product, dark = false, color }) => {
   } = product
   const [variant, setVariant] = useState({ ...initialVariant })
   const [quantity] = useState(1)
+  const [loading, setLoading] = useState(false)
   const { client, adding, addVariantToCart } = useContext(StoreContext)
   const { toggleCart } = useContext(LayoutContext)
 
@@ -32,14 +34,14 @@ const ProductForm = ({ product, dark = false, color }) => {
   const [available, setAvailable] = useState(productVariant.availableForSale)
 
   const checkAvailability = useCallback(
-    productId => {
-      client.product.fetch(productId).then(fetchedProduct => {
-        // this checks the currently selected variant for availability
-        const result = fetchedProduct.variants.filter(
-          variant => variant.id === productVariant.shopifyId
-        )
-        setAvailable(result[0].available)
-      })
+    async productId => {
+      setLoading(true)
+      const fetchedProduct = await client.product.fetch(productId)
+      const result = fetchedProduct.variants.filter(
+        variant => variant.id === productVariant.shopifyId
+      )
+      setAvailable(result[0].available)
+      setLoading(false)
     },
     [client.product, productVariant.shopifyId, variants]
   )
@@ -74,6 +76,12 @@ const ProductForm = ({ product, dark = false, color }) => {
     style: 'currency',
   }).format(variant.price)
 
+  const buyButtonContent = () => {
+    if (loading) return <Spinner />
+    if (available) return 'In den Einkaufswagen legen'
+    return 'Ausverkauft'
+  }
+
   return (
     <Wrapper>
       <ProductPrice color={color}>{price}</ProductPrice>
@@ -98,10 +106,10 @@ const ProductForm = ({ product, dark = false, color }) => {
         color={dark ? 'black' : 'white'}
         backgroundColor={dark ? 'white' : 'black'}
         type="submit"
-        disabled={!available || adding}
+        disabled={!available || adding || loading}
         onClick={handleAddToCart}
       >
-        {available ? 'In den Einkaufswagen legen' : 'Ausverkauft'}
+        {buyButtonContent()}
       </Button>
     </Wrapper>
   )

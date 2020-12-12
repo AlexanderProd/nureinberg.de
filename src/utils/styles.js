@@ -167,6 +167,7 @@ export const ThreeThirdsGrid = styled.div`
 
 export const Button = styled.button`
   color: ${({ color }) => (color ? color : 'white')};
+  min-width: ${({ minWidth }) => (minWidth ? minWidth : '0px')};
   background-color: ${({ backgroundColor }) =>
     backgroundColor ? backgroundColor : 'black'};
   font-family: 'Montserrat', 'HelveticaNeue', 'Helvetica Neue', sans-serif;
@@ -182,6 +183,8 @@ export const Button = styled.button`
   cursor: pointer;
   border: none;
   white-space: normal;
+  display: flex;
+  justify-content: center;
 
   &:hover {
     opacity: 0.8;
