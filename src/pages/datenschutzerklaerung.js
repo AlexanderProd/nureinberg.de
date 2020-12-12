@@ -6,8 +6,9 @@ const Agb = () => (
   <Page title="Datenschutzerklärung">
     <p>Verantwortliche Stelle im Sinne der Datenschutzgesetze ist:</p>
     <p>
-      H2 E-Commerce GbR <br />
-      In Vertretung durch Jens Herga, Alexander Hörl
+      1050 GbR <br />
+      Vertreten durch die Gesellschafter: Jens Herga, Alexander Hörl, Kai Zippe,
+      Anvar Gallyaniev, Rabije Dzaferi, Ole Preisig
     </p>
     <p>
       <br />
