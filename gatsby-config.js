@@ -5,6 +5,9 @@ require('dotenv').config({
 })
 
 module.exports = {
+  flags: {
+    PARALLEL_SOURCING: true,
+  },
   siteMetadata: {
     title: `NurEinBerg`,
     description: `Mode im Zeichen der Burg`,
