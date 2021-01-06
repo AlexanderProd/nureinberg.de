@@ -50,15 +50,17 @@ export const ProductValue = styled.div`
   min-width: 38px;
   min-height: 38px;
   text-align: center;
-  border: ${({ active, dark }) =>
-    active ? `1pt solid ${dark ? 'white' : 'black'}` : '1pt solid transparent'};
+  border: ${({ active, dark, color }) =>
+    active
+      ? `1pt solid ${color ? color : dark ? 'white' : 'black'}`
+      : '1pt solid transparent'};
   padding: 0 ${layout.spacing}px;
   margin-right: ${layout.spacing}px;
   margin-bottom: ${layout.spacing}px;
   background-color: ${({ active, dark }) =>
     active ? (dark ? 'transparent' : '#F2F2F2') : 'transparent'};
-  color: ${({ disabled, dark }) =>
-    disabled ? 'grey' : dark ? 'white' : 'black'};
+  color: ${({ disabled, dark, color }) =>
+    color ? color : disabled ? 'grey' : dark ? 'white' : 'black'};
   overflow: hidden;
   font-family: 'Montserrat', 'HelveticaNeue', 'Helvetica Neue', sans-serif;
   font-size: ${typo.small};

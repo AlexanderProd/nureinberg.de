@@ -93,6 +93,7 @@ const ProductForm = ({ product, dark = false, color }) => {
               <ProductValue
                 dark={dark}
                 key={`${id}-${value}`}
+                color={color}
                 active={variant.selectedOptions[optionIndex].value === value}
                 onClick={() => handleClick(optionIndex, value)}
               >
