@@ -28,6 +28,26 @@ const Background = styled.div`
   min-height: 100vh;
 `
 
+const Heading = styled.h1`
+  font-size: 2rem;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  z-index: 10;
+
+  @media screen and (min-width: 650px) {
+    position: absolute;
+    left: 0;
+    top: 6rem;
+  }
+`
+
+const Mark = styled.mark`
+  color: #fff;
+  background-color: #000;
+  line-height: 1.35;
+  padding: 0.325rem;
+`
+
 const HeroWrapper = styled.div`
   margin-top: 2rem;
   width: 100%;
@@ -172,13 +192,13 @@ const HorizonPage = ({ data }) => {
       <Container>
         <MainContent>
           <HeroWrapper>
-            <h1 className="heading rellax" data-rellax-speed="-5">
-              <mark>2020</mark>
+            <Heading className="rellax" data-rellax-speed="-5">
+              <Mark>2020</Mark>
               <br />
-              <mark>Horizon</mark>
+              <Mark>Horizon</Mark>
               <br />
-              <mark>By NurEinBerg</mark>
-            </h1>
+              <Mark>By NurEinBerg</Mark>
+            </Heading>
 
             <div className="grid-container" aria-hidden="true">
               <div className="grid">

@@ -269,7 +269,7 @@ export const query = graphql`
         }
       }
     }
-    brunnenWeiss: file(relativePath: { eq: "Brunnen_weiß.jpg" }) {
+    brunnenWeiss: file(relativePath: { eq: "Brunnen_weiß.png" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid_withWebp_tracedSVG
