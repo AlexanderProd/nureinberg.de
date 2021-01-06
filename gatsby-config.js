@@ -82,6 +82,12 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     {
+      resolve: `gatsby-plugin-image`,
+      options: {
+        formats: ['AUTO', 'WEBP', 'AVIF'],
+      },
+    },
+    {
       resolve: `gatsby-plugin-sharp`,
       options: {
         useMozJpeg: true,

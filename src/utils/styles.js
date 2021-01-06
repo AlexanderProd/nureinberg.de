@@ -1,5 +1,5 @@
 import React from 'react'
-import Image from 'gatsby-image'
+import { GatsbyImage } from "gatsby-plugin-image";
 import styled from '@emotion/styled'
 import { Global, css } from '@emotion/react'
 
@@ -61,7 +61,7 @@ export const GlobalStyle = () => (
   />
 )
 
-export const Img = styled(Image)`
+export const Img = styled(GatsbyImage)`
   max-width: 100 %;
   margin-left: 0;
   margin-right: 0;

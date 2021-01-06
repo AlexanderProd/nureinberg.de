@@ -1,5 +1,6 @@
 import React from 'react'
 import { useStaticQuery, graphql, Link } from 'gatsby'
+import { GatsbyImage } from 'gatsby-plugin-image'
 import styled from '@emotion/styled'
 
 import SEO from '~/components/seo'
@@ -43,7 +44,7 @@ const ImgWrapper = styled.div`
   height: 100%;
 `
 
-const ImgAbove = styled(Img)`
+const ImgAbove = styled(GatsbyImage)`
   z-index: 1;
   transition: opacity ease-in-out 0.2s;
 
@@ -63,7 +64,7 @@ const ImgBelow = styled.img`
 
 const Klassik = () => {
   const { allShopifyCollection } = useStaticQuery(graphql`
-    query {
+    {
       allShopifyCollection(filter: { title: { eq: "Klassik" } }) {
         edges {
           node {
@@ -78,9 +79,11 @@ const Klassik = () => {
                 originalSrc
                 localFile {
                   childImageSharp {
-                    fluid(maxWidth: 800, maxHeight: 600) {
-                      ...GatsbyImageSharpFluid_withWebp
-                    }
+                    gatsbyImageData(
+                      maxWidth: 800
+                      maxHeight: 600
+                      layout: FLUID
+                    )
                   }
                 }
               }
@@ -103,15 +106,16 @@ const Klassik = () => {
                 <Product>
                   <ImgWrapper>
                     <ImgAbove
-                      fluid={
+                      image={
                         product.images[product.images.length - 1].localFile
-                          .childImageSharp.fluid
+                          .childImageSharp.gatsbyImageData
                       }
                       alt={product.handle}
                     />
                     <ImgBelow
                       src={
-                        product.images[0].localFile.childImageSharp.fluid.src
+                        product.images[0].localFile.childImageSharp
+                          .gatsbyImageData.images.fallback.src
                       }
                       alt={product.handle}
                     />

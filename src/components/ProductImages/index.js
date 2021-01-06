@@ -24,7 +24,7 @@ const ProductImages = ({ product }) => {
           <Slide {...properties}>
             {images.map(i => (
               <Img
-                fluid={i.localFile.childImageSharp.fluid}
+                fluid={i.localFile.childImageSharp.gatsbyImageData}
                 alt={product.title}
                 key={i.id}
               />
@@ -33,14 +33,14 @@ const ProductImages = ({ product }) => {
         ) : (
           images.map(image => (
             <Img
-              fluid={image.localFile.childImageSharp.fluid}
+              fluid={image.localFile.childImageSharp.gatsbyImageData}
               alt={product.title}
               key={image.id}
             />
           ))
         )}
       </div>
-    )
+    );
   }
 }
 
