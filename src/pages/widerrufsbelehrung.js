@@ -108,13 +108,13 @@ const Widerrufsbelehrung = () => (
     <br />
     <div>
       An :<br />
-      H2 E-Commerce GbR
+      1050 GbR
       <br />
-      Am Stadtwald 22
+      Steilstraße 1a
       <br />
-      D-90768 Fürth
+      D-90753 Zirndorf
       <br />
-      E-Mail mail@nureinberg.de
+      E-Mail info@nureinberg.de
       <br />
       <br />
       Hiermit widerrufe(n) ich/wir (*) den von mir/uns (*) abgeschlossenen
