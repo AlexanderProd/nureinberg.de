@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { GatsbyImage } from "gatsby-plugin-image";
+import { GatsbyImage } from 'gatsby-plugin-image'
 import styled from '@emotion/styled'
 
 import Page from '~/templates/Page'
@@ -44,26 +44,38 @@ const Pflegenaleitung = ({ data }) => {
           <GatsbyImage
             image={node.childImageSharp.gatsbyImageData}
             key={node.id}
-            alt={node.name} />
+            alt={node.name}
+          />
         ))}
       </Icons>
     </Page>
-  );
+  )
 }
 
 export default Pflegenaleitung
 
-export const query = graphql`{
-  icons: allFile(filter: {extension: {regex: "/(jpg)|(jpeg)|(png)/"}, name: {regex: "/(waschsymbol)/"}}) {
-    edges {
-      node {
-        id
-        name
-        childImageSharp {
-          gatsbyImageData(width: 100, height: 100, placeholder: TRACED_SVG, layout: FIXED)
+export const query = graphql`
+  {
+    icons: allFile(
+      filter: {
+        extension: { regex: "/(jpg)|(jpeg)|(png)/" }
+        name: { regex: "/(waschsymbol)/" }
+      }
+    ) {
+      edges {
+        node {
+          id
+          name
+          childImageSharp {
+            gatsbyImageData(
+              width: 100
+              height: 100
+              placeholder: TRACED_SVG
+              layout: FIXED
+            )
+          }
         }
       }
     }
   }
-}
 `

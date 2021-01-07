@@ -35,52 +35,58 @@ const ProductPage = ({ data }) => {
   )
 }
 
-export const query = graphql`query ($handle: String!) {
-  shopifyProduct(handle: {eq: $handle}) {
-    id
-    title
-    handle
-    productType
-    description
-    descriptionHtml
-    shopifyId
-    options {
-      id
-      name
-      values
-    }
-    variants {
+export const query = graphql`
+  query($handle: String!) {
+    shopifyProduct(handle: { eq: $handle }) {
       id
       title
-      price
-      availableForSale
+      handle
+      productType
+      description
+      descriptionHtml
       shopifyId
-      selectedOptions {
+      options {
+        id
         name
-        value
+        values
       }
-    }
-    priceRange {
-      minVariantPrice {
-        amount
-        currencyCode
+      variants {
+        id
+        title
+        price
+        availableForSale
+        shopifyId
+        selectedOptions {
+          name
+          value
+        }
       }
-      maxVariantPrice {
-        amount
-        currencyCode
+      priceRange {
+        minVariantPrice {
+          amount
+          currencyCode
+        }
+        maxVariantPrice {
+          amount
+          currencyCode
+        }
       }
-    }
-    images {
-      originalSrc
-      id
-      localFile {
-        childImageSharp {
-          gatsbyImageData(maxWidth: 600, maxHeight: 450, placeholder: TRACED_SVG, layout: FLUID)
+      images {
+        originalSrc
+        id
+        localFile {
+          childImageSharp {
+            gatsbyImageData(
+              maxWidth: 600
+              maxHeight: 450
+              placeholder: TRACED_SVG
+              layout: FLUID
+            )
+          }
         }
       }
     }
   }
-}
 `
 
 export default ProductPage

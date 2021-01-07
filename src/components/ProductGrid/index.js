@@ -7,31 +7,36 @@ import { Img } from '../../utils/styles'
 
 const ProductGrid = () => {
   const { checkout } = useContext(StoreContext)
-  const { allShopifyProduct } = useStaticQuery(graphql`{
-  allShopifyProduct(sort: {fields: [createdAt], order: DESC}) {
-    edges {
-      node {
-        id
-        title
-        handle
-        createdAt
-        images {
-          id
-          originalSrc
-          localFile {
-            childImageSharp {
-              gatsbyImageData(maxWidth: 910, placeholder: TRACED_SVG, layout: FLUID)
+  const { allShopifyProduct } = useStaticQuery(graphql`
+    {
+      allShopifyProduct(sort: { fields: [createdAt], order: DESC }) {
+        edges {
+          node {
+            id
+            title
+            handle
+            createdAt
+            images {
+              id
+              originalSrc
+              localFile {
+                childImageSharp {
+                  gatsbyImageData(
+                    maxWidth: 910
+                    placeholder: TRACED_SVG
+                    layout: FLUID
+                  )
+                }
+              }
+            }
+            variants {
+              price
             }
           }
         }
-        variants {
-          price
-        }
       }
     }
-  }
-}
-`)
+  `)
 
   const getPrice = price =>
     Intl.NumberFormat(undefined, {
@@ -59,7 +64,7 @@ const ProductGrid = () => {
         <p>No Products found!</p>
       )}
     </Grid>
-  );
+  )
 }
 
 export default ProductGrid

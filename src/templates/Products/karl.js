@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { GatsbyImage } from "gatsby-plugin-image";
+import { GatsbyImage } from 'gatsby-plugin-image'
 import styled from '@emotion/styled'
 
 import SEO from '~/components/seo'
@@ -126,7 +126,10 @@ const KarlPage = ({ data }) => {
           </HeroWrapper>
           <TwoColumnGrid>
             <ImgWrapper>
-              <GatsbyImage image={karlDetail2.childImageSharp.gatsbyImageData} alt="Karl Detail 1" />
+              <GatsbyImage
+                image={karlDetail2.childImageSharp.gatsbyImageData}
+                alt="Karl Detail 1"
+              />
             </ImgWrapper>
             <TextWrapper>
               <H2>Karl IV</H2>
@@ -143,7 +146,10 @@ const KarlPage = ({ data }) => {
               </Text>
             </TextWrapper>
             <ImgWrapper>
-              <GatsbyImage image={karlDetail3.childImageSharp.gatsbyImageData} alt="Karl Detail 3" />
+              <GatsbyImage
+                image={karlDetail3.childImageSharp.gatsbyImageData}
+                alt="Karl Detail 3"
+              />
             </ImgWrapper>
             <TextWrapper>
               <H2>Hergestellt in der Region</H2>
@@ -168,16 +174,24 @@ const KarlPage = ({ data }) => {
           <ThreeThirdsGrid style={{ margin: '10rem 0' }}>
             <GatsbyImage
               image={karlShooting1.childImageSharp.gatsbyImageData}
-              alt="Karl Shooting 1" />
-            <GatsbyImage image={frauenkirche.childImageSharp.gatsbyImageData} alt="Frauenkirche" />
+              alt="Karl Shooting 1"
+            />
+            <GatsbyImage
+              image={frauenkirche.childImageSharp.gatsbyImageData}
+              alt="Frauenkirche"
+            />
             <GatsbyImage
               image={karlShooting2.childImageSharp.gatsbyImageData}
-              alt="Karl Shooting 2" />
+              alt="Karl Shooting 2"
+            />
           </ThreeThirdsGrid>
           <TwoColumnGrid style={{ margin: '10rem 0' }}>
             <GatsbyImage
-              image={product.images[0].localFile.childImageSharp.gatsbyImageData}
-              alt="Produktfoto Karl" />
+              image={
+                product.images[0].localFile.childImageSharp.gatsbyImageData
+              }
+              alt="Produktfoto Karl"
+            />
             <div>
               <ProductTitle>{product.title}</ProductTitle>
               <ProductForm color="#DEDEDE" dark={true} product={product} />
@@ -190,85 +204,90 @@ const KarlPage = ({ data }) => {
         <Footer color="#DEDEDE" />
       </Container>
     </div>
-  );
+  )
 }
 
-export const query = graphql`query ($handle: String!) {
-  shopifyProduct(handle: {eq: $handle}) {
-    id
-    title
-    handle
-    productType
-    description
-    descriptionHtml
-    shopifyId
-    options {
-      id
-      name
-      values
-    }
-    variants {
+export const query = graphql`
+  query($handle: String!) {
+    shopifyProduct(handle: { eq: $handle }) {
       id
       title
-      price
-      availableForSale
+      handle
+      productType
+      description
+      descriptionHtml
       shopifyId
-      selectedOptions {
+      options {
+        id
         name
-        value
+        values
       }
-    }
-    priceRange {
-      minVariantPrice {
-        amount
-        currencyCode
+      variants {
+        id
+        title
+        price
+        availableForSale
+        shopifyId
+        selectedOptions {
+          name
+          value
+        }
       }
-      maxVariantPrice {
-        amount
-        currencyCode
+      priceRange {
+        minVariantPrice {
+          amount
+          currencyCode
+        }
+        maxVariantPrice {
+          amount
+          currencyCode
+        }
       }
-    }
-    images {
-      originalSrc
-      id
-      localFile {
-        childImageSharp {
-          gatsbyImageData(maxWidth: 910, placeholder: TRACED_SVG, layout: FLUID)
+      images {
+        originalSrc
+        id
+        localFile {
+          childImageSharp {
+            gatsbyImageData(
+              maxWidth: 910
+              placeholder: TRACED_SVG
+              layout: FLUID
+            )
+          }
         }
       }
     }
-  }
-  karlDetail1: file(relativePath: {eq: "Karl_Detail_1.jpg"}) {
-    childImageSharp {
-      gatsbyImageData(layout: FLUID)
+    karlDetail1: file(relativePath: { eq: "Karl_Detail_1.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(layout: FLUID)
+      }
+    }
+    karlDetail2: file(relativePath: { eq: "Karl_Detail_2.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(height: 500, layout: FIXED)
+      }
+    }
+    karlDetail3: file(relativePath: { eq: "Karl_Detail_3.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(height: 500, layout: FIXED)
+      }
+    }
+    karlShooting1: file(relativePath: { eq: "Karl_Shooting_1.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(placeholder: TRACED_SVG, layout: FLUID)
+      }
+    }
+    karlShooting2: file(relativePath: { eq: "Karl_Shooting_2.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(placeholder: TRACED_SVG, layout: FLUID)
+      }
+    }
+    frauenkirche: file(relativePath: { eq: "Frauenkirche_farbe.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(placeholder: TRACED_SVG, layout: FLUID)
+      }
     }
   }
-  karlDetail2: file(relativePath: {eq: "Karl_Detail_2.jpg"}) {
-    childImageSharp {
-      gatsbyImageData(height: 500, layout: FIXED)
-    }
-  }
-  karlDetail3: file(relativePath: {eq: "Karl_Detail_3.jpg"}) {
-    childImageSharp {
-      gatsbyImageData(height: 500, layout: FIXED)
-    }
-  }
-  karlShooting1: file(relativePath: {eq: "Karl_Shooting_1.jpg"}) {
-    childImageSharp {
-      gatsbyImageData(placeholder: TRACED_SVG, layout: FLUID)
-    }
-  }
-  karlShooting2: file(relativePath: {eq: "Karl_Shooting_2.jpg"}) {
-    childImageSharp {
-      gatsbyImageData(placeholder: TRACED_SVG, layout: FLUID)
-    }
-  }
-  frauenkirche: file(relativePath: {eq: "Frauenkirche_farbe.jpg"}) {
-    childImageSharp {
-      gatsbyImageData(placeholder: TRACED_SVG, layout: FLUID)
-    }
-  }
-}
 `
 
 export default KarlPage

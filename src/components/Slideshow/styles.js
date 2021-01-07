@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import { GatsbyImage } from "gatsby-plugin-image";
+import { GatsbyImage } from 'gatsby-plugin-image'
 
 import { breakpoints } from '~/utils/styles'
 
