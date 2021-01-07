@@ -335,14 +335,14 @@ const HorizonPage = ({ data }) => {
             </GridItemFive>
             <GridItemSix>
               <GridImage
-                image={horizon_detail_1.childImageSharp.gatsbyImageData}
-                alt="horizon_detail_1"
+                image={label_weiss.childImageSharp.gatsbyImageData}
+                alt="label"
               />
             </GridItemSix>
             <GridItemSeven>
               <GridImage
-                image={label_weiss.childImageSharp.gatsbyImageData}
-                alt="label"
+                image={horizon_detail_1.childImageSharp.gatsbyImageData}
+                alt="horizon_detail_1"
               />
             </GridItemSeven>
           </CollageGrid>
