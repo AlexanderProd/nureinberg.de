@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { graphql, Link } from 'gatsby'
-import { GatsbyImage } from "gatsby-plugin-image";
+import { GatsbyImage } from 'gatsby-plugin-image'
 
 import SEO from '~/components/seo'
 import Navigation from '~/components/Navigation'
@@ -98,59 +98,73 @@ const ImageWrapper = styled.div`
 const Index = ({ data }) => {
   const { klassik, modern } = data
 
-  return <>
-    <SEO title="Home" keywords={[`nureinberg`, `nürnberg`, `fashion`]} />
-    <Navigation color="black" />
-    <Caption color="white">
-      <Subtitle>MODE &amp; FASHION</Subtitle>
-      <Title>Eine Stadt - Eine Marke</Title>
-    </Caption>
-    <VideoBG loop muted playsInline autoPlay>
-      <source src={video} type="video/mp4" />
-      <ImageBG src={slide_1} />
-    </VideoBG>
-    <Wrapper>
-      <TwoColumnGrid gap={'0'}>
-        <Link to={`/klassik/`}>
-          <ImageWrapper>
-            <Caption>
-              <Title style={{ color: 'white' }}>Klassik</Title>
-              <Button>Zu den Produkten</Button>
-            </Caption>
-            <GatsbyImage image={klassik.childImageSharp.gatsbyImageData} alt="Klassik" />
-          </ImageWrapper>
-        </Link>
-        <Link to={`/modern/`}>
-          <ImageWrapper>
-            <Caption>
-              <Title
-                style={{ fontFamily: 'Roboto, sans-serif', color: 'white' }}
-              >
-                Modern
-              </Title>
-              <Button>Zu den Produkten</Button>
-            </Caption>
-            <GatsbyImage image={modern.childImageSharp.gatsbyImageData} alt="Modern" />
-          </ImageWrapper>
-        </Link>
-      </TwoColumnGrid>
-      <Footer />
-    </Wrapper>
-  </>;
+  return (
+    <>
+      <SEO title="Home" keywords={[`nureinberg`, `nürnberg`, `fashion`]} />
+      <Navigation color="black" />
+      <Caption color="white">
+        <Subtitle>MODE &amp; FASHION</Subtitle>
+        <Title>Eine Stadt - Eine Marke</Title>
+      </Caption>
+      <VideoBG loop muted playsInline autoPlay>
+        <source src={video} type="video/mp4" />
+        <ImageBG src={slide_1} />
+      </VideoBG>
+      <Wrapper>
+        <TwoColumnGrid gap={'0'}>
+          <Link to={`/klassik/`}>
+            <ImageWrapper>
+              <Caption>
+                <Title style={{ color: 'white' }}>Klassik</Title>
+                <Button>Zu den Produkten</Button>
+              </Caption>
+              <GatsbyImage
+                image={klassik.childImageSharp.gatsbyImageData}
+                alt="Klassik"
+              />
+            </ImageWrapper>
+          </Link>
+          <Link to={`/modern/`}>
+            <ImageWrapper>
+              <Caption>
+                <Title
+                  style={{ fontFamily: 'Roboto, sans-serif', color: 'white' }}
+                >
+                  Modern
+                </Title>
+                <Button>Zu den Produkten</Button>
+              </Caption>
+              <GatsbyImage
+                image={modern.childImageSharp.gatsbyImageData}
+                alt="Modern"
+              />
+            </ImageWrapper>
+          </Link>
+        </TwoColumnGrid>
+        <Footer />
+      </Wrapper>
+    </>
+  )
 }
 
-export const query = graphql`{
-  klassik: file(relativePath: {eq: "klassik.jpg"}) {
-    childImageSharp {
-      gatsbyImageData(maxWidth: 600, placeholder: TRACED_SVG, layout: FLUID)
+export const query = graphql`
+  {
+    klassik: file(relativePath: { eq: "klassik.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(maxWidth: 600, placeholder: TRACED_SVG, layout: FLUID)
+      }
+    }
+    modern: file(relativePath: { eq: "modern.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(
+          maxWidth: 600
+          placeholder: TRACED_SVG
+          layout: FLUID
+          formats: [AUTO, WEBP, AVIF]
+        )
+      }
     }
   }
-  modern: file(relativePath: {eq: "modern.jpg"}) {
-    childImageSharp {
-      gatsbyImageData(maxWidth: 600, placeholder: TRACED_SVG, layout: FLUID)
-    }
-  }
-}
 `
 
 export default Index

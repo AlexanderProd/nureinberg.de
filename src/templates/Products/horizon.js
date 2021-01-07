@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { graphql } from 'gatsby'
-import { GatsbyImage } from "gatsby-plugin-image";
+import { GatsbyImage } from 'gatsby-plugin-image'
 import styled from '@emotion/styled'
 
 import SEO from '~/components/seo'
@@ -205,69 +205,99 @@ const HorizonPage = ({ data }) => {
                 <div className="grid__item grid__item--bg">
                   <GatsbyImage
                     image={fragment_portrait_bg.childImageSharp.gatsbyImageData}
-                    alt="fragment_portrait_bg" />
+                    alt="fragment_portrait_bg"
+                  />
                 </div>
                 <div
                   className="grid__item grid__item--portrait-half rellax"
                   data-rellax-speed="3"
                 >
                   <GatsbyImage
-                    image={fragment_portrait_half_copy.childImageSharp.gatsbyImageData}
-                    alt="fragment_portrait_half_copy" />
+                    image={
+                      fragment_portrait_half_copy.childImageSharp
+                        .gatsbyImageData
+                    }
+                    alt="fragment_portrait_half_copy"
+                  />
                 </div>
                 <div
                   className="grid__item grid__item--portrait-neck rellax"
                   data-rellax-speed="-2"
                 >
                   <GatsbyImage
-                    image={fragment_portrait_neck.childImageSharp.gatsbyImageData}
-                    alt="fragment_portrait_neck" />
+                    image={
+                      fragment_portrait_neck.childImageSharp.gatsbyImageData
+                    }
+                    alt="fragment_portrait_neck"
+                  />
                 </div>
                 <div
                   className="grid__item grid__item--portrait-left rellax"
                   data-rellax-speed="-4"
                 >
                   <GatsbyImage
-                    image={fragment_portrait_shirt_left.childImageSharp.gatsbyImageData}
-                    alt="fragment_portrait_shirt_left" />
+                    image={
+                      fragment_portrait_shirt_left.childImageSharp
+                        .gatsbyImageData
+                    }
+                    alt="fragment_portrait_shirt_left"
+                  />
                 </div>
                 <div
                   className="grid__item grid__item--portrait-eye rellax"
                   data-rellax-speed="4"
                 >
-                  <GatsbyImage image={fragment_eye.childImageSharp.gatsbyImageData} alt="fragment_eye" />
+                  <GatsbyImage
+                    image={fragment_eye.childImageSharp.gatsbyImageData}
+                    alt="fragment_eye"
+                  />
                 </div>
                 <div
                   className="grid__item grid__item--portrait-shirt rellax"
                   data-rellax-speed="-6"
                 >
                   <GatsbyImage
-                    image={fragment_portrait_shirt.childImageSharp.gatsbyImageData}
-                    alt="fragment_portrait_shirt" />
+                    image={
+                      fragment_portrait_shirt.childImageSharp.gatsbyImageData
+                    }
+                    alt="fragment_portrait_shirt"
+                  />
                 </div>
                 <div
                   className="grid__item grid__item--portrait-bg-1 rellax"
                   data-rellax-speed="-2"
                 >
-                  <GatsbyImage image={fragment_bg_1.childImageSharp.gatsbyImageData} alt="fragment_bg_1" />
+                  <GatsbyImage
+                    image={fragment_bg_1.childImageSharp.gatsbyImageData}
+                    alt="fragment_bg_1"
+                  />
                 </div>
                 <div
                   className="grid__item grid__item--portrait-bg-2 rellax"
                   data-rellax-speed="-10"
                 >
-                  <GatsbyImage image={fragment_bg_2.childImageSharp.gatsbyImageData} alt="fragment_bg_2" />
+                  <GatsbyImage
+                    image={fragment_bg_2.childImageSharp.gatsbyImageData}
+                    alt="fragment_bg_2"
+                  />
                 </div>
                 <div
                   className="grid__item grid__item--portrait-bg-3 rellax"
                   data-rellax-speed="18"
                 >
-                  <GatsbyImage image={fragment_bg_1.childImageSharp.gatsbyImageData} alt="fragment_bg_1" />
+                  <GatsbyImage
+                    image={fragment_bg_1.childImageSharp.gatsbyImageData}
+                    alt="fragment_bg_1"
+                  />
                 </div>
                 <div
                   className="grid__item grid__item--portrait-bg-4 rellax"
                   data-rellax-speed="-6"
                 >
-                  <GatsbyImage image={fragment_bg_2.childImageSharp.gatsbyImageData} alt="fragment_bg_2" />
+                  <GatsbyImage
+                    image={fragment_bg_2.childImageSharp.gatsbyImageData}
+                    alt="fragment_bg_2"
+                  />
                 </div>
               </div>
             </div>
@@ -275,51 +305,54 @@ const HorizonPage = ({ data }) => {
           <CollageGrid>
             <GridItemOne>
               <GridImage
-                fluid={horizon_shooting_1.childImageSharp.gatsbyImageData}
+                image={horizon_shooting_1.childImageSharp.gatsbyImageData}
                 alt="horizon_shooting_1"
               />
             </GridItemOne>
             <GridItemTwo>
               <GridImage
-                fluid={horizon_shooting_2.childImageSharp.gatsbyImageData}
+                image={horizon_shooting_2.childImageSharp.gatsbyImageData}
                 alt="horizon_shooting_2"
               />
             </GridItemTwo>
             <GridItemThree>
               <GridImage
-                fluid={horizon_shooting_3.childImageSharp.gatsbyImageData}
+                image={horizon_shooting_3.childImageSharp.gatsbyImageData}
                 alt="horizon_shooting_3"
               />
             </GridItemThree>
             <GridItemFour>
               <GridImage
-                fluid={horizon_shooting_4.childImageSharp.gatsbyImageData}
+                image={horizon_shooting_4.childImageSharp.gatsbyImageData}
                 alt="horizon_shooting_4"
               />
             </GridItemFour>
             <GridItemFive>
               <GridImage
-                fluid={horizon_shooting_5.childImageSharp.gatsbyImageData}
+                image={horizon_shooting_5.childImageSharp.gatsbyImageData}
                 alt="horizon_shooting_5"
               />
             </GridItemFive>
             <GridItemSix>
               <GridImage
-                fluid={horizon_detail_1.childImageSharp.gatsbyImageData}
+                image={horizon_detail_1.childImageSharp.gatsbyImageData}
                 alt="horizon_detail_1"
               />
             </GridItemSix>
             <GridItemSeven>
               <GridImage
-                fluid={label_weiss.childImageSharp.gatsbyImageData}
+                image={label_weiss.childImageSharp.gatsbyImageData}
                 alt="label"
               />
             </GridItemSeven>
           </CollageGrid>
           <TwoColumnGrid>
             <GatsbyImage
-              image={product.images[0].localFile.childImageSharp.gatsbyImageData}
-              alt="Produktfoto Karl" />
+              image={
+                product.images[0].localFile.childImageSharp.gatsbyImageData
+              }
+              alt="Produktfoto Karl"
+            />
             <div>
               <ProductTitle>{product.title}</ProductTitle>
               <ProductForm product={product} dark={true} color={'white'} />
@@ -332,133 +365,156 @@ const HorizonPage = ({ data }) => {
         <Footer color={'white'} />
       </Container>
     </Background>
-  );
+  )
 }
 
-export const query = graphql`query ($handle: String!) {
-  shopifyProduct(handle: {eq: $handle}) {
-    id
-    title
-    handle
-    productType
-    description
-    descriptionHtml
-    shopifyId
-    options {
-      id
-      name
-      values
-    }
-    variants {
+export const query = graphql`
+  query($handle: String!) {
+    shopifyProduct(handle: { eq: $handle }) {
       id
       title
-      price
-      availableForSale
+      handle
+      productType
+      description
+      descriptionHtml
       shopifyId
-      selectedOptions {
+      options {
+        id
         name
-        value
+        values
       }
-    }
-    priceRange {
-      minVariantPrice {
-        amount
-        currencyCode
+      variants {
+        id
+        title
+        price
+        availableForSale
+        shopifyId
+        selectedOptions {
+          name
+          value
+        }
       }
-      maxVariantPrice {
-        amount
-        currencyCode
+      priceRange {
+        minVariantPrice {
+          amount
+          currencyCode
+        }
+        maxVariantPrice {
+          amount
+          currencyCode
+        }
       }
-    }
-    images {
-      originalSrc
-      id
-      localFile {
-        childImageSharp {
-          gatsbyImageData(maxWidth: 910, placeholder: TRACED_SVG, layout: FLUID)
+      images {
+        originalSrc
+        id
+        localFile {
+          childImageSharp {
+            gatsbyImageData(
+              maxWidth: 910
+              placeholder: TRACED_SVG
+              layout: FLUID
+            )
+          }
         }
       }
     }
-  }
-  fragment_portrait_bg: file(relativePath: {eq: "horizon_fragments/fragment_portrait_bg.jpg"}) {
-    childImageSharp {
-      gatsbyImageData(placeholder: TRACED_SVG, layout: FLUID)
-    }
-  }
-  fragment_eye: file(relativePath: {eq: "horizon_fragments/fragment_eye.jpg"}) {
-    childImageSharp {
-      gatsbyImageData(placeholder: TRACED_SVG, layout: FLUID)
-    }
-  }
-  fragment_portrait_half_copy: file(relativePath: {eq: "horizon_fragments/fragment_portrait_half_3.jpg"}) {
-    childImageSharp {
-      gatsbyImageData(placeholder: TRACED_SVG, layout: FLUID)
-    }
-  }
-  fragment_portrait_neck: file(relativePath: {eq: "horizon_fragments/fragment_portrait_neck_alt.jpg"}) {
-    childImageSharp {
-      gatsbyImageData(placeholder: TRACED_SVG, layout: FLUID)
-    }
-  }
-  fragment_portrait_shirt_left: file(relativePath: {eq: "horizon_fragments/fragment_portrait_shirt_left_3.jpg"}) {
-    childImageSharp {
-      gatsbyImageData(placeholder: TRACED_SVG, layout: FLUID)
-    }
-  }
-  fragment_portrait_shirt: file(relativePath: {eq: "horizon_fragments/fragment_portrait_shirt_3.jpg"}) {
-    childImageSharp {
-      gatsbyImageData(placeholder: TRACED_SVG, layout: FLUID)
-    }
-  }
-  fragment_bg_1: file(relativePath: {eq: "horizon_fragments/fragment_bg_1.jpg"}) {
-    childImageSharp {
-      gatsbyImageData(placeholder: TRACED_SVG, layout: FLUID)
-    }
-  }
-  fragment_bg_2: file(relativePath: {eq: "horizon_fragments/fragment_bg_2.jpg"}) {
-    childImageSharp {
-      gatsbyImageData(placeholder: TRACED_SVG, layout: FLUID)
-    }
-  }
-  horizon_shooting_1: file(relativePath: {eq: "horizon_shooting_1.jpg"}) {
-    childImageSharp {
-      original {
-        src
+    fragment_portrait_bg: file(
+      relativePath: { eq: "horizon_fragments/fragment_portrait_bg.jpg" }
+    ) {
+      childImageSharp {
+        gatsbyImageData(placeholder: TRACED_SVG, layout: FLUID)
       }
-      gatsbyImageData(placeholder: TRACED_SVG, layout: FLUID)
+    }
+    fragment_eye: file(
+      relativePath: { eq: "horizon_fragments/fragment_eye.jpg" }
+    ) {
+      childImageSharp {
+        gatsbyImageData(placeholder: TRACED_SVG, layout: FLUID)
+      }
+    }
+    fragment_portrait_half_copy: file(
+      relativePath: { eq: "horizon_fragments/fragment_portrait_half_3.jpg" }
+    ) {
+      childImageSharp {
+        gatsbyImageData(placeholder: TRACED_SVG, layout: FLUID)
+      }
+    }
+    fragment_portrait_neck: file(
+      relativePath: { eq: "horizon_fragments/fragment_portrait_neck_alt.jpg" }
+    ) {
+      childImageSharp {
+        gatsbyImageData(placeholder: TRACED_SVG, layout: FLUID)
+      }
+    }
+    fragment_portrait_shirt_left: file(
+      relativePath: {
+        eq: "horizon_fragments/fragment_portrait_shirt_left_3.jpg"
+      }
+    ) {
+      childImageSharp {
+        gatsbyImageData(placeholder: TRACED_SVG, layout: FLUID)
+      }
+    }
+    fragment_portrait_shirt: file(
+      relativePath: { eq: "horizon_fragments/fragment_portrait_shirt_3.jpg" }
+    ) {
+      childImageSharp {
+        gatsbyImageData(placeholder: TRACED_SVG, layout: FLUID)
+      }
+    }
+    fragment_bg_1: file(
+      relativePath: { eq: "horizon_fragments/fragment_bg_1.jpg" }
+    ) {
+      childImageSharp {
+        gatsbyImageData(placeholder: TRACED_SVG, layout: FLUID)
+      }
+    }
+    fragment_bg_2: file(
+      relativePath: { eq: "horizon_fragments/fragment_bg_2.jpg" }
+    ) {
+      childImageSharp {
+        gatsbyImageData(placeholder: TRACED_SVG, layout: FLUID)
+      }
+    }
+    horizon_shooting_1: file(relativePath: { eq: "horizon_shooting_1.jpg" }) {
+      childImageSharp {
+        original {
+          src
+        }
+        gatsbyImageData(placeholder: TRACED_SVG, layout: FLUID)
+      }
+    }
+    horizon_shooting_2: file(relativePath: { eq: "horizon_shooting_2.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(placeholder: TRACED_SVG, layout: FLUID)
+      }
+    }
+    horizon_shooting_3: file(relativePath: { eq: "horizon_shooting_3.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(placeholder: TRACED_SVG, layout: FLUID)
+      }
+    }
+    horizon_shooting_4: file(relativePath: { eq: "horizon_shooting_4.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(placeholder: TRACED_SVG, layout: FLUID)
+      }
+    }
+    horizon_shooting_5: file(relativePath: { eq: "horizon_shooting_5.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(placeholder: TRACED_SVG, layout: FLUID)
+      }
+    }
+    horizon_detail_1: file(relativePath: { eq: "horizon_detail_1.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(placeholder: TRACED_SVG, layout: FLUID)
+      }
+    }
+    label_weiss: file(relativePath: { eq: "Label_weiß.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(placeholder: TRACED_SVG, layout: FLUID)
+      }
     }
   }
-  horizon_shooting_2: file(relativePath: {eq: "horizon_shooting_2.jpg"}) {
-    childImageSharp {
-      gatsbyImageData(placeholder: TRACED_SVG, layout: FLUID)
-    }
-  }
-  horizon_shooting_3: file(relativePath: {eq: "horizon_shooting_3.jpg"}) {
-    childImageSharp {
-      gatsbyImageData(placeholder: TRACED_SVG, layout: FLUID)
-    }
-  }
-  horizon_shooting_4: file(relativePath: {eq: "horizon_shooting_4.jpg"}) {
-    childImageSharp {
-      gatsbyImageData(placeholder: TRACED_SVG, layout: FLUID)
-    }
-  }
-  horizon_shooting_5: file(relativePath: {eq: "horizon_shooting_5.jpg"}) {
-    childImageSharp {
-      gatsbyImageData(placeholder: TRACED_SVG, layout: FLUID)
-    }
-  }
-  horizon_detail_1: file(relativePath: {eq: "horizon_detail_1.jpg"}) {
-    childImageSharp {
-      gatsbyImageData(placeholder: TRACED_SVG, layout: FLUID)
-    }
-  }
-  label_weiss: file(relativePath: {eq: "Label_weiß.jpg"}) {
-    childImageSharp {
-      gatsbyImageData(placeholder: TRACED_SVG, layout: FLUID)
-    }
-  }
-}
 `
 
 export default HorizonPage
