@@ -10,6 +10,7 @@ export const Title = styled.h1`
   line-height: 1.4;
   text-align: center;
   margin-bottom: 50px;
+  ${({ titleStyles }) => (titleStyles ? titleStyles : null)}
 
   :after {
     border-top: solid #1c1d1d;

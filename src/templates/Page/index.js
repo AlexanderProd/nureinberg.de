@@ -9,6 +9,7 @@ import { Title } from './styles'
 const Page = ({
   title,
   children,
+  titleStyles,
   titleFontSize,
   titleFontFamily,
   color = 'transparent',
@@ -18,7 +19,11 @@ const Page = ({
     <Navigation />
     <Container>
       <MainContent>
-        <Title titleFontFamily={titleFontFamily} titleFontSize={titleFontSize}>
+        <Title
+          titleFontFamily={titleFontFamily}
+          titleFontSize={titleFontSize}
+          titleStyles={titleStyles}
+        >
           {title}
         </Title>
         {children}

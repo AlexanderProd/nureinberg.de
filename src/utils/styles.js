@@ -153,6 +153,8 @@ export const ThreeThirdsGrid = styled.div`
   grid-template-columns: 1fr 1fr 1fr;
   grid-auto-flow: row dense;
   gap: ${({ gap }) => (gap ? gap : '2.5rem')};
+  ${({ backgroundColor }) =>
+    backgroundColor ? `background-color: ${backgroundColor};` : null};
 
   @media (max-width: ${breakpoints.l}px) {
     display: block;
