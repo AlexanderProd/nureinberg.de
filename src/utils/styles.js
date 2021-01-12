@@ -94,6 +94,8 @@ export const TwoColumnGrid = styled.div`
   grid-template-columns: repeat(2, 1fr);
   gap: ${({ gap }) => (gap ? gap : '2.5rem')};
   grid-auto-flow: row dense;
+  ${({ backgroundColor }) =>
+    backgroundColor ? `background-color: ${backgroundColor};` : null};
 
   & > :nth-of-type(4n - 1) {
     grid-column-start: 2;
