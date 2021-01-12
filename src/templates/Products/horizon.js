@@ -274,7 +274,7 @@ const HorizonPage = ({ data }) => {
                 </div>
                 <div
                   className="grid__item grid__item--portrait-bg-2 rellax"
-                  data-rellax-speed="-10"
+                  data-rellax-speed="-8"
                 >
                   <GatsbyImage
                     image={fragment_bg_2.childImageSharp.gatsbyImageData}
@@ -283,7 +283,7 @@ const HorizonPage = ({ data }) => {
                 </div>
                 <div
                   className="grid__item grid__item--portrait-bg-3 rellax"
-                  data-rellax-speed="18"
+                  data-rellax-speed="10"
                 >
                   <GatsbyImage
                     image={fragment_bg_1.childImageSharp.gatsbyImageData}
