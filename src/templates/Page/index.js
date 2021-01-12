@@ -6,13 +6,21 @@ import { Container, MainContent } from '~/utils/styles'
 import Footer from '~/components/Footer'
 import { Title } from './styles'
 
-const Page = ({ title, children, color = 'transparent' }) => (
+const Page = ({
+  title,
+  children,
+  titleFontSize,
+  titleFontFamily,
+  color = 'transparent',
+}) => (
   <div style={{ backgroundColor: color }}>
     <SEO title={title} />
     <Navigation />
     <Container>
       <MainContent>
-        <Title>{title}</Title>
+        <Title titleFontFamily={titleFontFamily} titleFontSize={titleFontSize}>
+          {title}
+        </Title>
         {children}
       </MainContent>
     </Container>

@@ -1,8 +1,10 @@
 import styled from '@emotion/styled'
 
 export const Title = styled.h1`
-  font-size: 1.875rem;
-  font-family: 'Old Standard TT', serif;
+  font-size: ${({ titleFontSize }) =>
+    titleFontSize ? titleFontSize : '1.875rem'};
+  font-family: ${({ titleFontFamily }) =>
+    titleFontFamily ? titleFontFamily : `'Old Standard TT', serif`};
   font-weight: 400;
   margin: 0 0 0.5em;
   line-height: 1.4;
