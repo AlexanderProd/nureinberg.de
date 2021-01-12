@@ -6,7 +6,7 @@ import styled from '@emotion/styled'
 import SEO from '~/components/seo'
 import Navigation from '~/components/Navigation'
 import Footer from '~/components/Footer'
-import { Img, breakpoints, MainContent } from '~/utils/styles'
+import { breakpoints, MainContent } from '~/utils/styles'
 
 const Grid = styled.div`
   display: grid;
