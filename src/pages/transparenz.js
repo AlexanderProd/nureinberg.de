@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import Image from 'gatsby-image'
+import { CountUp } from 'use-count-up'
 
 import Page from '~/templates/Page'
 import { TwoColumnGrid, ThreeThirdsGrid, breakpoints } from '~/utils/styles'
@@ -60,6 +61,14 @@ const Transparenz = ({ data }) => {
     karl_computer,
     karl_stick,
   } = data
+
+  const alterBerechnen = () => {
+    const oneDay = 24 * 60 * 60 * 1000
+    const firstDate = new Date(2017, 4, 4)
+    const secondDate = new Date()
+
+    return Math.round(Math.abs((firstDate - secondDate) / oneDay))
+  }
 
   return (
     <Page
@@ -160,7 +169,7 @@ const Transparenz = ({ data }) => {
         <div>
           <img src={sonne} height="120px" alt="Sonne" />
           <H2>2H</H2>
-          <Text>In jedem I nstagram Post stecken 2 Stunden Arbeit.</Text>
+          <Text>In jedem Instagram Post stecken 2 Stunden Arbeit.</Text>
         </div>
         <div>
           <img src={sewing_machine} height="120px" alt="Nähmaschine" />
@@ -226,6 +235,31 @@ const Transparenz = ({ data }) => {
             nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
             erat, sed diam voluptua.
           </Text>
+        </div>
+      </ThreeThirdsGrid>
+      <ThreeThirdsGrid
+        style={{
+          textAlign: 'center',
+          marginTop: '5rem',
+        }}
+      >
+        <div>
+          <H2>
+            <CountUp isCounting end={alterBerechnen()} duration={3.2} />
+          </H2>
+          <Text>Tage ist das Label NurEinBerg alt.</Text>
+        </div>
+        <div>
+          <H2>
+            <CountUp isCounting end={135} duration={2} />€
+          </H2>
+          <Text>haben wir für einen wohltätigen Zweck gesammelt.</Text>
+        </div>
+        <div>
+          <H2>
+            <CountUp isCounting end={9732} duration={6.4} />
+          </H2>
+          <Text>Follower haben wir bereits auf lnstagram.</Text>
         </div>
       </ThreeThirdsGrid>
     </Page>

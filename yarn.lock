@@ -13523,6 +13523,18 @@ url@^0.11.0:
     punycode "1.3.2"
     querystring "0.2.0"
 
+use-count-up@^2.2.6:
+  version "2.2.6"
+  resolved "https://registry.yarnpkg.com/use-count-up/-/use-count-up-2.2.6.tgz#f7d33b53c801b13534e79d1da2c9d9a139dcfc59"
+  integrity sha512-a3FGcV/kC9RPokQ/DdzXbw5AvUCiedx+9JeOBpz1vGMy3mLSQuMC2L/iPHFYtaAesQC1xHBSgROIxcoJ8DsSgA==
+  dependencies:
+    use-elapsed-time "^2.1.4"
+
+use-elapsed-time@^2.1.4:
+  version "2.1.6"
+  resolved "https://registry.yarnpkg.com/use-elapsed-time/-/use-elapsed-time-2.1.6.tgz#8ad0c0054a1ba7bf881540855b5eb2d60ff501be"
+  integrity sha512-6h6bY63oto1REUqcID3Goedgl5tVqWXsLzUSJ6EB9VprqZqnO5VDo1kkQqY/6V5Jc4Wu4XUgW3B8aDUHG2KRcA==
+
 use@^3.1.0:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/use/-/use-3.1.1.tgz#d50c8cac79a19fbc20f2911f56eb973f4e10070f"
