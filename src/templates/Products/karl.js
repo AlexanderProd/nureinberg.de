@@ -113,7 +113,7 @@ const KarlPage = ({ data }) => {
         <MainContent>
           <HeroWrapper>
             <HeroImage
-              fluid={karlDetail1.childImageSharp.gatsbyImageData}
+              image={karlDetail1.childImageSharp.gatsbyImageData}
               alt="Karl Detail 1"
             />
             <H2>Alltagsfähig - Minimalistisch - Heimatliebe</H2>
