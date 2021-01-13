@@ -54,6 +54,14 @@ module.exports = {
         link: '/groessentabelle',
       },
       {
+        name: 'Team',
+        link: '/team',
+      },
+      {
+        name: 'Transparenz',
+        link: '/transparenz',
+      },
+      {
         name: 'Impressum',
         link: '/impressum',
       },

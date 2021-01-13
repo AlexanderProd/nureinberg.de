@@ -1,14 +1,15 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import Image from 'gatsby-image'
-import { CountUp } from 'use-count-up'
+import CountUp from 'react-countup'
+import VisibilitySensor from 'react-visibility-sensor'
 
 import Page from '~/templates/Page'
 import { TwoColumnGrid, ThreeThirdsGrid, breakpoints } from '~/utils/styles'
-import video from '~/images/subucoola.mp4'
+import video from '~/images/subucoola-1.mp4'
 import sewing_machine from '~/images/sewing_machine.svg'
-import stecknadel from '~/images/stecknadel.svg'
-import sonne from '~/images/sonne.svg'
+import stift from '~/images/stift.svg'
+import handy from '~/images/handy.svg'
 
 const TextWrapper = styled.div`
   display: flex;
@@ -19,12 +20,17 @@ const TextWrapper = styled.div`
   @media (max-width: ${breakpoints.l}px) {
     padding: 2.5rem;
   }
+
+  @media (max-width: ${breakpoints.s}px) {
+    padding: 1rem;
+  }
 `
 
 const H1 = styled.h1`
   font-size: 2.5rem;
   font-weight: 600;
   font-family: 'Roboto', sans-serif;
+  word-wrap: break-word;
   text-transform: uppercase;
   text-align: center;
   margin-top: 5rem;
@@ -50,6 +56,9 @@ const Text = styled.p`
 
 const Video = styled.video`
   max-width: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 `
 
 const Transparenz = ({ data }) => {
@@ -122,14 +131,23 @@ const Transparenz = ({ data }) => {
           <H2>Regionale Herstellung</H2>
           <Text>
             Wie der Name NurEinBerg schon sagt, sind wir ein Nürnberger
-            Unternehmen.
+            Unternehmen. Somit ist es für uns selbstverständlich, dass unsere
+            Produkte in der Region hergestellt werden.
             <br />
+            <br /> Vor allem bei unseren Siebdruck und Stick Motiven arbeiten
+            wir eng mit unseren Partnerbetrieben zusammen.
             <br />
-            Somit ist es für uns selbstverständlich, dass unsere Produkte in der
-            Region hergestellt werden.
+            <br /> Beim Siebdruck werden verschiedene Techniken angewandt. Links
+            im Video ist unser Horizon Shirt zu sehen, welches von Subucoola
+            randlos am Kragen abwärts veredelt wurde. Das Motiv wurde hierbei
+            bewusst mit einer Rasterung gedruckt, um die Feinheiten des Motives
+            besser darstellen zu können.
             <br />
-            <br />
-            Beispielsweiße bei „Subucoola“ wie links im Video zu sehen.
+            <br /> Auch die Discharge Methode wurde bei einigen unserer Shirts
+            verwendet. Hierbei wird nicht Farbe auf das Textil aufgetragen,
+            sondern die Färbung der Baumwolle heraus gegerbt. So wird jedes
+            Shirt zu einem Unikat da die natürliche Baumwollfarbe des Shirts zum
+            Vorschein kommt und das Motiv immer unterschiedlich definiert.
           </Text>
         </TextWrapper>
       </TwoColumnGrid>
@@ -141,12 +159,17 @@ const Transparenz = ({ data }) => {
         <TextWrapper>
           <H2>Handgefertigt</H2>
           <Text>
-            Mit sehr Liebe zum Detail werden unsere Produkte per Hand veredelt.
+            Ein Großteil unserer Produkte wird jedoch von uns selbst veredelt.
             <br />
             <br />
-            Durch unsere eigene Druckerei, wird nicht nur das Label Etikett
-            handgefertigt. Auch unsere Motive werden von uns einzeln aufgedruckt
-            und somit zu Unikaten.
+            Nicht nur das Label Etikett wird von uns per Hand aufgenäht, auch
+            unsere Patches „Karl“ und „Heinrich“ bringen wir mit größter
+            Sorgfalt auf dem Shirt an.
+            <br />
+            <br /> Auch unsere „Herzschlag Nürnberg“ Shirts bedrucken wir
+            komplett eigenständig. Somit können wir 5€ pro verkauftem Shirt an
+            die Elterninitiative krebskranker Kinder e.V. abgeben. Schaut doch
+            gerne bei dem Produkt vorbei und Unterstützt unser Projekt.
           </Text>
         </TextWrapper>
         <Image
@@ -162,12 +185,12 @@ const Transparenz = ({ data }) => {
         }}
       >
         <div>
-          <img src={sewing_machine} height="120px" alt="Nähmaschine" />
+          <img src={stift} height="120px" alt="Nähmaschine" />
           <H2>43H</H2>
           <Text>In jedem Design stecken 43 Stunden Entwicklungszeit.</Text>
         </div>
         <div>
-          <img src={sonne} height="120px" alt="Sonne" />
+          <img src={handy} height="120px" alt="Sonne" />
           <H2>2H</H2>
           <Text>In jedem Instagram Post stecken 2 Stunden Arbeit.</Text>
         </div>
@@ -193,6 +216,7 @@ const Transparenz = ({ data }) => {
             fluid={karl_zeichnung.childImageSharp.fluid}
             alt="Karl Zeichnung"
           />
+          <H2>Entwurf</H2>
           <Text
             style={{
               paddingLeft: '2.5rem',
@@ -200,9 +224,10 @@ const Transparenz = ({ data }) => {
               paddingBottom: '2.5rem',
             }}
           >
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-            erat, sed diam voluptua.
+            Der erste Schritt bei der Produktentwicklung ist sich inspirieren zu
+            lassen, um anschließend ein paar Skizzen anfertigen zu können. Bei
+            unserem „Karl“ Shirt war von Anfang an das Ziel, eine
+            minimalistische Darstellung der Gothischen Kirche zu kreieren.
           </Text>
         </div>
         <div>
@@ -210,6 +235,7 @@ const Transparenz = ({ data }) => {
             fluid={karl_computer.childImageSharp.fluid}
             alt="Karl Computer"
           />
+          <H2>Zeichnung</H2>
           <Text
             style={{
               paddingLeft: '2.5rem',
@@ -217,13 +243,14 @@ const Transparenz = ({ data }) => {
               paddingBottom: '2.5rem',
             }}
           >
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-            erat, sed diam voluptua.
+            Im zweiten Schritt wird der Entwurf auf dem PC nachgezeichnet und
+            ausgearbeitet. Dies ist meist der schwierigste Schritt, da hier
+            bereits die Details für das endgültige Produkt festgelegt werden.
           </Text>
         </div>
         <div>
           <Image fluid={karl_stick.childImageSharp.fluid} alt="Karl Stick" />
+          <H2>Stick</H2>
           <Text
             style={{
               paddingLeft: '2.5rem',
@@ -231,9 +258,10 @@ const Transparenz = ({ data }) => {
               paddingBottom: '2.5rem',
             }}
           >
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-            erat, sed diam voluptua.
+            Beim letzten Schritt geht es letztendlich um die Umsetzung des
+            Designs. Nach der Herstellung eines Musterexemplars wird gemeinsam
+            entschieden, ob an dem Produkt noch Abänderungen vorgenommen werden
+            müssen.
           </Text>
         </div>
       </ThreeThirdsGrid>
@@ -245,19 +273,37 @@ const Transparenz = ({ data }) => {
       >
         <div>
           <H2>
-            <CountUp isCounting end={alterBerechnen()} duration={3.2} />
+            <CountUp start={0} end={alterBerechnen()} duration={3.2}>
+              {({ countUpRef, start }) => (
+                <VisibilitySensor onChange={start} delayedCall>
+                  <span ref={countUpRef} />
+                </VisibilitySensor>
+              )}
+            </CountUp>
           </H2>
           <Text>Tage ist das Label NurEinBerg alt.</Text>
         </div>
         <div>
           <H2>
-            <CountUp isCounting end={135} duration={2} />€
+            <CountUp start={0} end={135} duration={2} suffix=" €" delay={1}>
+              {({ countUpRef, start }) => (
+                <VisibilitySensor onChange={start} delayedCall>
+                  <span ref={countUpRef} />
+                </VisibilitySensor>
+              )}
+            </CountUp>
           </H2>
           <Text>haben wir für einen wohltätigen Zweck gesammelt.</Text>
         </div>
         <div>
           <H2>
-            <CountUp isCounting end={9732} duration={6.4} />
+            <CountUp start={0} end={9732} duration={6.4} delay={2}>
+              {({ countUpRef, start }) => (
+                <VisibilitySensor onChange={start} delayedCall>
+                  <span ref={countUpRef} />
+                </VisibilitySensor>
+              )}
+            </CountUp>
           </H2>
           <Text>Follower haben wir bereits auf lnstagram.</Text>
         </div>

@@ -96,7 +96,7 @@ const ImageWrapper = styled.div`
 `
 
 const Index = ({ data }) => {
-  const { klassik, modern } = data
+  const { klassik, modern, transparenz } = data
 
   return (
     <>
@@ -135,6 +135,19 @@ const Index = ({ data }) => {
             </ImageWrapper>
           </Link>
         </TwoColumnGrid>
+        <Link to={`/transparenz/`}>
+          <ImageWrapper style={{ marginTop: '6rem' }}>
+            <Caption>
+              <Title
+                style={{ fontFamily: 'Roboto, sans-serif', color: 'white' }}
+              >
+                Transparenz
+              </Title>
+              <Button>Zur Seite</Button>
+            </Caption>
+            <Image fluid={transparenz.childImageSharp.fluid} alt="Modern" />
+          </ImageWrapper>
+        </Link>
         <Footer />
       </Wrapper>
     </>
@@ -151,6 +164,13 @@ export const query = graphql`
       }
     }
     modern: file(relativePath: { eq: "modern.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 600) {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        }
+      }
+    }
+    transparenz: file(relativePath: { eq: "transparenz_header.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 600) {
           ...GatsbyImageSharpFluid_withWebp_tracedSVG
