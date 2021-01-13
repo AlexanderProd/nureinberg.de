@@ -196,9 +196,7 @@ const Transparenz = ({ data }) => {
         <div>
           <img src={sewing_machine} height="120px" alt="Nähmaschine" />
           <H2>1,5H</H2>
-          <Text>
-            In jedem Produkt stecken eineinhalb Stunden Herstellungszeit.
-          </Text>
+          <Text>In jedem Produkt stecken 1,5 Stunden Herstellungszeit.</Text>
         </div>
       </ThreeThirdsGrid>
       <H1>Designentwicklung</H1>
