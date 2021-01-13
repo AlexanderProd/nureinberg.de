@@ -90,7 +90,7 @@ const Transparenz = ({ data }) => {
     >
       <TwoColumnGrid backgroundColor="white" gap="0">
         <TextWrapper>
-          <H2>Bio Baumwolle</H2>
+          <H2>Bio-Baumwolle</H2>
           <Text>
             Nicht nur aufgrund des Tragekomforts, sondern vor allem der Umwelt
             zu liebe, verwenden wir Textilien aus 100% Bio Baumwolle.
@@ -162,8 +162,8 @@ const Transparenz = ({ data }) => {
             <br />
             Nicht nur das Label Etikett wird von uns per Hand aufgenäht, auch
             unsere Patches „<Link to="/produkt/karl/">Karl</Link>“ und „
-            <Link to="/produkt/karl/">Heinrich</Link>“ bringen wir mit größter
-            Sorgfalt auf dem Shirt an.
+            <Link to="/produkt/heinrich/">Heinrich</Link>“ bringen wir mit
+            größter Sorgfalt auf dem Shirt an.
             <br />
             <br /> Auch unsere „Herzschlag Nürnberg“ Shirts bedrucken wir
             komplett eigenständig. Somit können wir 5€ pro verkauftem Shirt an
