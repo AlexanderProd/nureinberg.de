@@ -114,17 +114,9 @@ const Transparenz = ({ data }) => {
         <TextWrapper>
           <H2>Faire Arbeitsbedingungen</H2>
           <Text>
-            Unsere Textilien sind{' '}
-            <a
-              href="https://www.fairwear.org/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Fair Wear Foundation
-            </a>{' '}
-            verifiziert. Die Organisation setzt sich für den Arbeitsschutz und
-            faire Löhne für die Arbeiter in den Fabriken großer Textilhersteller
-            ein
+            Unsere Textilien sind Fair Wear Foundation verifiziert. Die
+            Organisation setzt sich für den Arbeitsschutz und faire Löhne für
+            die Arbeiter in den Fabriken großer Textilhersteller ein
           </Text>
         </TextWrapper>
       </TwoColumnGrid>
@@ -144,14 +136,7 @@ const Transparenz = ({ data }) => {
             wir eng mit unseren Partnerbetrieben zusammen.
             <br />
             <br /> Beim Siebdruck werden verschiedene Techniken angewandt. Links
-            im Video ist unser Horizon Shirt zu sehen, welches von{' '}
-            <a
-              href="https://www.subucoola.de/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Subucoola
-            </a>{' '}
+            im Video ist unser Horizon Shirt zu sehen, welches von Subucoola
             randlos am Kragen abwärts veredelt wurde. Das Motiv wurde hierbei
             bewusst mit einer Rasterung gedruckt, um die Feinheiten des Motives
             besser darstellen zu können.
