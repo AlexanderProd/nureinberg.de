@@ -1,12 +1,13 @@
 import React from 'react'
 import styled from '@emotion/styled'
+import { graphql, Link } from 'gatsby'
 import Image from 'gatsby-image'
 import CountUp from 'react-countup'
 import VisibilitySensor from 'react-visibility-sensor'
 
 import Page from '~/templates/Page'
 import { TwoColumnGrid, ThreeThirdsGrid, breakpoints } from '~/utils/styles'
-import video from '~/images/subucoola-1.mp4'
+import video from '~/images/subucoola.mp4'
 import sewing_machine from '~/images/sewing_machine.svg'
 import stift from '~/images/stift.svg'
 import handy from '~/images/handy.svg'
@@ -113,12 +114,17 @@ const Transparenz = ({ data }) => {
         <TextWrapper>
           <H2>Faire Arbeitsbedingungen</H2>
           <Text>
-            Nicht nur aufgrund des Tragekomforts, sondern vor allem der Umwelt
-            zu liebe, verwenden wir Textilien aus 100% Bio Baumwolle.
-            <br />
-            <br />
-            Dadurch ist ein geringerer Wasserverbrauch der Baumwollpflanze und
-            der Verzicht auf gifitigen Pestiziden gewährleistet.
+            Unsere Textilien sind{' '}
+            <a
+              href="https://www.fairwear.org/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Fair Wear Foundation
+            </a>{' '}
+            verifiziert. Die Organisation setzt sich für den Arbeitsschutz und
+            faire Löhne für die Arbeiter in den Fabriken großer Textilhersteller
+            ein
           </Text>
         </TextWrapper>
       </TwoColumnGrid>
@@ -138,7 +144,14 @@ const Transparenz = ({ data }) => {
             wir eng mit unseren Partnerbetrieben zusammen.
             <br />
             <br /> Beim Siebdruck werden verschiedene Techniken angewandt. Links
-            im Video ist unser Horizon Shirt zu sehen, welches von Subucoola
+            im Video ist unser Horizon Shirt zu sehen, welches von{' '}
+            <a
+              href="https://www.subucoola.de/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Subucoola
+            </a>{' '}
             randlos am Kragen abwärts veredelt wurde. Das Motiv wurde hierbei
             bewusst mit einer Rasterung gedruckt, um die Feinheiten des Motives
             besser darstellen zu können.
@@ -163,7 +176,8 @@ const Transparenz = ({ data }) => {
             <br />
             <br />
             Nicht nur das Label Etikett wird von uns per Hand aufgenäht, auch
-            unsere Patches „Karl“ und „Heinrich“ bringen wir mit größter
+            unsere Patches „<Link to="/produkt/karl/">Karl</Link>“ und „
+            <Link to="/produkt/karl/">Heinrich</Link>“ bringen wir mit größter
             Sorgfalt auf dem Shirt an.
             <br />
             <br /> Auch unsere „Herzschlag Nürnberg“ Shirts bedrucken wir
