@@ -64,7 +64,7 @@ const PfeileWrapper = styled.div`
   }
 `
 
-export const ProductTitle = styled.h1`
+const ProductTitle = styled.h1`
   color: #9a694f;
   font-size: 2.25rem;
   margin-bottom: 15px;
@@ -76,7 +76,7 @@ export const ProductTitle = styled.h1`
   text-align: center;
 `
 
-export const ProductDescription = styled.div`
+const ProductDescription = styled.div`
   color: #9a694f;
   margin-top: 40px;
   font-weight: 300;
