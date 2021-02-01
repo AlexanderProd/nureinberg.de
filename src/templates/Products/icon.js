@@ -171,8 +171,14 @@ const IconPage = ({ data }) => {
 
           <TwoColumnGrid style={{ margin: '10rem 0' }} gap="5rem">
             <Grid ref={innerRef}>
-              {icons.edges.map(({ node }) => (
-                <div onClick={changeInfoText} key={node.id}>
+              {icons.edges.map(({ node }, i) => (
+                <div
+                  tabIndex={i}
+                  role="button"
+                  onClick={changeInfoText}
+                  onKeyPress={changeInfoText}
+                  key={node.id}
+                >
                   <Icon alt={node.name} fluid={node.childImageSharp.fluid} />
                 </div>
               ))}
