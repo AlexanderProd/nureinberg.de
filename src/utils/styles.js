@@ -136,8 +136,9 @@ export const RightTwoThirds = styled.div`
 
 export const AlternatingTwoThirdsGrid = styled.div`
   display: grid;
-  grid-template-columns: 1fr 66%;
+  grid-template-columns: 66% 1fr;
   grid-auto-flow: row dense;
+  gap: ${({ gap }) => (gap ? gap : '2.5rem')};
 
   & > :nth-child(4n - 1) {
     grid-column-start: 2;

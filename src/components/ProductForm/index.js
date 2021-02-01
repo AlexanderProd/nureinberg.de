@@ -43,7 +43,7 @@ const ProductForm = ({ product, dark = false, color }) => {
       setAvailable(result[0].available)
       setLoading(false)
     },
-    [client.product, productVariant.shopifyId, variants]
+    [client.product, productVariant.shopifyId]
   )
 
   useEffect(() => {
