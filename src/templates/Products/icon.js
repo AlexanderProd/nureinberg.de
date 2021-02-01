@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import { graphql } from 'gatsby'
 import Image from 'gatsby-image'
 import styled from '@emotion/styled'
@@ -7,6 +7,7 @@ import SEO from '~/components/seo'
 import Navigation from '~/components/Navigation'
 import ProductForm from '~/components/ProductForm'
 import Footer from '~/components/Footer'
+import { useOuterClick } from '~/utils/hooks'
 import {
   Container,
   TwoColumnGrid,
@@ -142,6 +143,11 @@ const IconPage = ({ data }) => {
   const { icons, iconBanner } = data
   const [infoTitle, setInfoTitle] = useState(icon_text['NurEinBerg'].title)
   const [infoText, setInfoText] = useState(icon_text['NurEinBerg'].text)
+  const innerRef = useRef(null)
+  useOuterClick(() => {
+    setInfoTitle(icon_text['NurEinBerg'].title)
+    setInfoText(icon_text['NurEinBerg'].text)
+  }, innerRef)
 
   const changeInfoText = ({ target }) => {
     const { alt } = target
@@ -164,7 +170,7 @@ const IconPage = ({ data }) => {
           </HeroWrapper>
 
           <TwoColumnGrid style={{ margin: '10rem 0' }} gap="5rem">
-            <Grid>
+            <Grid ref={innerRef}>
               {icons.edges.map(({ node }) => (
                 <div onClick={changeInfoText} key={node.id}>
                   <Icon alt={node.name} fluid={node.childImageSharp.fluid} />
