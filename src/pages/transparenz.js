@@ -315,29 +315,17 @@ export const query = graphql`
   {
     karl_zeichnung: file(relativePath: { eq: "Karl_Zeichnung.png" }) {
       childImageSharp {
-        gatsbyImageData(
-          height: 400
-          placeholder: TRACED_SVG
-          layout: FULL_WIDTH
-        )
+        gatsbyImageData(placeholder: TRACED_SVG, layout: FULL_WIDTH)
       }
     }
     karl_computer: file(relativePath: { eq: "Karl_Computer.png" }) {
       childImageSharp {
-        gatsbyImageData(
-          height: 400
-          placeholder: TRACED_SVG
-          layout: FULL_WIDTH
-        )
+        gatsbyImageData(placeholder: TRACED_SVG, layout: FULL_WIDTH)
       }
     }
     karl_stick: file(relativePath: { eq: "Karl_Stick.png" }) {
       childImageSharp {
-        gatsbyImageData(
-          height: 400
-          placeholder: TRACED_SVG
-          layout: FULL_WIDTH
-        )
+        gatsbyImageData(placeholder: TRACED_SVG, layout: FULL_WIDTH)
       }
     }
   }

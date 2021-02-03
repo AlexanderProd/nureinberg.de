@@ -7,6 +7,8 @@ require('dotenv').config({
 module.exports = {
   flags: {
     PARALLEL_SOURCING: true,
+    FAST_REFRESH: true,
+    DEV_SSR: true,
   },
   siteMetadata: {
     title: `NurEinBerg`,

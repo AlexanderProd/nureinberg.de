@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { graphql } from 'gatsby'
-import { GatsbyImage } from 'gatsby-plugin-image'
+import { GatsbyImage, StaticImage } from 'gatsby-plugin-image'
 import styled from '@emotion/styled'
 
 import SEO from '~/components/seo'
@@ -155,14 +155,6 @@ const ProductDescription = styled.div`
 const HorizonPage = ({ data }) => {
   const product = data.shopifyProduct
   const {
-    fragment_portrait_bg,
-    fragment_portrait_half_copy,
-    fragment_portrait_neck,
-    fragment_portrait_shirt_left,
-    fragment_eye,
-    fragment_portrait_shirt,
-    fragment_bg_1,
-    fragment_bg_2,
     horizon_shooting_1,
     horizon_shooting_2,
     horizon_shooting_3,
@@ -203,8 +195,9 @@ const HorizonPage = ({ data }) => {
             <div className="grid-container" aria-hidden="true">
               <div className="grid">
                 <div className="grid__item grid__item--bg">
-                  <GatsbyImage
-                    image={fragment_portrait_bg.childImageSharp.gatsbyImageData}
+                  <StaticImage
+                    src="../../images/horizon_fragments/fragment_portrait_bg.jpg"
+                    layout="fullWidth"
                     alt="fragment_portrait_bg"
                   />
                 </div>
@@ -212,11 +205,9 @@ const HorizonPage = ({ data }) => {
                   className="grid__item grid__item--portrait-half rellax"
                   data-rellax-speed="3"
                 >
-                  <GatsbyImage
-                    image={
-                      fragment_portrait_half_copy.childImageSharp
-                        .gatsbyImageData
-                    }
+                  <StaticImage
+                    src="../../images/horizon_fragments/fragment_portrait_half_3.jpg"
+                    layout="fullWidth"
                     alt="fragment_portrait_half_copy"
                   />
                 </div>
@@ -224,10 +215,9 @@ const HorizonPage = ({ data }) => {
                   className="grid__item grid__item--portrait-neck rellax"
                   data-rellax-speed="-2"
                 >
-                  <GatsbyImage
-                    image={
-                      fragment_portrait_neck.childImageSharp.gatsbyImageData
-                    }
+                  <StaticImage
+                    src="../../images/horizon_fragments/fragment_portrait_neck_alt.jpg"
+                    layout="fullWidth"
                     alt="fragment_portrait_neck"
                   />
                 </div>
@@ -235,11 +225,9 @@ const HorizonPage = ({ data }) => {
                   className="grid__item grid__item--portrait-left rellax"
                   data-rellax-speed="-4"
                 >
-                  <GatsbyImage
-                    image={
-                      fragment_portrait_shirt_left.childImageSharp
-                        .gatsbyImageData
-                    }
+                  <StaticImage
+                    src="../../images/horizon_fragments/fragment_portrait_shirt_left.jpg"
+                    layout="fullWidth"
                     alt="fragment_portrait_shirt_left"
                   />
                 </div>
@@ -247,8 +235,9 @@ const HorizonPage = ({ data }) => {
                   className="grid__item grid__item--portrait-eye rellax"
                   data-rellax-speed="4"
                 >
-                  <GatsbyImage
-                    image={fragment_eye.childImageSharp.gatsbyImageData}
+                  <StaticImage
+                    src="../../images/horizon_fragments/fragment_eye.jpg"
+                    layout="fullWidth"
                     alt="fragment_eye"
                   />
                 </div>
@@ -256,10 +245,9 @@ const HorizonPage = ({ data }) => {
                   className="grid__item grid__item--portrait-shirt rellax"
                   data-rellax-speed="-6"
                 >
-                  <GatsbyImage
-                    image={
-                      fragment_portrait_shirt.childImageSharp.gatsbyImageData
-                    }
+                  <StaticImage
+                    src="../../images/horizon_fragments/fragment_portrait_shirt.jpg"
+                    layout="fullWidth"
                     alt="fragment_portrait_shirt"
                   />
                 </div>
@@ -267,8 +255,9 @@ const HorizonPage = ({ data }) => {
                   className="grid__item grid__item--portrait-bg-1 rellax"
                   data-rellax-speed="-2"
                 >
-                  <GatsbyImage
-                    image={fragment_bg_1.childImageSharp.gatsbyImageData}
+                  <StaticImage
+                    src="../../images/horizon_fragments/fragment_bg_1.jpg"
+                    layout="fullWidth"
                     alt="fragment_bg_1"
                   />
                 </div>
@@ -276,8 +265,9 @@ const HorizonPage = ({ data }) => {
                   className="grid__item grid__item--portrait-bg-2 rellax"
                   data-rellax-speed="-10"
                 >
-                  <GatsbyImage
-                    image={fragment_bg_2.childImageSharp.gatsbyImageData}
+                  <StaticImage
+                    src="../../images/horizon_fragments/fragment_bg_2.jpg"
+                    layout="fullWidth"
                     alt="fragment_bg_2"
                   />
                 </div>
@@ -285,8 +275,9 @@ const HorizonPage = ({ data }) => {
                   className="grid__item grid__item--portrait-bg-3 rellax"
                   data-rellax-speed="18"
                 >
-                  <GatsbyImage
-                    image={fragment_bg_1.childImageSharp.gatsbyImageData}
+                  <StaticImage
+                    src="../../images/horizon_fragments/fragment_bg_1.jpg"
+                    layout="fullWidth"
                     alt="fragment_bg_1"
                   />
                 </div>
@@ -294,8 +285,9 @@ const HorizonPage = ({ data }) => {
                   className="grid__item grid__item--portrait-bg-4 rellax"
                   data-rellax-speed="-6"
                 >
-                  <GatsbyImage
-                    image={fragment_bg_2.childImageSharp.gatsbyImageData}
+                  <StaticImage
+                    src="../../images/horizon_fragments/fragment_bg_2.jpg"
+                    layout="fullWidth"
                     alt="fragment_bg_2"
                   />
                 </div>
