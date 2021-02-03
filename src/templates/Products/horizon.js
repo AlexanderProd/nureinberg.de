@@ -410,64 +410,6 @@ export const query = graphql`
         }
       }
     }
-    fragment_portrait_bg: file(
-      relativePath: { eq: "horizon_fragments/fragment_portrait_bg.jpg" }
-    ) {
-      childImageSharp {
-        gatsbyImageData(placeholder: TRACED_SVG, layout: FULL_WIDTH)
-      }
-    }
-    fragment_eye: file(
-      relativePath: { eq: "horizon_fragments/fragment_eye.jpg" }
-    ) {
-      childImageSharp {
-        gatsbyImageData(placeholder: TRACED_SVG, layout: FULL_WIDTH)
-      }
-    }
-    fragment_portrait_half_copy: file(
-      relativePath: { eq: "horizon_fragments/fragment_portrait_half_3.jpg" }
-    ) {
-      childImageSharp {
-        gatsbyImageData(placeholder: TRACED_SVG, layout: FULL_WIDTH)
-      }
-    }
-    fragment_portrait_neck: file(
-      relativePath: { eq: "horizon_fragments/fragment_portrait_neck_alt.jpg" }
-    ) {
-      childImageSharp {
-        gatsbyImageData(placeholder: TRACED_SVG, layout: FULL_WIDTH)
-      }
-    }
-    fragment_portrait_shirt_left: file(
-      relativePath: {
-        eq: "horizon_fragments/fragment_portrait_shirt_left_3.jpg"
-      }
-    ) {
-      childImageSharp {
-        gatsbyImageData(placeholder: TRACED_SVG, layout: FULL_WIDTH)
-      }
-    }
-    fragment_portrait_shirt: file(
-      relativePath: { eq: "horizon_fragments/fragment_portrait_shirt_3.jpg" }
-    ) {
-      childImageSharp {
-        gatsbyImageData(placeholder: TRACED_SVG, layout: FULL_WIDTH)
-      }
-    }
-    fragment_bg_1: file(
-      relativePath: { eq: "horizon_fragments/fragment_bg_1.jpg" }
-    ) {
-      childImageSharp {
-        gatsbyImageData(placeholder: TRACED_SVG, layout: FULL_WIDTH)
-      }
-    }
-    fragment_bg_2: file(
-      relativePath: { eq: "horizon_fragments/fragment_bg_2.jpg" }
-    ) {
-      childImageSharp {
-        gatsbyImageData(placeholder: TRACED_SVG, layout: FULL_WIDTH)
-      }
-    }
     horizon_shooting_1: file(relativePath: { eq: "horizon_shooting_1.jpg" }) {
       childImageSharp {
         original {
