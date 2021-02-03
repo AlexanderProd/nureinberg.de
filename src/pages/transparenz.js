@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { graphql, Link } from 'gatsby'
-import Image from 'gatsby-image'
+import { GatsbyImage, StaticImage } from 'gatsby-plugin-image'
 import CountUp from 'react-countup'
 import VisibilitySensor from 'react-visibility-sensor'
 
@@ -63,14 +63,7 @@ const Video = styled.video`
 `
 
 const Transparenz = ({ data }) => {
-  const {
-    baumwolle,
-    fairwearfoundation,
-    label,
-    karl_zeichnung,
-    karl_computer,
-    karl_stick,
-  } = data
+  const { karl_zeichnung, karl_computer, karl_stick } = data
 
   const alterBerechnen = () => {
     const oneDay = 24 * 60 * 60 * 1000
@@ -100,15 +93,20 @@ const Transparenz = ({ data }) => {
             der Verzicht auf gifitigen Pestiziden gewährleistet.
           </Text>
         </TextWrapper>
-        <Image fluid={baumwolle.childImageSharp.fluid} alt="Baumwolle" />
+        <StaticImage
+          src="../images/Transparenz_Baumwolle.png"
+          layout="fullWidth"
+          alt="Baumwolle"
+        />
       </TwoColumnGrid>
       <TwoColumnGrid
         backgroundColor="white"
         gap="0"
         style={{ marginTop: '5rem' }}
       >
-        <Image
-          fluid={fairwearfoundation.childImageSharp.fluid}
+        <StaticImage
+          src="../images/fairwearfoundation.png"
+          layout="fullWidth"
           alt="Fair Wear Foundation"
         />
         <TextWrapper>
@@ -171,8 +169,9 @@ const Transparenz = ({ data }) => {
             gerne bei dem Produkt vorbei und Unterstützt unser Projekt.
           </Text>
         </TextWrapper>
-        <Image
-          fluid={label.childImageSharp.fluid}
+        <StaticImage
+          src="../images/Transparenz_Label.png"
+          layout="fullWidth"
           alt="Nähmaschine mit NurEinBerg Label"
         />
       </TwoColumnGrid>
@@ -209,8 +208,8 @@ const Transparenz = ({ data }) => {
         }}
       >
         <div>
-          <Image
-            fluid={karl_zeichnung.childImageSharp.fluid}
+          <GatsbyImage
+            image={karl_zeichnung.childImageSharp.gatsbyImageData}
             alt="Karl Zeichnung"
           />
           <H2>Entwurf</H2>
@@ -228,8 +227,8 @@ const Transparenz = ({ data }) => {
           </Text>
         </div>
         <div>
-          <Image
-            fluid={karl_computer.childImageSharp.fluid}
+          <GatsbyImage
+            image={karl_computer.childImageSharp.gatsbyImageData}
             alt="Karl Computer"
           />
           <H2>Zeichnung</H2>
@@ -246,7 +245,10 @@ const Transparenz = ({ data }) => {
           </Text>
         </div>
         <div>
-          <Image fluid={karl_stick.childImageSharp.fluid} alt="Karl Stick" />
+          <GatsbyImage
+            image={karl_stick.childImageSharp.gatsbyImageData}
+            alt="Karl Stick"
+          />
           <H2>Stick</H2>
           <Text
             style={{
@@ -310,47 +312,32 @@ const Transparenz = ({ data }) => {
 }
 
 export const query = graphql`
-  query {
-    baumwolle: file(relativePath: { eq: "Transparenz_Baumwolle.png" }) {
-      childImageSharp {
-        fluid(maxHeight: 400) {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
-        }
-      }
-    }
-    fairwearfoundation: file(relativePath: { eq: "fairwearfoundation.png" }) {
-      childImageSharp {
-        fluid(maxHeight: 400) {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
-        }
-      }
-    }
-    label: file(relativePath: { eq: "Transparenz_Label.png" }) {
-      childImageSharp {
-        fluid(maxHeight: 400) {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
-        }
-      }
-    }
+  {
     karl_zeichnung: file(relativePath: { eq: "Karl_Zeichnung.png" }) {
       childImageSharp {
-        fluid(maxHeight: 400) {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
-        }
+        gatsbyImageData(
+          height: 400
+          placeholder: TRACED_SVG
+          layout: FULL_WIDTH
+        )
       }
     }
     karl_computer: file(relativePath: { eq: "Karl_Computer.png" }) {
       childImageSharp {
-        fluid(maxHeight: 400) {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
-        }
+        gatsbyImageData(
+          height: 400
+          placeholder: TRACED_SVG
+          layout: FULL_WIDTH
+        )
       }
     }
     karl_stick: file(relativePath: { eq: "Karl_Stick.png" }) {
       childImageSharp {
-        fluid(maxHeight: 400) {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
-        }
+        gatsbyImageData(
+          height: 400
+          placeholder: TRACED_SVG
+          layout: FULL_WIDTH
+        )
       }
     }
   }

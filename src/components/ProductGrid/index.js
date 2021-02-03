@@ -7,34 +7,31 @@ import { Img } from '../../utils/styles'
 
 const ProductGrid = () => {
   const { checkout } = useContext(StoreContext)
-  const { allShopifyProduct } = useStaticQuery(graphql`
-    query {
-      allShopifyProduct(sort: { fields: [createdAt], order: DESC }) {
-        edges {
-          node {
-            id
-            title
-            handle
-            createdAt
-            images {
-              id
-              originalSrc
-              localFile {
-                childImageSharp {
-                  fluid(maxWidth: 910) {
-                    ...GatsbyImageSharpFluid_withWebp_tracedSVG
-                  }
-                }
-              }
-            }
-            variants {
-              price
+  const { allShopifyProduct } = useStaticQuery(graphql`{
+  allShopifyProduct(sort: {fields: [createdAt], order: DESC}) {
+    edges {
+      node {
+        id
+        title
+        handle
+        createdAt
+        images {
+          id
+          originalSrc
+          localFile {
+            childImageSharp {
+              gatsbyImageData(width: 910, placeholder: TRACED_SVG, layout: CONSTRAINED)
             }
           }
         }
+        variants {
+          price
+        }
       }
     }
-  `)
+  }
+}
+`)
 
   const getPrice = price =>
     Intl.NumberFormat(undefined, {
@@ -50,7 +47,7 @@ const ProductGrid = () => {
           <Product key={node.id}>
             <Link to={`/produkt/${node.handle}/`}>
               <Img
-                fluid={node.images[0].localFile.childImageSharp.fluid}
+                fluid={node.images[0].localFile.childImageSharp.gatsbyImageData}
                 alt={node.handle}
               />
             </Link>
@@ -62,7 +59,7 @@ const ProductGrid = () => {
         <p>No Products found!</p>
       )}
     </Grid>
-  )
+  );
 }
 
 export default ProductGrid

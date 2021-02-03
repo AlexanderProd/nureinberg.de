@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Image from 'gatsby-image'
+import { GatsbyImage } from "gatsby-plugin-image";
 import styled from '@emotion/styled'
 
 import SEO from '~/components/seo'
@@ -35,7 +35,7 @@ const HeroWrapper = styled.div`
   }
 `
 
-const HeroImage = styled(Image)`
+const HeroImage = styled(GatsbyImage)`
   width: 50%;
 
   @media (max-width: ${breakpoints.l}px) {
@@ -113,7 +113,7 @@ const KarlPage = ({ data }) => {
         <MainContent>
           <HeroWrapper>
             <HeroImage
-              fluid={karlDetail1.childImageSharp.fluid}
+              fluid={karlDetail1.childImageSharp.gatsbyImageData}
               alt="Karl Detail 1"
             />
             <H2>Alltagsfähig - Minimalistisch - Heimatliebe</H2>
@@ -126,10 +126,7 @@ const KarlPage = ({ data }) => {
           </HeroWrapper>
           <TwoColumnGrid>
             <ImgWrapper>
-              <Image
-                fixed={karlDetail2.childImageSharp.fixed}
-                alt="Karl Detail 1"
-              />
+              <GatsbyImage image={karlDetail2.childImageSharp.gatsbyImageData} alt="Karl Detail 1" />
             </ImgWrapper>
             <TextWrapper>
               <H2>Karl IV</H2>
@@ -146,10 +143,7 @@ const KarlPage = ({ data }) => {
               </Text>
             </TextWrapper>
             <ImgWrapper>
-              <Image
-                fixed={karlDetail3.childImageSharp.fixed}
-                alt="Karl Detail 3"
-              />
+              <GatsbyImage image={karlDetail3.childImageSharp.gatsbyImageData} alt="Karl Detail 3" />
             </ImgWrapper>
             <TextWrapper>
               <H2>Hergestellt in der Region</H2>
@@ -172,24 +166,18 @@ const KarlPage = ({ data }) => {
             </TextWrapper>
           </TwoColumnGrid>
           <ThreeThirdsGrid style={{ margin: '10rem 0' }}>
-            <Image
-              fluid={karlShooting1.childImageSharp.fluid}
-              alt="Karl Shooting 1"
-            />
-            <Image
-              fluid={frauenkirche.childImageSharp.fluid}
-              alt="Frauenkirche"
-            />
-            <Image
-              fluid={karlShooting2.childImageSharp.fluid}
-              alt="Karl Shooting 2"
-            />
+            <GatsbyImage
+              image={karlShooting1.childImageSharp.gatsbyImageData}
+              alt="Karl Shooting 1" />
+            <GatsbyImage image={frauenkirche.childImageSharp.gatsbyImageData} alt="Frauenkirche" />
+            <GatsbyImage
+              image={karlShooting2.childImageSharp.gatsbyImageData}
+              alt="Karl Shooting 2" />
           </ThreeThirdsGrid>
           <TwoColumnGrid style={{ margin: '10rem 0' }}>
-            <Image
-              fluid={product.images[0].localFile.childImageSharp.fluid}
-              alt="Produktfoto Karl"
-            />
+            <GatsbyImage
+              image={product.images[0].localFile.childImageSharp.gatsbyImageData}
+              alt="Produktfoto Karl" />
             <div>
               <ProductTitle>{product.title}</ProductTitle>
               <ProductForm color="#DEDEDE" dark={true} product={product} />
@@ -202,100 +190,85 @@ const KarlPage = ({ data }) => {
         <Footer color="#DEDEDE" />
       </Container>
     </div>
-  )
+  );
 }
 
-export const query = graphql`
-  query($handle: String!) {
-    shopifyProduct(handle: { eq: $handle }) {
+export const query = graphql`query ($handle: String!) {
+  shopifyProduct(handle: {eq: $handle}) {
+    id
+    title
+    handle
+    productType
+    description
+    descriptionHtml
+    shopifyId
+    options {
+      id
+      name
+      values
+    }
+    variants {
       id
       title
-      handle
-      productType
-      description
-      descriptionHtml
+      price
+      availableForSale
       shopifyId
-      options {
-        id
+      selectedOptions {
         name
-        values
-      }
-      variants {
-        id
-        title
-        price
-        availableForSale
-        shopifyId
-        selectedOptions {
-          name
-          value
-        }
-      }
-      priceRange {
-        minVariantPrice {
-          amount
-          currencyCode
-        }
-        maxVariantPrice {
-          amount
-          currencyCode
-        }
-      }
-      images {
-        originalSrc
-        id
-        localFile {
-          childImageSharp {
-            fluid(maxWidth: 910) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
-            }
-          }
-        }
+        value
       }
     }
-    karlDetail1: file(relativePath: { eq: "Karl_Detail_1.jpg" }) {
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid_withWebp
-        }
+    priceRange {
+      minVariantPrice {
+        amount
+        currencyCode
+      }
+      maxVariantPrice {
+        amount
+        currencyCode
       }
     }
-    karlDetail2: file(relativePath: { eq: "Karl_Detail_2.jpg" }) {
-      childImageSharp {
-        fixed(height: 500) {
-          ...GatsbyImageSharpFixed_withWebp
-        }
-      }
-    }
-    karlDetail3: file(relativePath: { eq: "Karl_Detail_3.jpg" }) {
-      childImageSharp {
-        fixed(height: 500) {
-          ...GatsbyImageSharpFixed_withWebp
-        }
-      }
-    }
-    karlShooting1: file(relativePath: { eq: "Karl_Shooting_1.jpg" }) {
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
-        }
-      }
-    }
-    karlShooting2: file(relativePath: { eq: "Karl_Shooting_2.jpg" }) {
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
-        }
-      }
-    }
-    frauenkirche: file(relativePath: { eq: "Frauenkirche_farbe.jpg" }) {
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+    images {
+      originalSrc
+      id
+      localFile {
+        childImageSharp {
+          gatsbyImageData(width: 910, placeholder: TRACED_SVG, layout: CONSTRAINED)
         }
       }
     }
   }
+  karlDetail1: file(relativePath: {eq: "Karl_Detail_1.jpg"}) {
+    childImageSharp {
+      gatsbyImageData(layout: FULL_WIDTH)
+    }
+  }
+  karlDetail2: file(relativePath: {eq: "Karl_Detail_2.jpg"}) {
+    childImageSharp {
+      gatsbyImageData(height: 500, layout: FIXED)
+    }
+  }
+  karlDetail3: file(relativePath: {eq: "Karl_Detail_3.jpg"}) {
+    childImageSharp {
+      gatsbyImageData(height: 500, layout: FIXED)
+    }
+  }
+  karlShooting1: file(relativePath: {eq: "Karl_Shooting_1.jpg"}) {
+    childImageSharp {
+      gatsbyImageData(placeholder: TRACED_SVG, layout: FULL_WIDTH)
+    }
+  }
+  karlShooting2: file(relativePath: {eq: "Karl_Shooting_2.jpg"}) {
+    childImageSharp {
+      gatsbyImageData(placeholder: TRACED_SVG, layout: FULL_WIDTH)
+    }
+  }
+  frauenkirche: file(relativePath: {eq: "Frauenkirche_farbe.jpg"}) {
+    childImageSharp {
+      gatsbyImageData(placeholder: TRACED_SVG, layout: FULL_WIDTH)
+    }
+  }
+}
 `
 
 export default KarlPage

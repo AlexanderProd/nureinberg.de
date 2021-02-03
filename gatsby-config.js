@@ -95,8 +95,13 @@ module.exports = {
         useMozJpeg: true,
         stripMetadata: true,
         defaultQuality: 75,
+        defaults: {
+          formats: ['auto', 'webp', 'avif'],
+          placeholder: 'blurred',
+        },
       },
     },
+    `gatsby-plugin-image`,
     `gatsby-plugin-layout`,
     {
       resolve: `gatsby-plugin-manifest`,

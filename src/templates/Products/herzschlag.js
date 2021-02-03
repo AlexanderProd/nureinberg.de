@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Image from 'gatsby-image'
+import { GatsbyImage } from "gatsby-plugin-image";
 import styled from '@emotion/styled'
 
 import SEO from '~/components/seo'
@@ -96,170 +96,150 @@ const HerzschlagPage = ({ data }) => {
   const product = data.shopifyProduct
   const { herzschlagBanner, collagePics } = data
 
-  return (
-    <>
-      <SEO title={product.title} description={product.description} />
-      <Navigation />
-      <Container>
-        <MainContent>
-          <HeroWrapper>
-            <HeroVideo muted loop playsInline autoPlay>
-              <source src={herzschlagAnimation} type="video/mp4" />
-              <Image
-                fluid={herzschlagBanner.childImageSharp.fluid}
-                alt="Herzschlag"
-              />
-            </HeroVideo>
-            <H2>Herzschlag Nürnberg</H2>
+  return <>
+    <SEO title={product.title} description={product.description} />
+    <Navigation />
+    <Container>
+      <MainContent>
+        <HeroWrapper>
+          <HeroVideo muted loop playsInline autoPlay>
+            <source src={herzschlagAnimation} type="video/mp4" />
+            <GatsbyImage image={herzschlagBanner.childImageSharp.gatsbyImageData} alt="Herzschlag" />
+          </HeroVideo>
+          <H2>Herzschlag Nürnberg</H2>
+          <Text>
+            <i>
+              „Wir lieben Nürnberg – denn diese Stadt hält zusammen,
+              unabhängig von Religion und Hautfarbe.“
+            </i>
+            <br />
+            - NurEinBerg Mitgründer Jens Herga im Nürnberger Nachrichten
+            Interview
+            <br />
+            <br />
+            Nürnberg hält zusammen! Mit unserem Herzschlag Nürnberg Shirt
+            wollen wir nicht nur die Liebe zu unserer Stadt, sondern auch
+            Nächstenlieb zeigen. Denn pro verkauften Herzschlag Shirt gehen 5
+            Euro an die Elterninitiative Krebskranker Kinder e.V. Nürnberg.
+          </Text>
+        </HeroWrapper>
+        <ThreeThirdsGrid style={{ textAlign: 'center' }}>
+          <div>
+            <img src={sewing_machine} height="120px" alt="Nähmaschine" />
+            <H2>Handgefertigt</H2>
             <Text>
-              <i>
-                „Wir lieben Nürnberg – denn diese Stadt hält zusammen,
-                unabhängig von Religion und Hautfarbe.“
-              </i>
-              <br />
-              - NurEinBerg Mitgründer Jens Herga im Nürnberger Nachrichten
-              Interview
-              <br />
-              <br />
-              Nürnberg hält zusammen! Mit unserem Herzschlag Nürnberg Shirt
-              wollen wir nicht nur die Liebe zu unserer Stadt, sondern auch
-              Nächstenlieb zeigen. Denn pro verkauften Herzschlag Shirt gehen 5
-              Euro an die Elterninitiative Krebskranker Kinder e.V. Nürnberg.
+              Mit Hand und Herz werden nicht nur das Label Etikett angenäht,
+              sondern auch das Herzschlag Nürnberg Design auf das Shirt
+              gedruckt.
             </Text>
-          </HeroWrapper>
-          <ThreeThirdsGrid style={{ textAlign: 'center' }}>
-            <div>
-              <img src={sewing_machine} height="120px" alt="Nähmaschine" />
-              <H2>Handgefertigt</H2>
-              <Text>
-                Mit Hand und Herz werden nicht nur das Label Etikett angenäht,
-                sondern auch das Herzschlag Nürnberg Design auf das Shirt
-                gedruckt.
-              </Text>
-            </div>
-            <div>
-              <img src={sonne} height="120px" alt="Sonne" />
-              <H2>Nachhaltig</H2>
-              <Text>
-                Unsere Textilien bestehen zu 100% aus Bio Baumwolle. Zudem
-                produzieren wir unsere Herzschlag Nürnberg Shirts erst nach
-                Eingang einer Bestellung um keine Ressource zu verschwenden.
-              </Text>
-            </div>
-            <div>
-              <img src={stecknadel} height="120px" alt="Stecknadel" />
-              <H2>Regional</H2>
-              <Text>
-                NurEinBerg steht für Nürnberg. Somit ist vollkommen klar - wir
-                produzieren in der Region. Sowohl mit Partnerfirmen in Nürnberg
-                als auch Hausintern werden unsere Produkte hergestellt.
-              </Text>
-            </div>
-          </ThreeThirdsGrid>
-          <Collage style={{ margin: '10rem 0' }}>
-            {collagePics.edges.map(({ node }) => (
-              <Image
-                key={node.id}
-                alt={node.name}
-                fluid={node.childImageSharp.fluid}
-              />
-            ))}
-          </Collage>
-          <TwoColumnGrid style={{ margin: '10rem 0' }}>
-            <Image
-              fluid={product.images[0].localFile.childImageSharp.fluid}
-              alt="Produktfoto Karl"
+          </div>
+          <div>
+            <img src={sonne} height="120px" alt="Sonne" />
+            <H2>Nachhaltig</H2>
+            <Text>
+              Unsere Textilien bestehen zu 100% aus Bio Baumwolle. Zudem
+              produzieren wir unsere Herzschlag Nürnberg Shirts erst nach
+              Eingang einer Bestellung um keine Ressource zu verschwenden.
+            </Text>
+          </div>
+          <div>
+            <img src={stecknadel} height="120px" alt="Stecknadel" />
+            <H2>Regional</H2>
+            <Text>
+              NurEinBerg steht für Nürnberg. Somit ist vollkommen klar - wir
+              produzieren in der Region. Sowohl mit Partnerfirmen in Nürnberg
+              als auch Hausintern werden unsere Produkte hergestellt.
+            </Text>
+          </div>
+        </ThreeThirdsGrid>
+        <Collage style={{ margin: '10rem 0' }}>
+          {collagePics.edges.map(({ node }) => (
+            <GatsbyImage
+              image={node.childImageSharp.gatsbyImageData}
+              key={node.id}
+              alt={node.name} />
+          ))}
+        </Collage>
+        <TwoColumnGrid style={{ margin: '10rem 0' }}>
+          <GatsbyImage
+            image={product.images[0].localFile.childImageSharp.gatsbyImageData}
+            alt="Produktfoto Karl" />
+          <div>
+            <ProductTitle>{product.title}</ProductTitle>
+            <ProductForm product={product} />
+            <ProductDescription
+              dangerouslySetInnerHTML={{ __html: product.descriptionHtml }}
             />
-            <div>
-              <ProductTitle>{product.title}</ProductTitle>
-              <ProductForm product={product} />
-              <ProductDescription
-                dangerouslySetInnerHTML={{ __html: product.descriptionHtml }}
-              />
-            </div>
-          </TwoColumnGrid>
-        </MainContent>
-        <Footer />
-      </Container>
-    </>
-  )
+          </div>
+        </TwoColumnGrid>
+      </MainContent>
+      <Footer />
+    </Container>
+  </>;
 }
 
-export const query = graphql`
-  query($handle: String!) {
-    shopifyProduct(handle: { eq: $handle }) {
+export const query = graphql`query ($handle: String!) {
+  shopifyProduct(handle: {eq: $handle}) {
+    id
+    title
+    handle
+    productType
+    description
+    descriptionHtml
+    shopifyId
+    options {
+      id
+      name
+      values
+    }
+    variants {
       id
       title
-      handle
-      productType
-      description
-      descriptionHtml
+      price
+      availableForSale
       shopifyId
-      options {
-        id
+      selectedOptions {
         name
-        values
-      }
-      variants {
-        id
-        title
-        price
-        availableForSale
-        shopifyId
-        selectedOptions {
-          name
-          value
-        }
-      }
-      priceRange {
-        minVariantPrice {
-          amount
-          currencyCode
-        }
-        maxVariantPrice {
-          amount
-          currencyCode
-        }
-      }
-      images {
-        originalSrc
-        id
-        localFile {
-          childImageSharp {
-            fluid(maxWidth: 910) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
-            }
-          }
-        }
+        value
       }
     }
-    herzschlagBanner: file(relativePath: { eq: "Herzschlag_Banner.jpg" }) {
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
-        }
+    priceRange {
+      minVariantPrice {
+        amount
+        currencyCode
+      }
+      maxVariantPrice {
+        amount
+        currencyCode
       }
     }
-    collagePics: allFile(
-      filter: {
-        dir: { regex: "/(collage)/" }
-        extension: { regex: "/(jpg)|(jpeg)|(png)/" }
-      }
-      limit: 18
-    ) {
-      edges {
-        node {
-          id
-          name
-          childImageSharp {
-            fluid(maxWidth: 300) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
-            }
-          }
+    images {
+      originalSrc
+      id
+      localFile {
+        childImageSharp {
+          gatsbyImageData(width: 910, placeholder: TRACED_SVG, layout: CONSTRAINED)
         }
       }
     }
   }
+  herzschlagBanner: file(relativePath: {eq: "Herzschlag_Banner.jpg"}) {
+    childImageSharp {
+      gatsbyImageData(placeholder: TRACED_SVG, layout: FULL_WIDTH)
+    }
+  }
+  collagePics: allFile(filter: {dir: {regex: "/(collage)/"}, extension: {regex: "/(jpg)|(jpeg)|(png)/"}}, limit: 18) {
+    edges {
+      node {
+        id
+        name
+        childImageSharp {
+          gatsbyImageData(width: 300, placeholder: TRACED_SVG, layout: CONSTRAINED)
+        }
+      }
+    }
+  }
+}
 `
 
 export default HerzschlagPage

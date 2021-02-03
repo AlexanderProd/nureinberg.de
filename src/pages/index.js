@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import { graphql, Link } from 'gatsby'
-import Image from 'gatsby-image'
+import { Link } from 'gatsby'
+import { StaticImage } from 'gatsby-plugin-image'
 
 import SEO from '~/components/seo'
 import Navigation from '~/components/Navigation'
@@ -95,89 +95,69 @@ const ImageWrapper = styled.div`
   height: 100%;
 `
 
-const Index = ({ data }) => {
-  const { klassik, modern, transparenz } = data
-
-  return (
-    <>
-      <SEO title="Home" keywords={[`nureinberg`, `nürnberg`, `fashion`]} />
-      <Navigation color="black" />
-      <Caption color="white">
-        <Subtitle>MODE &amp; FASHION</Subtitle>
-        <Title>Eine Stadt - Eine Marke</Title>
-      </Caption>
-      <VideoBG loop muted playsInline autoPlay>
-        <source src={video} type="video/mp4" />
-        <ImageBG src={slide_1} />
-      </VideoBG>
-      <Wrapper>
-        <TwoColumnGrid gap={'0'}>
-          <Link to={`/klassik/`}>
-            <ImageWrapper>
-              <Caption>
-                <Title style={{ color: 'white' }}>Klassik</Title>
-                <Button>Zu den Produkten</Button>
-              </Caption>
-              <Image fluid={klassik.childImageSharp.fluid} alt="Klassik" />
-            </ImageWrapper>
-          </Link>
-          <Link to={`/modern/`}>
-            <ImageWrapper>
-              <Caption>
-                <Title
-                  style={{ fontFamily: 'Roboto, sans-serif', color: 'white' }}
-                >
-                  Modern
-                </Title>
-                <Button>Zu den Produkten</Button>
-              </Caption>
-              <Image fluid={modern.childImageSharp.fluid} alt="Modern" />
-            </ImageWrapper>
-          </Link>
-        </TwoColumnGrid>
-        <Link to={`/transparenz/`}>
-          <ImageWrapper style={{ marginTop: '6rem' }}>
+const Index = () => (
+  <>
+    <SEO title="Home" keywords={[`nureinberg`, `nürnberg`, `fashion`]} />
+    <Navigation color="black" />
+    <Caption color="white">
+      <Subtitle>MODE &amp; FASHION</Subtitle>
+      <Title>Eine Stadt - Eine Marke</Title>
+    </Caption>
+    <VideoBG loop muted playsInline autoPlay>
+      <source src={video} type="video/mp4" />
+      <ImageBG src={slide_1} />
+    </VideoBG>
+    <Wrapper>
+      <TwoColumnGrid gap={'0'}>
+        <Link to={`/klassik/`}>
+          <ImageWrapper>
+            <Caption>
+              <Title style={{ color: 'white' }}>Klassik</Title>
+              <Button>Zu den Produkten</Button>
+            </Caption>
+            <StaticImage
+              src="../images/klassik.jpg"
+              layout="fullWidth"
+              alt="Klassik"
+            />
+          </ImageWrapper>
+        </Link>
+        <Link to={`/modern/`}>
+          <ImageWrapper>
             <Caption>
               <Title
                 style={{ fontFamily: 'Roboto, sans-serif', color: 'white' }}
               >
-                Transparenz
+                Modern
               </Title>
-              <Button>Zur Seite</Button>
+              <Button>Zu den Produkten</Button>
             </Caption>
-            <Image fluid={transparenz.childImageSharp.fluid} alt="Modern" />
+            <StaticImage
+              src="../images/modern.jpg"
+              layout="fullWidth"
+              alt="Modern"
+            />
           </ImageWrapper>
         </Link>
-        <Footer />
-      </Wrapper>
-    </>
-  )
-}
-
-export const query = graphql`
-  query {
-    klassik: file(relativePath: { eq: "klassik.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 600) {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
-        }
-      }
-    }
-    modern: file(relativePath: { eq: "modern.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 600) {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
-        }
-      }
-    }
-    transparenz: file(relativePath: { eq: "transparenz_header.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 600) {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
-        }
-      }
-    }
-  }
-`
+      </TwoColumnGrid>
+      <Link to={`/transparenz/`}>
+        <ImageWrapper style={{ marginTop: '6rem' }}>
+          <Caption>
+            <Title style={{ fontFamily: 'Roboto, sans-serif', color: 'white' }}>
+              Transparenz
+            </Title>
+            <Button>Zur Seite</Button>
+          </Caption>
+          <StaticImage
+            src="../images/transparenz_header.jpg"
+            layout="fullWidth"
+            alt="Modern"
+          />
+        </ImageWrapper>
+      </Link>
+      <Footer />
+    </Wrapper>
+  </>
+)
 
 export default Index

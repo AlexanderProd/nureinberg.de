@@ -1,9 +1,9 @@
 import styled from '@emotion/styled'
-import Image from 'gatsby-image'
+import { GatsbyImage } from "gatsby-plugin-image";
 
 import { breakpoints } from '~/utils/styles'
 
-export const SlideshowImage = styled(Image)`
+export const SlideshowImage = styled(GatsbyImage)`
   height: 100vh;
   width: 100vw;
   object-fit: cover;

@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react'
 import { graphql } from 'gatsby'
-import Image from 'gatsby-image'
+import { GatsbyImage } from 'gatsby-plugin-image'
 import styled from '@emotion/styled'
 
 import SEO from '~/components/seo'
@@ -24,7 +24,7 @@ const HeroWrapper = styled.div`
   align-items: center;
 `
 
-const HeroImage = styled(Image)`
+const HeroImage = styled(GatsbyImage)`
   width: 100%;
   border: solid black 0.25rem;
 
@@ -55,7 +55,7 @@ const Grid = styled.div`
   }
 `
 
-const Icon = styled(Image)`
+const Icon = styled(GatsbyImage)`
   width: 100%;
   height: 100%;
   border: solid black 0.25rem;
@@ -96,7 +96,7 @@ const H2 = styled.h2`
   text-align: center;
 `
 
-const ProductImage = styled(Image)`
+const ProductImage = styled(GatsbyImage)`
   width: 100%;
   height: 100%;
   border: solid black 0.25rem;
@@ -164,7 +164,7 @@ const IconPage = ({ data }) => {
         <MainContent>
           <HeroWrapper>
             <HeroImage
-              fluid={iconBanner.childImageSharp.fluid}
+              image={iconBanner.childImageSharp.gatsbyImageData}
               alt="Icon Banner"
             />
           </HeroWrapper>
@@ -179,7 +179,10 @@ const IconPage = ({ data }) => {
                   onKeyPress={changeInfoText}
                   key={node.id}
                 >
-                  <Icon alt={node.name} fluid={node.childImageSharp.fluid} />
+                  <Icon
+                    alt={node.name}
+                    image={node.childImageSharp.gatsbyImageData}
+                  />
                 </div>
               ))}
             </Grid>
@@ -191,7 +194,9 @@ const IconPage = ({ data }) => {
 
           <TwoColumnGrid style={{ margin: '10rem 0' }} gap="5rem">
             <ProductImage
-              fluid={product.images[0].localFile.childImageSharp.fluid}
+              image={
+                product.images[0].localFile.childImageSharp.gatsbyImageData
+              }
               alt="Produktfoto Karl"
             />
             <ProductDetails>
@@ -250,18 +255,18 @@ export const query = graphql`
         id
         localFile {
           childImageSharp {
-            fluid(maxWidth: 910) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
-            }
+            gatsbyImageData(
+              width: 910
+              placeholder: TRACED_SVG
+              layout: CONSTRAINED
+            )
           }
         }
       }
     }
     iconBanner: file(relativePath: { eq: "Icon_Banner.png" }) {
       childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
-        }
+        gatsbyImageData(placeholder: TRACED_SVG, layout: FULL_WIDTH)
       }
     }
     icons: allFile(
@@ -276,9 +281,11 @@ export const query = graphql`
           id
           name
           childImageSharp {
-            fluid(maxWidth: 300) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
-            }
+            gatsbyImageData(
+              width: 300
+              placeholder: TRACED_SVG
+              layout: CONSTRAINED
+            )
           }
         }
       }

@@ -1,11 +1,12 @@
 import React from 'react'
 import { useStaticQuery, graphql, Link } from 'gatsby'
+import { GatsbyImage } from 'gatsby-plugin-image'
 import styled from '@emotion/styled'
 
 import SEO from '~/components/seo'
 import Navigation from '~/components/Navigation'
 import Footer from '~/components/Footer'
-import { Img, breakpoints, MainContent } from '~/utils/styles'
+import { breakpoints, MainContent } from '~/utils/styles'
 
 const Grid = styled.div`
   display: grid;
@@ -43,7 +44,7 @@ const ImgWrapper = styled.div`
   height: 100%;
 `
 
-const ImgAbove = styled(Img)`
+const ImgAbove = styled(GatsbyImage)`
   z-index: 1;
   transition: opacity ease-in-out 0.2s;
 
@@ -63,7 +64,7 @@ const ImgBelow = styled.img`
 
 const Klassik = () => {
   const { allShopifyCollection } = useStaticQuery(graphql`
-    query {
+    {
       allShopifyCollection(filter: { title: { eq: "Klassik" } }) {
         edges {
           node {
@@ -78,9 +79,7 @@ const Klassik = () => {
                 originalSrc
                 localFile {
                   childImageSharp {
-                    fluid(maxWidth: 800, maxHeight: 600) {
-                      ...GatsbyImageSharpFluid_withWebp
-                    }
+                    gatsbyImageData(width: 800, height: 600, layout: FULL_WIDTH)
                   }
                 }
               }
@@ -103,15 +102,16 @@ const Klassik = () => {
                 <Product>
                   <ImgWrapper>
                     <ImgAbove
-                      fluid={
+                      image={
                         product.images[product.images.length - 1].localFile
-                          .childImageSharp.fluid
+                          .childImageSharp.gatsbyImageData
                       }
                       alt={product.handle}
                     />
                     <ImgBelow
                       src={
-                        product.images[0].localFile.childImageSharp.fluid.src
+                        product.images[0].localFile.childImageSharp
+                          .gatsbyImageData.images.fallback.src
                       }
                       alt={product.handle}
                     />
