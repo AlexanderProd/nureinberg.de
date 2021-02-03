@@ -12,7 +12,10 @@ const UeberUns = () => (
       Ecken wie der Henkersteg und das Heilig-Geist-Spital, sollen zwar den
       Charm der Stadt widerspiegeln, aber auch als frische und moderne Mode
       angesehen werden. Uns geht es darum, dass diese Stadt noch mehr gelebt und
-      geliebt wird, als wir es sowieso schon tun.
+      geliebt wird, als wir es sowieso schon tun.{' '}
+      <span role="img" aria-label="heart">
+        ❤️
+      </span>
     </p>
   </Page>
 )
