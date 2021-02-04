@@ -101,6 +101,7 @@ const Modern = () => {
                 <Product>
                   <ImgWrapper>
                     <ImgAbove
+                      loading="eager"
                       image={
                         product.images[product.images.length - 1].localFile
                           .childImageSharp.gatsbyImageData
