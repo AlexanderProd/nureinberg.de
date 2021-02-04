@@ -8,15 +8,16 @@ const Impressum = () => (
       <strong>Angaben gemäss § 5 TMG:</strong>
     </h1>
     <p>
-      1050 GbR
+      Jens Herga, Alexander Hörl, Kai Zippe, Anvar Gallyaniev, Rabije Dzaferi,
+      Ole Preisig, 1050 GbR
       <br />
       Steilstraße 1a
       <br />
       90513 Zirndorf
       <br />
       <br />
-      Vertreten durch die Gesellschafter: Jens Herga, Alexander Hörl, Kai Zippe, Anvar
-      Gallyaniev, Rabije Dzaferi, Ole Preisig
+      Vertreten durch die Gesellschafter: Jens Herga, Alexander Hörl, Kai Zippe,
+      Anvar Gallyaniev, Rabije Dzaferi, Ole Preisig
     </p>
     <h1>
       <strong>
