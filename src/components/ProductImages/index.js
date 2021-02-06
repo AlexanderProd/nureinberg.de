@@ -1,7 +1,9 @@
 import React from 'react'
-import { GatsbyImage } from "gatsby-plugin-image";
+import { GatsbyImage } from 'gatsby-plugin-image'
 import { Slide } from 'react-slideshow-image'
 import 'react-slideshow-image/dist/styles.css'
+
+import { SlideContainer } from './styles'
 
 const ProductImages = ({ product }) => {
   const properties = {
@@ -14,21 +16,20 @@ const ProductImages = ({ product }) => {
 
   if (product.images) {
     return (
-      <div className="slide-container">
+      <SlideContainer>
         <Slide {...properties}>
           {product.images.map(i => (
             <div className="each-fade" key={i.id}>
-              <div className="image-container">
-                <GatsbyImage
-                  image={i.localFile.childImageSharp.gatsbyImageData}
-                  alt={product.title}
-                  key={i.id} />
-              </div>
+              <GatsbyImage
+                image={i.localFile.childImageSharp.gatsbyImageData}
+                alt={product.title}
+                key={i.id}
+              />
             </div>
           ))}
         </Slide>
-      </div>
-    );
+      </SlideContainer>
+    )
   }
 }
 

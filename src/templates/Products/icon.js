@@ -6,6 +6,7 @@ import styled from '@emotion/styled'
 import SEO from '~/components/seo'
 import Navigation from '~/components/Navigation'
 import ProductForm from '~/components/ProductForm'
+import ProductImages from '~/components/ProductImages'
 import Footer from '~/components/Footer'
 import { useOuterClick } from '~/utils/hooks'
 import {
@@ -96,11 +97,14 @@ const H2 = styled.h2`
   text-align: center;
 `
 
-const ProductImage = styled(GatsbyImage)`
+const ProductImageWrpper = styled.div`
   width: 100%;
   height: 100%;
   border: solid black 0.25rem;
   background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   @media (max-width: ${breakpoints.s}px) {
     border: solid black 0.1rem;
@@ -193,12 +197,15 @@ const IconPage = ({ data }) => {
           </TwoColumnGrid>
 
           <TwoColumnGrid style={{ margin: '10rem 0' }} gap="5rem">
-            <ProductImage
+            <ProductImageWrpper>
+              <ProductImages product={product} />
+            </ProductImageWrpper>
+            {/* <ProductImage
               image={
                 product.images[0].localFile.childImageSharp.gatsbyImageData
               }
               alt="Produktfoto Karl"
-            />
+            /> */}
             <ProductDetails>
               <ProductTitle>{product.title}</ProductTitle>
               <ProductForm product={product} />

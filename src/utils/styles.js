@@ -1,5 +1,5 @@
 import React from 'react'
-import { GatsbyImage } from "gatsby-plugin-image";
+import { GatsbyImage } from 'gatsby-plugin-image'
 import styled from '@emotion/styled'
 import { Global, css } from '@emotion/react'
 
@@ -91,7 +91,7 @@ export const MainContent = styled.main`
 
 export const TwoColumnGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: ${({ gap }) => (gap ? gap : '2.5rem')};
   grid-auto-flow: row dense;
   ${({ backgroundColor }) =>
