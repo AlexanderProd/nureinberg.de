@@ -1,4 +1,5 @@
 import React from 'react'
+import { OutboundLink } from 'gatsby-plugin-google-gtag'
 
 import { useSiteMetadata } from '~/utils/hooks'
 import { Container } from '~/utils/styles'
@@ -57,14 +58,14 @@ const Footer = ({ color = 'black' }) => {
               return (
                 <li key={name}>
                   {socialMediaIcons(name, color)}
-                  <a
+                  <OutboundLink
                     href={link}
                     key={name}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     {name}
-                  </a>
+                  </OutboundLink>
                 </li>
               )
             })}
