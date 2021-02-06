@@ -160,6 +160,14 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: 'UA-97218477-1',
+        anonymize: true,
+        respectDNT: true,
+      },
+    },
+    {
       resolve: 'gatsby-plugin-root-import',
       options: {
         '~': path.join(__dirname, 'src/'),
