@@ -91,6 +91,7 @@ const ProductForm = ({ product, dark = false, color }) => {
           <OptionValues>
             {values.map(value => (
               <ProductValue
+                as="button"
                 dark={dark}
                 key={`${id}-${value}`}
                 color={color}

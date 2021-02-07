@@ -76,6 +76,7 @@ const Navigation = ({ color }) => {
             Modern
           </MenuItem>
           <CartIcon
+            as="button"
             onClick={() => {
               setMobileNavVisible(false)
               toggleCart()
