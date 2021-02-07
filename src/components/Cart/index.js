@@ -20,9 +20,9 @@ const Cart = ({ visible, setVisibility }) => {
   const { client, checkout, updateLineItem } = useContext(StoreContext)
   const innerRef = useRef(null)
 
-  /* useOuterClick(function () {
+  useOuterClick(function () {
     if (visible) setVisibility()
-  }, innerRef) */
+  }, innerRef)
 
   const handleCheckout = () => {
     window.open(checkout.webUrl)
