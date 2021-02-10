@@ -78,7 +78,7 @@ const Modern = () => {
                 originalSrc
                 localFile {
                   childImageSharp {
-                    gatsbyImageData(layout: FULL_WIDTH)
+                    gatsbyImageData(layout: FULL_WIDTH, aspectRatio: 1.5)
                   }
                 }
               }
