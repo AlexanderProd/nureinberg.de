@@ -1,12 +1,12 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import styled from '@emotion/styled'
 import { graphql, Link } from 'gatsby'
 import { GatsbyImage, StaticImage } from 'gatsby-plugin-image'
 import CountUp from 'react-countup'
-import VisibilitySensor from 'react-visibility-sensor'
 
 import Page from '~/templates/Page'
 import { TwoColumnGrid, ThreeThirdsGrid, breakpoints } from '~/utils/styles'
+import { useOnScreen } from '~/utils/hooks'
 import video from '~/images/subucoola.mp4'
 import sewing_machine from '~/images/sewing_machine.svg'
 import stift from '~/images/stift.svg'
@@ -63,7 +63,9 @@ const Video = styled.video`
 `
 
 const Transparenz = ({ data }) => {
+  const ref = useRef()
   const { karl_zeichnung, karl_computer, karl_stick } = data
+  const onScreen = useOnScreen(ref)
 
   const alterBerechnen = () => {
     const oneDay = 24 * 60 * 60 * 1000
@@ -128,7 +130,7 @@ const Transparenz = ({ data }) => {
           <Text>
             Wie der Name NurEinBerg schon sagt, sind wir ein Nürnberger
             Unternehmen. Somit ist es für uns selbstverständlich, dass unsere
-            Produkte in der Region hergestellt werden.
+            Produkte in der Region veredelt werden.
             <br />
             <br /> Vor allem bei unseren Siebdruck und Stick Motiven arbeiten
             wir eng mit unseren Partnerbetrieben zusammen.
@@ -264,49 +266,34 @@ const Transparenz = ({ data }) => {
           </Text>
         </div>
       </ThreeThirdsGrid>
-      <ThreeThirdsGrid
-        style={{
-          textAlign: 'center',
-          marginTop: '5rem',
-        }}
-      >
-        <div>
-          <H2>
-            <CountUp start={0} end={alterBerechnen()} duration={3.2}>
-              {({ countUpRef, start }) => (
-                <VisibilitySensor onChange={start} delayedCall>
-                  <span ref={countUpRef} />
-                </VisibilitySensor>
-              )}
-            </CountUp>
-          </H2>
-          <Text>Tage ist das Label NurEinBerg alt.</Text>
-        </div>
-        <div>
-          <H2>
-            <CountUp start={0} end={135} duration={2} suffix=" €" delay={1}>
-              {({ countUpRef, start }) => (
-                <VisibilitySensor onChange={start} delayedCall>
-                  <span ref={countUpRef} />
-                </VisibilitySensor>
-              )}
-            </CountUp>
-          </H2>
-          <Text>haben wir für einen wohltätigen Zweck gesammelt.</Text>
-        </div>
-        <div>
-          <H2>
-            <CountUp start={0} end={9732} duration={6.4} delay={2}>
-              {({ countUpRef, start }) => (
-                <VisibilitySensor onChange={start} delayedCall>
-                  <span ref={countUpRef} />
-                </VisibilitySensor>
-              )}
-            </CountUp>
-          </H2>
-          <Text>Follower haben wir bereits auf lnstagram.</Text>
-        </div>
-      </ThreeThirdsGrid>
+      <div ref={ref}></div>
+      {onScreen && (
+        <ThreeThirdsGrid
+          style={{
+            textAlign: 'center',
+            marginTop: '5rem',
+          }}
+        >
+          <div>
+            <H2>
+              <CountUp start={0} end={alterBerechnen()} duration={3.2} />
+            </H2>
+            <Text>Tage ist das Label NurEinBerg alt.</Text>
+          </div>
+          <div>
+            <H2>
+              <CountUp start={0} end={135} duration={2} suffix=" €" delay={1} />
+            </H2>
+            <Text>haben wir für einen wohltätigen Zweck gesammelt.</Text>
+          </div>
+          <div>
+            <H2>
+              <CountUp start={0} end={9732} duration={6.4} delay={2} />
+            </H2>
+            <Text>Follower haben wir bereits auf lnstagram.</Text>
+          </div>
+        </ThreeThirdsGrid>
+      )}
     </Page>
   )
 }
