@@ -99,6 +99,7 @@ const Transparenz = ({ data }) => {
           src="../images/Transparenz_Baumwolle.png"
           layout="fullWidth"
           alt="Baumwolle"
+          loading="eager"
         />
       </TwoColumnGrid>
       <TwoColumnGrid
@@ -278,7 +279,7 @@ const Transparenz = ({ data }) => {
             <H2>
               <CountUp start={0} end={alterBerechnen()} duration={3.2} />
             </H2>
-            <Text>Tage ist das Label NurEinBerg alt.</Text>
+            <Text>Tage ist die Marke NurEinBerg alt.</Text>
           </div>
           <div>
             <H2>
