@@ -8,7 +8,7 @@ const Impressum = () => (
       <strong>Angaben gemäss § 5 TMG:</strong>
     </h1>
     <p>
-      Jens Herga, Alexander Hörl, Kai Zippe, Anvar Gallyaniev, Rabije Dzaferi,
+      Jens Herga, Alexander Hörl, Kai Zippe, Anvar Gallyamiev, Rabije Djaferi,
       Ole Preisig, 1050 GbR
       <br />
       Steilstraße 1a
@@ -17,7 +17,7 @@ const Impressum = () => (
       <br />
       <br />
       Vertreten durch die Gesellschafter: Jens Herga, Alexander Hörl, Kai Zippe,
-      Anvar Gallyaniev, Rabije Dzaferi, Ole Preisig
+      Anvar Gallyamiev, Rabije Djaferi, Ole Preisig
     </p>
     <h1>
       <strong>
