@@ -17,7 +17,7 @@ const Impressum = () => (
       <br />
       <br />
       Vertreten durch die Gesellschafter: Jens Herga, Alexander Hörl, Kai Zippe,
-      Anvar Gallyamiev, Rabije Djaferi, Ole Preisig
+      Anvar Gallyamiev, Rabije Djaferi, Ole Preisig 🐳
     </p>
     <h1>
       <strong>
