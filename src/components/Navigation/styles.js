@@ -22,6 +22,7 @@ export const Wrapper = styled.div`
 
 export const LogoWrapepr = styled.span`
   cursor: pointer;
+  opacity: ${({ logoVisible }) => (logoVisible ? '1' : '0')};
 `
 
 export const HamburgerWrapper = styled.span`

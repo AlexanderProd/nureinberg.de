@@ -64,16 +64,15 @@ const Navigation = ({ color, logoVisible = true }) => {
           >
             Klassik
           </MenuItem>
-          {logoVisible && (
-            <Logo
-              onClick={() => {
-                setMobileNavVisible(false)
-                navigate('/')
-              }}
-              color={navBarColor}
-              height={width > breakpoints.s ? '4rem' : '3rem'}
-            />
-          )}
+          <Logo
+            onClick={() => {
+              setMobileNavVisible(false)
+              navigate('/')
+            }}
+            color={navBarColor}
+            logoVisible={logoVisible}
+            height={width > breakpoints.s ? '4rem' : '3rem'}
+          />
           <MenuItem to={'/modern'} color={color}>
             Modern
           </MenuItem>

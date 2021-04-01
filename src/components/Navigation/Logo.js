@@ -2,8 +2,8 @@ import React from 'react'
 
 import { LogoWrapepr } from './styles'
 
-const Logo = ({ color, height = 32, onClick }) => (
-  <LogoWrapepr onClick={onClick}>
+const Logo = ({ color, height = 32, onClick, logoVisible }) => (
+  <LogoWrapepr onClick={onClick} logoVisible={logoVisible}>
     <svg height={height} viewBox="0 0 1577.01 901.19" style={{ color }}>
       <path
         fill="currentColor"
