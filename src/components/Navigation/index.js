@@ -20,7 +20,7 @@ const countQuantity = ({ lineItems = [] }) => {
   return quantity
 }
 
-const Navigation = ({ color }) => {
+const Navigation = ({ color, logoVisible = true }) => {
   const { checkout } = useContext(StoreContext)
   const {
     mobileNavVisible,
@@ -64,14 +64,16 @@ const Navigation = ({ color }) => {
           >
             Klassik
           </MenuItem>
-          <Logo
-            onClick={() => {
-              setMobileNavVisible(false)
-              navigate('/')
-            }}
-            color={navBarColor}
-            height={width > breakpoints.s ? '4rem' : '3rem'}
-          />
+          {logoVisible && (
+            <Logo
+              onClick={() => {
+                setMobileNavVisible(false)
+                navigate('/')
+              }}
+              color={navBarColor}
+              height={width > breakpoints.s ? '4rem' : '3rem'}
+            />
+          )}
           <MenuItem to={'/modern'} color={color}>
             Modern
           </MenuItem>
