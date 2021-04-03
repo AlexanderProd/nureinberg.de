@@ -200,12 +200,6 @@ const IconPage = ({ data }) => {
             <ProductImageWrpper>
               <ProductImages product={product} />
             </ProductImageWrpper>
-            {/* <ProductImage
-              image={
-                product.images[0].localFile.childImageSharp.gatsbyImageData
-              }
-              alt="Produktfoto Karl"
-            /> */}
             <ProductDetails>
               <ProductTitle>{product.title}</ProductTitle>
               <ProductForm product={product} />
