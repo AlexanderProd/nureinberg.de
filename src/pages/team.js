@@ -98,7 +98,8 @@ const Team = () => (
           alt="Anvar Portrait"
         />
         <Text>
-          Ich bin für die Produktion der Shirts und die Logistik verantwortlich.
+          Hey, mein Name ist Anvar und ich bin für die Produktion der Shirts und
+          die Logistik verantwortlich.
           <br />
           <br />
           <i>
