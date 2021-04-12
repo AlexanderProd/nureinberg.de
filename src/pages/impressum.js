@@ -8,16 +8,14 @@ const Impressum = () => (
       <strong>Angaben gemäss § 5 TMG:</strong>
     </h1>
     <p>
-      Jens Herga, Alexander Hörl, Kai Zippe, Anvar Gallyamiev, Rabije Djaferi,
-      Ole Preisig, 1050 GbR
+      NurEinBerg UG (haftungsbeschränkt)
       <br />
       Steilstraße 1a
       <br />
       90513 Zirndorf
       <br />
       <br />
-      Vertreten durch die Gesellschafter: Jens Herga, Alexander Hörl, Kai Zippe,
-      Anvar Gallyamiev, Rabije Djaferi, Ole Preisig
+      Vertreten durch die Gesellschafter: Jens Herga, Alexander Hörl, Kai Zippe
     </p>
     <h1>
       <strong>
