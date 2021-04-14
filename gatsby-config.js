@@ -123,7 +123,7 @@ module.exports = {
         stripMetadata: true,
         defaultQuality: 75,
         defaults: {
-          formats: ['auto', 'webp'],
+          formats: ['auto', 'webp', 'avif'],
           placeholder: 'blurred',
         },
       },
