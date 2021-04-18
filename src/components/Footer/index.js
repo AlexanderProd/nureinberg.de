@@ -76,7 +76,7 @@ const Footer = ({ color = 'black' }) => {
           <br />
           <br />
           Konzept &amp; Entwicklung:
-          <a style={{ color: color }} href="mailto:info@wertgebung.de">
+          <a style={{ color: color }} href="https://wertgebung.de">
             WERTGEBUNG
           </a>
         </Links>
