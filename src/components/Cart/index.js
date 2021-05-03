@@ -65,7 +65,9 @@ const Cart = ({ visible, setVisibility }) => {
               Rabattcodes, Versandkosten und Steuern
               <br /> werden bei der Bezahlung berechnet.
             </Notice>
-            <BuyButton onClick={handleCheckout}>Zur Kasse →</BuyButton>
+            <BuyButton onClick={handleCheckout} role="button">
+              Zur Kasse →
+            </BuyButton>
           </>
         ) : (
           <Notice>Dein Einkaufswagen ist im Moment leer.</Notice>
