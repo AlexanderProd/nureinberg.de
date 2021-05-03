@@ -180,6 +180,7 @@ export const Button = styled.button`
   font-style: normal;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  height: 40px;
   padding: 12px 20px;
   font-size: 0.8125em;
   text-decoration: none;
