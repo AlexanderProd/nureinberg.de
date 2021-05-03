@@ -110,6 +110,7 @@ const ProductForm = ({ product, dark = false, color }) => {
         type="submit"
         disabled={!available || adding || loading}
         onClick={handleAddToCart}
+        role="button"
       >
         {buyButtonContent()}
       </Button>
