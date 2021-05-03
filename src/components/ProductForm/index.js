@@ -107,7 +107,7 @@ const ProductForm = ({ product, dark = false, color }) => {
       <Button
         color={dark ? 'black' : 'white'}
         backgroundColor={dark ? 'white' : 'black'}
-        //type="submit"
+        type="submit"
         disabled={!available || adding || loading}
         onClick={handleAddToCart}
         role="button"
