@@ -320,12 +320,9 @@ const Transparenz = ({ data }) => {
               pointerEvents: 'none',
               fontSize: '0.4rem',
             }}
-            onMouseOver={(_, index) => {
+            onClick={(_, index) => {
               setSelectedPieChartElement(pieChartArray[index])
               setHovered(index)
-            }}
-            onMouseOut={() => {
-              setHovered(undefined)
             }}
           />
         </div>
