@@ -1,16 +1,23 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import styled from '@emotion/styled'
 import { graphql, Link } from 'gatsby'
 import { GatsbyImage, StaticImage } from 'gatsby-plugin-image'
 import CountUp from 'react-countup'
+import { PieChart } from 'react-minimal-pie-chart'
 
 import Page from '~/templates/Page'
-import { TwoColumnGrid, ThreeThirdsGrid, breakpoints } from '~/utils/styles'
+import {
+  TwoColumnGrid,
+  ThreeThirdsGrid,
+  breakpoints,
+  AlternatingTwoThirdsGrid,
+} from '~/utils/styles'
 import { useOnScreen } from '~/utils/hooks'
 import video from '~/images/subucoola.mp4'
 import sewing_machine from '~/images/sewing_machine.svg'
 import stift from '~/images/stift.svg'
 import handy from '~/images/handy.svg'
+import pieChartArray from '~/images/transparenz_pie_chart_data.json'
 
 const TextWrapper = styled.div`
   display: flex;
@@ -66,6 +73,12 @@ const Transparenz = ({ data }) => {
   const ref = useRef()
   const { karl_zeichnung, karl_computer, karl_stick } = data
   const onScreen = useOnScreen(ref)
+  const [hovered, setHovered] = useState(undefined)
+
+  const [selectedPieChartElement, setSelectedPieChartElement] = useState({
+    description:
+      'Klicke auf einen Bereich im Diagram um mehr über diesen zu erfahren.',
+  })
 
   const alterBerechnen = () => {
     const oneDay = 24 * 60 * 60 * 1000
@@ -74,6 +87,16 @@ const Transparenz = ({ data }) => {
 
     return Math.round(Math.abs((firstDate - secondDate) / oneDay))
   }
+
+  const pieChartData = pieChartArray.map((entry, i) => {
+    if (hovered === i) {
+      return {
+        ...entry,
+        color: 'grey',
+      }
+    }
+    return entry
+  })
 
   return (
     <Page
@@ -201,6 +224,7 @@ const Transparenz = ({ data }) => {
           <Text>In jedem Produkt stecken 1,5 Stunden Herstellungszeit.</Text>
         </div>
       </ThreeThirdsGrid>
+
       <H1>Designentwicklung</H1>
       <ThreeThirdsGrid
         backgroundColor="white"
@@ -267,6 +291,46 @@ const Transparenz = ({ data }) => {
           </Text>
         </div>
       </ThreeThirdsGrid>
+
+      <H1>Preisgestaltung</H1>
+      <AlternatingTwoThirdsGrid
+        gap="0"
+        style={{ marginTop: '5rem', backgroundColor: 'white' }}
+      >
+        <TextWrapper>
+          <Text>
+            <H1>
+              {selectedPieChartElement.title}{' '}
+              {selectedPieChartElement.value
+                ? `(${selectedPieChartElement.value}%)`
+                : null}
+            </H1>
+            {selectedPieChartElement.description}
+          </Text>
+        </TextWrapper>
+        <div style={{ margin: '1rem' }}>
+          <PieChart
+            animate
+            data={pieChartData}
+            label={({ dataEntry }) => dataEntry.title}
+            labelPosition={65}
+            labelStyle={{
+              fill: '#fff',
+              opacity: 0.75,
+              pointerEvents: 'none',
+              fontSize: '0.4rem',
+            }}
+            onMouseOver={(_, index) => {
+              setSelectedPieChartElement(pieChartArray[index])
+              setHovered(index)
+            }}
+            onMouseOut={() => {
+              setHovered(undefined)
+            }}
+          />
+        </div>
+      </AlternatingTwoThirdsGrid>
+
       <div ref={ref}></div>
       {onScreen && (
         <ThreeThirdsGrid

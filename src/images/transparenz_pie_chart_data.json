@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Material",
+    "value": 21,
+    "color": "#A61C00",
+    "description": "Unser Anspruch ist es die nachhaltigsten Stoffe zu verwenden. Aufgrund dessen verwenden wir ausschließlich Bio Baumwolle, weshalb der Preis für die Materialien in etwas doppelt so hoch ist, wie bei herkömmlicher Baumwolle."
+  },
+  {
+    "title": "Logistik",
+    "value": 7,
+    "color": "#E69138",
+    "description": "Unter dem Punkt Logistik fallen Kosten für den Versand, Verpackung und Lagerung. Bei NurEinBerg ist der Versand kostenfrei und auch hier greifen wir auf nachhaltige Verpackungsmaterialien zurück."
+  },
+  {
+    "title": "Werbung",
+    "value": 15,
+    "color": "#F1C232",
+    "description": "Vor allem für ein kleines Unternehmen ist das werben ein großer Bestandteil der Einfluss auf den Erfolg nimmt. Durch diesen Aspekt und unseren eingeschränkten Markt fallen die Kosten für uns  entsprechend hoch aus."
+  },
+  {
+    "title": "Arbeitszeit",
+    "value": 16,
+    "color": "#CCC000",
+    "description": "Da unsere Produkte in Franken veredelt werden, können wir gewährleisten das die Bezahlung der Arbeitszeit angemessen ist. Dies gilt selbst bei Produkten die wir nicht selbst bedrucken."
+  },
+  {
+    "title": "Steuer",
+    "value": 19,
+    "color": "#6AA84F",
+    "description": "Da wir eine Kapitalgesellschaft sind und somit nichtmehr in die Kleingewerbe Regelung fallen, sind wir verpflichtet die gesetzlich vorgeschriebene Umsatzsteuer abzuführen."
+  },
+  {
+    "title": "Gewinn",
+    "value": 23,
+    "color": "#45818E",
+    "description": "Der Gewinn dient vor allem dazu neue Produkte umsetzen zu können. Auch freie Mitarbeiter und Praktikanten werden von diesem Posten bezahlt."
+  }
+]
