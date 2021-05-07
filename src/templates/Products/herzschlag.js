@@ -121,10 +121,12 @@ const HerzschlagPage = ({ data }) => {
               Interview
               <br />
               <br />
-              Nürnberg hält zusammen! Mit unserem Herzschlag Nürnberg Shirt
-              wollen wir nicht nur die Liebe zu unserer Stadt, sondern auch
-              Nächstenlieb zeigen. Denn pro verkauften Herzschlag Shirt gehen 5
-              Euro an die Elterninitiative Krebskranker Kinder e.V. Nürnberg.
+              Nürnberg ist Bunt! Um diese Vielfältigkeit zu zeigen, haben wir
+              die verschiedensten Menschen aus Nürnberg mit unserem Herzschlag
+              Shirt abgelichtet. Denn wir sind alle gleich und sollten auch so
+              behandelt werden. NurEinBerg stellt nicht nur Nürnberg Shirts her,
+              sondern versucht Menschen zu verbinden um so eine bessere Welt zu
+              schaffen.
             </Text>
           </HeroWrapper>
           <ThreeThirdsGrid style={{ textAlign: 'center' }}>
