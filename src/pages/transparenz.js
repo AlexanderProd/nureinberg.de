@@ -329,7 +329,7 @@ const Transparenz = ({ data }) => {
       </AlternatingTwoThirdsGrid>
 
       <div ref={ref}></div>
-      {onScreen && (
+      {/* onScreen && (
         <ThreeThirdsGrid
           style={{
             textAlign: 'center',
@@ -355,7 +355,7 @@ const Transparenz = ({ data }) => {
             <Text>Follower haben wir bereits auf lnstagram.</Text>
           </div>
         </ThreeThirdsGrid>
-      )}
+      ) */}
     </Page>
   )
 }
