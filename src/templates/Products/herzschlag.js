@@ -124,9 +124,7 @@ const HerzschlagPage = ({ data }) => {
               Nürnberg ist Bunt! Um diese Vielfältigkeit zu zeigen, haben wir
               die verschiedensten Menschen aus Nürnberg mit unserem Herzschlag
               Shirt abgelichtet. Denn wir sind alle gleich und sollten auch so
-              behandelt werden. NurEinBerg stellt nicht nur Nürnberg Shirts her,
-              sondern versucht Menschen zu verbinden um so eine bessere Welt zu
-              schaffen.
+              behandelt werden.
             </Text>
           </HeroWrapper>
           <ThreeThirdsGrid style={{ textAlign: 'center' }}>
