@@ -7,7 +7,6 @@ import SEO from '~/components/seo'
 import Navigation from '~/components/Navigation'
 import Footer from '~/components/Footer'
 import { TwoColumnGrid, Button, breakpoints } from '~/utils/styles'
-import slide_1 from '~/images/slider_1.jpg'
 import video from '~/images/Website.mp4'
 
 const VideoBG = styled.video`
@@ -17,16 +16,6 @@ const VideoBG = styled.video`
   object-fit: cover;
   position: absolute;
   z-index: 1;
-  top: 0;
-`
-
-const ImageBG = styled.img`
-  max-width: 100vw;
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  position: absolute;
-  z-index: 2;
   top: 0;
 `
 
@@ -105,7 +94,20 @@ const Index = () => (
     </Caption>
     <VideoBG loop muted playsInline autoPlay>
       <source src={video} type="video/mp4" />
-      <ImageBG src={slide_1} />
+      <StaticImage
+        src="../images/slider_1.jpg"
+        layout="fullWidth"
+        alt="Nürnberg Panorama"
+        style={{
+          maxWidth: '100vw',
+          width: '100vw',
+          height: '100vh',
+          objectFit: 'cover',
+          position: 'absolute',
+          zIndex: 2,
+          top: 0,
+        }}
+      />
     </VideoBG>
     <Wrapper>
       <TwoColumnGrid gap={'0'}>
