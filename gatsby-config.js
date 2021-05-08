@@ -13,6 +13,7 @@ module.exports = {
     title: `NurEinBerg`,
     description: `Mode im Zeichen der Burg`,
     author: `@alexanderhorl`,
+    siteUrl: `https://nureinberg.de`,
     socialLinks: [
       {
         name: 'Instagram',
@@ -170,6 +171,7 @@ module.exports = {
         respectDNT: true,
       },
     },
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-facebook-pixel`,
       options: {

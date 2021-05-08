@@ -23,6 +23,7 @@
     "gatsby-plugin-react-helmet": "^4.3.0",
     "gatsby-plugin-root-import": "^2.0.6",
     "gatsby-plugin-sharp": "^3.3.1",
+    "gatsby-plugin-sitemap": "^4.0.0",
     "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-source-filesystem": "^3.3.0",
     "gatsby-source-shopify": "^4.3.0",
