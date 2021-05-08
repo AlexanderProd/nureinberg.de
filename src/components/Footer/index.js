@@ -9,7 +9,7 @@ import { Instagram, Facebook, Pinterest } from './icons'
 const Footer = ({ color = 'black' }) => {
   const { title, secondaryNav, socialLinks } = useSiteMetadata()
 
-  const links = (arr, n) => {
+  const splitArray = (arr, n) => {
     let chunkLength = Math.max(arr.length / n, 1)
     let chunks = []
     for (let i = 0; i < arr.length; i++) {
@@ -39,14 +39,14 @@ const Footer = ({ color = 'black' }) => {
     <Container>
       <Wrapper>
         <Links>
-          {links(secondaryNav, 2)[0].map(({ name, link }) => (
+          {splitArray(secondaryNav, 2)[0].map(({ name, link }) => (
             <Item to={link} key={name} color={color}>
               {name}
             </Item>
           ))}
         </Links>
         <Links>
-          {links(secondaryNav, 2)[1].map(({ name, link }) => (
+          {splitArray(secondaryNav, 2)[1].map(({ name, link }) => (
             <Item to={link} key={name} color={color}>
               {name}
             </Item>

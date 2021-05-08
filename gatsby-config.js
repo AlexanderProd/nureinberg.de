@@ -63,6 +63,10 @@ module.exports = {
         link: '/transparenz',
       },
       {
+        name: 'Retoure',
+        link: '/retoure',
+      },
+      {
         name: 'Impressum',
         link: '/impressum',
       },
