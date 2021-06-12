@@ -107,16 +107,19 @@ const KarlaKöhlerShirtPage = ({ data }) => {
 
           <TwoColumnGrid>
             <Text>
+              <H2>Über die Künstlerin</H2>
               Karla Köhler studierte Malerei und Bildhauerei, was auch in Ihren
               Arbeiten zu erkennen ist. Als Grundlage dient meist eine
               konturierte Leinwand, welche mit einem Dreidimensionalen Objekt
               aus verschiedensten Materialien veredelt wird. So werden
               beispielsweise Holz, Plastik oder Metal mit modernsten Techniken
               wie Laserschneiden und 3D Druck zum Einsatzgebracht um Ihre Werke
-              zu vollenden. Ihre aktuelle Themenreihe sind die Urbanen Welten,
-              bei denen Stadtansichten minimalistisch wiedergegeben werden.
-              Durch einfache Handzeichnungen in den einzelnen Städten kommt es
-              zur Entwicklung des Bildes, welches dann als Vektorgrafik
+              zu vollenden.
+              <br />
+              <br /> Ihre aktuelle Themenreihe sind die Urbanen Welten, bei
+              denen Stadtansichten minimalistisch wiedergegeben werden. Durch
+              einfache Handzeichnungen in den einzelnen Städten kommt es zur
+              Entwicklung des Bildes, welches dann als Vektorgrafik
               weiterverarbeitet wird. Ihre Arbeiten sind zu sehen in ihrem
               Atelier KUNSTKELLER hier im Defethaus (Termine können per Mail
               vereinbart werden) sowie im raum für zeitgenössische kunst von
