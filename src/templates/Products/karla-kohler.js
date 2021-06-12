@@ -43,6 +43,7 @@ const HeroVideo = styled.video`
 `
 
 const H2 = styled.h2`
+  font-family: 'Old Standard TT', serif;
   font-size: 2.25rem;
   margin-bottom: 15px;
   word-wrap: break-word;
