@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import styled from '@emotion/styled'
 
-import SEO from '~/components/seo'
+import Seo from '~/components/seo'
 import Navigation from '~/components/Navigation'
 import { Container, breakpoints } from '~/utils/styles'
 import Footer from '~/components/Footer'
@@ -24,7 +24,7 @@ const ImageWrapper = styled.div`
 
 const NotFoundPage = () => (
   <>
-    <SEO title="Page two" />
+    <Seo title="Page two" />
     <Navigation />
     <Container style={{ textAlign: 'center', marginTop: '5rem' }}>
       <h1>Seite nicht gefunden! 🙄</h1>

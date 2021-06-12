@@ -3,7 +3,7 @@ import { useStaticQuery, graphql, Link } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import styled from '@emotion/styled'
 
-import SEO from '~/components/seo'
+import Seo from '~/components/seo'
 import Navigation from '~/components/Navigation'
 import Footer from '~/components/Footer'
 import { breakpoints, MainContent } from '~/utils/styles'
@@ -92,7 +92,7 @@ const Klassik = () => {
 
   return (
     <>
-      <SEO title="Klassik" />
+      <Seo title="Klassik" />
       <Navigation />
       <MainContent>
         <Grid>

@@ -3,7 +3,7 @@ import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 
-import SEO from '~/components/seo'
+import Seo from '~/components/seo'
 import Navigation from '~/components/Navigation'
 import Footer from '~/components/Footer'
 import { TwoColumnGrid, Button, breakpoints } from '~/utils/styles'
@@ -86,7 +86,7 @@ const ImageWrapper = styled.div`
 
 const Index = () => (
   <>
-    <SEO title="Home" keywords={[`nureinberg`, `nürnberg`, `fashion`]} />
+    <Seo title="Home" keywords={[`nureinberg`, `nürnberg`, `fashion`]} />
     <Navigation color="black" />
     <Caption color="white">
       <Subtitle>MODE &amp; FASHION</Subtitle>

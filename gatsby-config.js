@@ -171,7 +171,33 @@ module.exports = {
         respectDNT: true,
       },
     },
-    `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        query: `
+        {
+          allSitePage {
+            nodes {
+              path
+            }
+          }
+          site {
+            siteMetadata {
+              siteUrl
+            }
+          }
+        }
+        `,
+      },
+      resolveSiteUrl: () => 'https://nureinberg.de',
+      resolvePages: ({ allSitePage: { nodes: allPages } }) => allPages,
+      serialize: ({ path }) => {
+        return {
+          url: path,
+          lastmod: new Date().toUTCString(),
+        }
+      },
+    },
     {
       resolve: `gatsby-plugin-facebook-pixel`,
       options: {

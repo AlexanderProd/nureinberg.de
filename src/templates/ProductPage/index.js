@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 
-import SEO from '~/components/seo'
+import Seo from '~/components/seo'
 import Navigation from '~/components/Navigation'
 import ProductForm from '~/components/ProductForm'
 import Footer from '~/components/Footer'
@@ -14,7 +14,7 @@ const ProductPage = ({ data }) => {
 
   return (
     <>
-      <SEO title={product.title} description={product.description} />
+      <Seo title={product.title} description={product.description} />
       <Navigation />
       <Container>
         <MainContent>
@@ -35,52 +35,58 @@ const ProductPage = ({ data }) => {
   )
 }
 
-export const query = graphql`query ($handle: String!) {
-  shopifyProduct(handle: {eq: $handle}) {
-    id
-    title
-    handle
-    productType
-    description
-    descriptionHtml
-    shopifyId
-    options {
-      id
-      name
-      values
-    }
-    variants {
+export const query = graphql`
+  query($handle: String!) {
+    shopifyProduct(handle: { eq: $handle }) {
       id
       title
-      price
-      availableForSale
+      handle
+      productType
+      description
+      descriptionHtml
       shopifyId
-      selectedOptions {
+      options {
+        id
         name
-        value
+        values
       }
-    }
-    priceRange {
-      minVariantPrice {
-        amount
-        currencyCode
+      variants {
+        id
+        title
+        price
+        availableForSale
+        shopifyId
+        selectedOptions {
+          name
+          value
+        }
       }
-      maxVariantPrice {
-        amount
-        currencyCode
+      priceRange {
+        minVariantPrice {
+          amount
+          currencyCode
+        }
+        maxVariantPrice {
+          amount
+          currencyCode
+        }
       }
-    }
-    images {
-      originalSrc
-      id
-      localFile {
-        childImageSharp {
-          gatsbyImageData(width: 600, height: 450, placeholder: TRACED_SVG, layout: CONSTRAINED)
+      images {
+        originalSrc
+        id
+        localFile {
+          childImageSharp {
+            gatsbyImageData(
+              width: 600
+              height: 450
+              placeholder: TRACED_SVG
+              layout: CONSTRAINED
+            )
+          }
         }
       }
     }
   }
-}
 `
 
 export default ProductPage

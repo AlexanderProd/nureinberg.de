@@ -1,9 +1,9 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import styled from '@emotion/styled'
-import { GatsbyImage } from "gatsby-plugin-image";
+import { GatsbyImage } from 'gatsby-plugin-image'
 
-import SEO from '~/components/seo'
+import Seo from '~/components/seo'
 import Navigation from '~/components/Navigation'
 import ProductForm from '~/components/ProductForm'
 import Footer from '~/components/Footer'
@@ -92,7 +92,7 @@ const FrankaPage = ({ data }) => {
 
   return (
     <div style={{ backgroundColor: 'black' }}>
-      <SEO title={product.title} description={product.description} />
+      <Seo title={product.title} description={product.description} />
       <Navigation color="#9A694F" />
       <Container>
         <MainContent>
@@ -100,7 +100,10 @@ const FrankaPage = ({ data }) => {
             <img src={pfeile} alt="pfeile" />
           </PfeileWrapper>
           <TwoColumnGrid>
-            <GatsbyImage image={frankaModel1.childImageSharp.gatsbyImageData} alt="Franka Model 1" />
+            <GatsbyImage
+              image={frankaModel1.childImageSharp.gatsbyImageData}
+              alt="Franka Model 1"
+            />
             <TextWrapper>
               <H2>Franka - die Franken Jacke</H2>
               <Text>
@@ -119,7 +122,10 @@ const FrankaPage = ({ data }) => {
                 Herzen, sondern auch auf der Haut.
               </Text>
             </TextWrapper>
-            <GatsbyImage image={frankaModel2.childImageSharp.gatsbyImageData} alt="Franka Model 2" />
+            <GatsbyImage
+              image={frankaModel2.childImageSharp.gatsbyImageData}
+              alt="Franka Model 2"
+            />
             <TextWrapper>
               <H2>Streng Limitiert</H2>
               <Text>
@@ -129,7 +135,10 @@ const FrankaPage = ({ data }) => {
                 Auflage kann das gewährleistet werden.
               </Text>
             </TextWrapper>
-            <GatsbyImage image={frankaModel3.childImageSharp.gatsbyImageData} alt="Franka Model 3" />
+            <GatsbyImage
+              image={frankaModel3.childImageSharp.gatsbyImageData}
+              alt="Franka Model 3"
+            />
             <TextWrapper>
               <H2>Hergestellt in Franken</H2>
               <Text>
@@ -147,11 +156,15 @@ const FrankaPage = ({ data }) => {
           <GatsbyImage
             image={frankaCollage.childImageSharp.gatsbyImageData}
             alt="Franka Collage"
-            style={{ marginTop: '10rem', marginBottom: '10rem' }} />
+            style={{ marginTop: '10rem', marginBottom: '10rem' }}
+          />
           <TwoColumnGrid>
             <GatsbyImage
-              image={product.images[0].localFile.childImageSharp.gatsbyImageData}
-              alt="Produktfoto Karl" />
+              image={
+                product.images[0].localFile.childImageSharp.gatsbyImageData
+              }
+              alt="Produktfoto Karl"
+            />
             <div>
               <ProductTitle>{product.title}</ProductTitle>
               <ProductForm dark={true} product={product} color="#9A694F" />
@@ -164,75 +177,80 @@ const FrankaPage = ({ data }) => {
         <Footer color="#9A694F" />
       </Container>
     </div>
-  );
+  )
 }
 
-export const query = graphql`query ($handle: String!) {
-  shopifyProduct(handle: {eq: $handle}) {
-    id
-    title
-    handle
-    productType
-    description
-    descriptionHtml
-    shopifyId
-    options {
-      id
-      name
-      values
-    }
-    variants {
+export const query = graphql`
+  query($handle: String!) {
+    shopifyProduct(handle: { eq: $handle }) {
       id
       title
-      price
-      availableForSale
+      handle
+      productType
+      description
+      descriptionHtml
       shopifyId
-      selectedOptions {
+      options {
+        id
         name
-        value
+        values
       }
-    }
-    priceRange {
-      minVariantPrice {
-        amount
-        currencyCode
+      variants {
+        id
+        title
+        price
+        availableForSale
+        shopifyId
+        selectedOptions {
+          name
+          value
+        }
       }
-      maxVariantPrice {
-        amount
-        currencyCode
+      priceRange {
+        minVariantPrice {
+          amount
+          currencyCode
+        }
+        maxVariantPrice {
+          amount
+          currencyCode
+        }
       }
-    }
-    images {
-      originalSrc
-      id
-      localFile {
-        childImageSharp {
-          gatsbyImageData(width: 600, placeholder: TRACED_SVG, layout: CONSTRAINED)
+      images {
+        originalSrc
+        id
+        localFile {
+          childImageSharp {
+            gatsbyImageData(
+              width: 600
+              placeholder: TRACED_SVG
+              layout: CONSTRAINED
+            )
+          }
         }
       }
     }
-  }
-  frankaModel1: file(relativePath: {eq: "Franka_Model_1.jpg"}) {
-    childImageSharp {
-      gatsbyImageData(layout: FULL_WIDTH)
+    frankaModel1: file(relativePath: { eq: "Franka_Model_1.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(layout: FULL_WIDTH)
+      }
+    }
+    frankaModel2: file(relativePath: { eq: "Franka_Model_2.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(layout: FULL_WIDTH)
+      }
+    }
+    frankaModel3: file(relativePath: { eq: "Franka_Model_3.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(layout: FULL_WIDTH)
+      }
+    }
+    frankaCollage: file(relativePath: { eq: "Franka_Collage.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(layout: FULL_WIDTH)
+      }
     }
   }
-  frankaModel2: file(relativePath: {eq: "Franka_Model_2.jpg"}) {
-    childImageSharp {
-      gatsbyImageData(layout: FULL_WIDTH)
-    }
-  }
-  frankaModel3: file(relativePath: {eq: "Franka_Model_3.jpg"}) {
-    childImageSharp {
-      gatsbyImageData(layout: FULL_WIDTH)
-    }
-  }
-  frankaCollage: file(relativePath: {eq: "Franka_Collage.jpg"}) {
-    childImageSharp {
-      gatsbyImageData(layout: FULL_WIDTH)
-    }
-  }
-}
 `
 
 export default FrankaPage

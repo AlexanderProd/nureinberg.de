@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 import { GatsbyImage, StaticImage } from 'gatsby-plugin-image'
 import styled from '@emotion/styled'
 
-import SEO from '~/components/seo'
+import Seo from '~/components/seo'
 import Navigation from '~/components/Navigation'
 import ProductForm from '~/components/ProductForm'
 import Footer from '~/components/Footer'
@@ -179,7 +179,7 @@ const HorizonPage = ({ data }) => {
 
   return (
     <Background style={{ backgroundColor: '#F2F2F2' }}>
-      <SEO title={product.title} description={product.description} />
+      <Seo title={product.title} description={product.description} />
       <Navigation color={'white'} />
       <Container>
         <MainContent>

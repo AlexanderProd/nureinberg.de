@@ -1,6 +1,6 @@
 import React from 'react'
 
-import SEO from '~/components/seo'
+import Seo from '~/components/seo'
 import Navigation from '~/components/Navigation'
 import { Container, MainContent } from '~/utils/styles'
 import Footer from '~/components/Footer'
@@ -15,7 +15,7 @@ const Page = ({
   color = 'transparent',
 }) => (
   <div style={{ backgroundColor: color }}>
-    <SEO title={title} />
+    <Seo title={title} />
     <Navigation />
     <Container>
       <MainContent>
