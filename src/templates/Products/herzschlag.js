@@ -204,7 +204,15 @@ const HerzschlagPage = ({ data }) => {
                 dabei und unterstütze unser Herzschlag Projekt!
                 <br />
                 <br /> Den Patavinus X NurEinBerg Anhänger und viele andere
-                Modelle gibts es hier einzeln zu erwerben.
+                Modelle gibts es{' '}
+                <a
+                  href="https://www.home.patavinus.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  hier
+                </a>{' '}
+                einzeln zu erwerben.
               </Text>
             </div>
             <StaticImage
