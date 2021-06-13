@@ -121,9 +121,24 @@ const KarlaKöhlerShirtPage = ({ data }) => {
               einfache Handzeichnungen in den einzelnen Städten kommt es zur
               Entwicklung des Bildes, welches dann als Vektorgrafik
               weiterverarbeitet wird. Ihre Arbeiten sind zu sehen in ihrem
-              Atelier KUNSTKELLER hier im Defethaus (Termine können per Mail
-              vereinbart werden) sowie im raum für zeitgenössische kunst von
-              Laurentiu Feller.
+              Atelier{' '}
+              <a
+                href="https://urbanewelt.tumblr.com"
+                target="_blank"
+                rel="noreferrer"
+              >
+                KUNSTKELLER
+              </a>{' '}
+              hier im{' '}
+              <a
+                href="https://atelier-galeriehaus.de/das-haus/ateliers/karla-koehler.html"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Defethaus
+              </a>{' '}
+              (Termine können per Mail vereinbart werden) sowie im raum für
+              zeitgenössische kunst von Laurentiu Feller.
             </Text>
             <StaticImage
               src="../../images/kk_portrait.jpg"
