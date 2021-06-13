@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { GatsbyImage } from 'gatsby-plugin-image'
+import { GatsbyImage, StaticImage } from 'gatsby-plugin-image'
 import styled from '@emotion/styled'
 
 import Seo from '~/components/seo'
@@ -165,6 +165,55 @@ const HerzschlagPage = ({ data }) => {
               />
             ))}
           </Collage>
+
+          <TwoColumnGrid>
+            <StaticImage
+              src="../../images/Patavinus_Porduktfoto.jpg"
+              layout="fullWidth"
+              alt="Patavinus Produktfoto"
+            />
+            <div>
+              <H2>Mit Sicherheit Gutes tun</H2>
+              <Text>
+                Patavinus und NurEinBerg haben eine Kooperation gestartet um
+                eine klare Message zu senden. Als Nürnberger Start-Ups wollen
+                wir gemeinsam unsere Stärken nutzen und unserer Stadt etwas
+                zurückgeben. Durch den Patavinus Anhänger bekommt Ihr nicht nur
+                eine Sicherheit für eure wertvollen Gegenstände, sondern tut
+                auch etwas Gutes für ein soziales Projekt. Denn 10% der
+                Einnahmen gehen an die Eltern Initiative Krebskranker Kinder
+                Nürnberg e.V. 
+              </Text>
+            </div>
+          </TwoColumnGrid>
+
+          <TwoColumnGrid style={{ margin: '10rem 0' }}>
+            <div>
+              <H2>Patavinus - Das schnellste Fundbüro der Welt </H2>
+              <Text>
+                Egal ob ein verlorener Schlüssel oder Telefon, es ist immer
+                besorgniserregend seine Wertsache zu verlieren. Doch Patavinus
+                hat einen Lösung entwickelt. Die Idee hinter dem Produkt setzt
+                auf die Hilfsbreitschaft der Menschen. Jeder Anhänger ist mit
+                einen QR-Code versehen, über den der Finder anonym Kontakt zum
+                Besitzer aufnehmen kann. Gerade zur heutigen Zeit ist
+                Datenschutz ein wichtiges Thema - Patavinus funktioniert ohne
+                Angabe von persönlichen Daten oder Tracking des Smartphones. So
+                gelangen 70% der verloren gegangenen Gegenstände sicher zurück
+                zum Besitzer und das nur aufgrund Menschlicher Mithilfe. Sei
+                dabei und unterstütze unser Herzschlag Projekt!
+                <br />
+                <br /> Den Patavinus X NurEinBerg Anhänger und viele andere
+                Modelle gibts es hier einzeln zu erwerben.
+              </Text>
+            </div>
+            <StaticImage
+              src="../../images/P_5_B.jpg"
+              layout="fullWidth"
+              alt="Patavinus Produktfoto"
+            />
+          </TwoColumnGrid>
+
           <TwoColumnGrid style={{ margin: '10rem 0' }}>
             <GatsbyImage
               image={
