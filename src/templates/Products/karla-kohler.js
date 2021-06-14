@@ -99,28 +99,27 @@ const KarlaKöhlerShirtPage = ({ data }) => {
               <br />
               <br />
               So ergab sich eine Zusammenarbeit die nicht nur aufgrund gleicher
-              Stilrichtungen entstand. Wie auch NurEinBerg stammt Karla Köhler
-              aus Nürnberg, weshalb viele Ihrer Kunstwerke einen regionalen
-              Bezug haben.
+              Stilrichtungen entstand. Sie wuchs in Franken auf und lebt seit
+              1993 in Nürnberg.
             </Text>
           </HeroWrapper>
 
           <TwoColumnGrid>
             <Text>
               <H2>Über die Künstlerin</H2>
-              Karla Köhler studierte Malerei und Bildhauerei, was auch in Ihren
-              Arbeiten zu erkennen ist. Als Grundlage dient meist eine
-              konturierte Leinwand, welche mit einem Dreidimensionalen Objekt
-              aus verschiedensten Materialien veredelt wird. So werden
-              beispielsweise Holz, Plastik oder Metal mit modernsten Techniken
-              wie Laserschneiden und 3D Druck zum Einsatzgebracht um Ihre Werke
-              zu vollenden.
+              Karla Köhler studierte Malerei und Bildhauerei was man auch an
+              Ihren Werken erkennen kann. Als Grundlage dient immer eine
+              Handzeichnung. Im nächsten Schritt wird eine konturierte Leinwand,
+              welche mit einem Dreidimensionalen Objekt aus verschiedensten
+              Materialien veredelt. So werden beispielsweise Holz, Plastik oder
+              Metal mit modernsten Techniken wie Laserschneiden und 3D Druck zum
+              Einsatzgebracht um Ihre Werke zu vollenden.
               <br />
               <br /> Ihre aktuelle Themenreihe sind die Urbanen Welten, bei
               denen Stadtansichten minimalistisch wiedergegeben werden. Durch
               einfache Handzeichnungen in den einzelnen Städten kommt es zur
               Entwicklung des Bildes, welches dann als Vektorgrafik
-              weiterverarbeitet wird. Ihre Arbeiten sind zu sehen in ihrem
+              weiterverarbeitet wird. Ihre Arbeiten sind zu sehen in Ihrem
               Atelier{' '}
               <a
                 href="https://urbanewelt.tumblr.com"
@@ -137,8 +136,8 @@ const KarlaKöhlerShirtPage = ({ data }) => {
               >
                 Defethaus
               </a>{' '}
-              (Termine können per Mail vereinbart werden) sowie im raum für
-              zeitgenössische kunst von Laurentiu Feller.
+              in der Bergstraße 11 (Termine können per Mail vereinbart werden)
+              sowie im Raum Für Zeitgenössische Kunst von Laurentiu Feller.
             </Text>
             <StaticImage
               src="../../images/kk_portrait.jpg"
@@ -165,7 +164,7 @@ const KarlaKöhlerShirtPage = ({ data }) => {
 }
 
 export const query = graphql`
-  query($handle: String!) {
+  query ($handle: String!) {
     shopifyProduct(handle: { eq: $handle }) {
       id
       title
