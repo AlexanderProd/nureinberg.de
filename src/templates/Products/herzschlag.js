@@ -121,10 +121,10 @@ const HerzschlagPage = ({ data }) => {
               Interview
               <br />
               <br />
-              Nürnberg ist Bunt! Um diese Vielfältigkeit zu zeigen, haben wir
-              die verschiedensten Menschen aus Nürnberg mit unserem Herzschlag
-              Shirt abgelichtet. Denn wir sind alle gleich und sollten auch so
-              behandelt werden.
+              Nürnberg hält zusammen! Mit unserem Herzschlag Nürnberg Shirt
+              wollen wir nicht nur die Liebe zu unserer Stadt, sondern auch
+              Nächstenlieb zeigen. Denn pro verkauften Herzschlag Shirt gehen 5
+              Euro an die Elterninitiative Krebskranker Kinder e.V. Nürnberg.
             </Text>
           </HeroWrapper>
           <ThreeThirdsGrid style={{ textAlign: 'center' }}>
@@ -206,7 +206,7 @@ const HerzschlagPage = ({ data }) => {
                 <br /> Den Patavinus X NurEinBerg Anhänger und viele andere
                 Modelle gibts es{' '}
                 <a
-                  href="https://www.home.patavinus.com/"
+                  href="https://www.home.patavinus.com/product-page/Nuernberg-Anhaenger-Herzschlag"
                   target="_blank"
                   rel="noreferrer"
                 >
