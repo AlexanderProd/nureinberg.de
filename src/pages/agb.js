@@ -24,9 +24,9 @@ const Agb = () => (
     (2) Im Falle des Vertragsschlusses kommt der Vertrag mit
     <br />
     <div>
-      <br /> 1050 GbR
+      <br /> NurEinBerg UG (haftungsbeschränkt)
       <br /> Vertreten durch die Gesellschafter: Jens Herga, Alexander Hörl, Kai
-      Zippe, Anvar Gallyaniev, Rabije Dzaferi, Ole Preisig
+      Zippe.
       <br /> Steilstraße 1a
       <br /> D-90513 Zirndorf
     </div>

@@ -38,24 +38,26 @@ const Impressum = () => (
     <p> </p>
     <h1>
       <strong>
-        Umsatzsteuer-ID:
+        Geschäftsangaben:
         <br />
       </strong>
     </h1>
+    <h2>Umsatzsteuer-Identifikationsnummer</h2>
     <p>
-      <span>
-        Umsatzsteuer-Identifikationsnummer gemäß §27 a Umsatzsteuergesetz:
-        <br />
-      </span>
-      <span>
-        (Kleinunternehmer Regelung wird in Anspruch genommen.)
-        <br />
-      </span>
       <span>
         DE312148136
         <br />
         <br />
       </span>
+    </p>
+    <h2>Handelsregistereintrag</h2>
+    <p>
+      <span>Registergericht: </span>
+      <span>Fürth</span>
+    </p>
+    <p>
+      <span>Registernummer: </span>
+      <span>HRB 18756</span>
     </p>
     <h1>
       <strong>Haftungsausschluss: </strong>
